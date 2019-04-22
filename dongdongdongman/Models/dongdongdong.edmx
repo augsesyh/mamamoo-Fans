@@ -1,0 +1,1848 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="dongdongdongModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Address">
+          <Key>
+            <PropertyRef Name="Address_id" />
+          </Key>
+          <Property Name="Address_id" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="User_id" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Address_province" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Address_city" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Address_detail" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Address_phone" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Address_name" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Collection">
+          <Key>
+            <PropertyRef Name="Collection_id" />
+          </Key>
+          <Property Name="Collection_id" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="User_id" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Video_id" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Collection_time" Type="nchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Comic">
+          <Key>
+            <PropertyRef Name="Comic_id" />
+          </Key>
+          <Property Name="Comic_id" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="UP_id" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Comic_cover" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Comic_name" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Comic_writer" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Comic_intro" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Comic_chapter_nums" Type="nchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Comic_Cate">
+          <Key>
+            <PropertyRef Name="Comic_cate_id" />
+          </Key>
+          <Property Name="Comic_cate_id" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Comic_cate_name" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Comic_cate_nums" Type="nchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Comic_Cate_Comic">
+          <Key>
+            <PropertyRef Name="Comic_Cate_Comic_id" />
+          </Key>
+          <Property Name="Comic_Cate_Comic_id" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Comic_id" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Comic_cate_id" Type="nchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Comic_chapter">
+          <Key>
+            <PropertyRef Name="Comic_chapter_id" />
+          </Key>
+          <Property Name="Comic_chapter_id" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Comic_id" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Comic_chapter_detail" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Comic_chapter_title" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Comic_update_time" Type="nchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Comment">
+          <Key>
+            <PropertyRef Name="Comment_id" />
+          </Key>
+          <Property Name="Comment_id" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Reback_id" Type="nchar" MaxLength="10" />
+          <Property Name="Comic_id" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="User_id" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Comment_intro" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Comment_time" Type="nchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Follow">
+          <Key>
+            <PropertyRef Name="Follow_id" />
+          </Key>
+          <Property Name="Follow_id" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Comic_id" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="User_id" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Follow_time" Type="nchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Goods_Cate">
+          <Key>
+            <PropertyRef Name="Ware_Cate_id" />
+          </Key>
+          <Property Name="Ware_Cate_id" Type="int" Nullable="false" />
+          <Property Name="Ware_Cate_name" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Ware_Cate_series" Type="nchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Order_details">
+          <Key>
+            <PropertyRef Name="Order_details_id" />
+          </Key>
+          <Property Name="Order_details_id" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Orders_id" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Ware_id" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Ware_num" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="Orders_id" />
+          </Key>
+          <Property Name="Orders_id" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Address_id" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="User_id" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Orders_time" Type="datetime" />
+          <Property Name="Orders_mon" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Report">
+          <Key>
+            <PropertyRef Name="Report_id" />
+          </Key>
+          <Property Name="Report_id" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="User_id" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Comment_id" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Report_category" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Report_intro" Type="nchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Reward">
+          <Key>
+            <PropertyRef Name="Reward_id" />
+          </Key>
+          <Property Name="Reward_id" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="UP_id" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Reward_num" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Reward_time" Type="nchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ShoppingCart">
+          <Key>
+            <PropertyRef Name="Cart_id" />
+          </Key>
+          <Property Name="Cart_id" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Ware_id" Type="int" Nullable="false" />
+          <Property Name="User_id" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Ware_num" Type="nchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Subscribe">
+          <Key>
+            <PropertyRef Name="Subscribe_id" />
+          </Key>
+          <Property Name="Subscribe_id" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="User_id" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Comic_detail_id" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Subscribe_time" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Subscribe_nums" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Subscribe_price" Type="nchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UP">
+          <Key>
+            <PropertyRef Name="UP_id" />
+          </Key>
+          <Property Name="UP_id" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="User_detail_id" Type="nchar" MaxLength="10" />
+          <Property Name="UP_account" Type="nchar" MaxLength="10" />
+          <Property Name="UP_password" Type="nchar" MaxLength="10" />
+          <Property Name="UP_money" Type="int" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="User_id" />
+          </Key>
+          <Property Name="User_id" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="User_detail_id" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="User_account" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="User_password" Type="nchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="User_detail">
+          <Key>
+            <PropertyRef Name="User_detail_id" />
+          </Key>
+          <Property Name="User_detail_id" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="User_name" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="User_head" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="User_realname" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="User_email" Type="nchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Video">
+          <Key>
+            <PropertyRef Name="Video_id" />
+          </Key>
+          <Property Name="Video_id" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="UP_id" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Video_name" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Video_intro" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Video_nums" Type="nchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Video_Access">
+          <Key>
+            <PropertyRef Name="Video_Access_id" />
+          </Key>
+          <Property Name="Video_Access_id" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Video_intro" Type="nchar" MaxLength="10" />
+          <Property Name="User_id" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Video_Cate">
+          <Key>
+            <PropertyRef Name="Video_Cate_id" />
+          </Key>
+          <Property Name="Video_Cate_id" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Video_Cate_name" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Video_series" Type="nchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Video_detail">
+          <Key>
+            <PropertyRef Name="Video_detail_id" />
+          </Key>
+          <Property Name="Video_detail_id" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Video_id" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Video_detail_name" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Video_num" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Video_detail_info" Type="nchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Ware">
+          <Key>
+            <PropertyRef Name="Ware_id" />
+          </Key>
+          <Property Name="Ware_id" Type="int" Nullable="false" />
+          <Property Name="Ware_name" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Ware_price" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Ware_intro" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Ware_photo" Type="nchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Ware_Assess">
+          <Key>
+            <PropertyRef Name="Assess_id" />
+          </Key>
+          <Property Name="Assess_id" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Assess_intro" Type="nchar" MaxLength="10" />
+          <Property Name="Assess_photo" Type="nchar" MaxLength="10" />
+          <Property Name="Assess_star" Type="nchar" MaxLength="10" />
+          <Property Name="Assess_time" Type="nchar" MaxLength="10" />
+          <Property Name="User_id" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Ware_Cate">
+          <Key>
+            <PropertyRef Name="Ware_Cate_id" />
+          </Key>
+          <Property Name="Cate_id" Type="int" />
+          <Property Name="Ware_id" Type="int" />
+          <Property Name="Ware_Cate_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Address_User">
+          <End Role="User" Type="Self.User" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Address" Type="Self.Address" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="User_id" />
+            </Principal>
+            <Dependent Role="Address">
+              <PropertyRef Name="User_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Collection_User">
+          <End Role="User" Type="Self.User" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Collection" Type="Self.Collection" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="User_id" />
+            </Principal>
+            <Dependent Role="Collection">
+              <PropertyRef Name="Collection_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Collection_Video">
+          <End Role="Video" Type="Self.Video" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Collection" Type="Self.Collection" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Video">
+              <PropertyRef Name="Video_id" />
+            </Principal>
+            <Dependent Role="Collection">
+              <PropertyRef Name="Collection_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comic_Cate_Comic_Comic">
+          <End Role="Comic" Type="Self.Comic" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Comic_Cate_Comic" Type="Self.Comic_Cate_Comic" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Comic">
+              <PropertyRef Name="Comic_id" />
+            </Principal>
+            <Dependent Role="Comic_Cate_Comic">
+              <PropertyRef Name="Comic_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comic_Cate_Comic_Comic_Cate">
+          <End Role="Comic_Cate" Type="Self.Comic_Cate" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Comic_Cate_Comic" Type="Self.Comic_Cate_Comic" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Comic_Cate">
+              <PropertyRef Name="Comic_cate_id" />
+            </Principal>
+            <Dependent Role="Comic_Cate_Comic">
+              <PropertyRef Name="Comic_cate_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comic_chapter_Comic">
+          <End Role="Comic" Type="Self.Comic" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Comic_chapter" Type="Self.Comic_chapter" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Comic">
+              <PropertyRef Name="Comic_id" />
+            </Principal>
+            <Dependent Role="Comic_chapter">
+              <PropertyRef Name="Comic_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comic_UP">
+          <End Role="UP" Type="Self.UP" Multiplicity="1" />
+          <End Role="Comic" Type="Self.Comic" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="UP">
+              <PropertyRef Name="UP_id" />
+            </Principal>
+            <Dependent Role="Comic">
+              <PropertyRef Name="Comic_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comment_Comic">
+          <End Role="Comic" Type="Self.Comic" Multiplicity="1" />
+          <End Role="Comment" Type="Self.Comment" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Comic">
+              <PropertyRef Name="Comic_id" />
+            </Principal>
+            <Dependent Role="Comment">
+              <PropertyRef Name="Comment_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comment_Comment">
+          <End Role="Comment" Type="Self.Comment" Multiplicity="1" />
+          <End Role="Comment1" Type="Self.Comment" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Comment">
+              <PropertyRef Name="Comment_id" />
+            </Principal>
+            <Dependent Role="Comment1">
+              <PropertyRef Name="Comment_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comment_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Comment" Type="Self.Comment" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="User_id" />
+            </Principal>
+            <Dependent Role="Comment">
+              <PropertyRef Name="Comment_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Follow_Comic">
+          <End Role="Comic" Type="Self.Comic" Multiplicity="1" />
+          <End Role="Follow" Type="Self.Follow" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Comic">
+              <PropertyRef Name="Comic_id" />
+            </Principal>
+            <Dependent Role="Follow">
+              <PropertyRef Name="Comic_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Follow_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Follow" Type="Self.Follow" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="User_id" />
+            </Principal>
+            <Dependent Role="Follow">
+              <PropertyRef Name="User_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_Address">
+          <End Role="Address" Type="Self.Address" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Address">
+              <PropertyRef Name="Address_id" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="Orders_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="User_id" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="Orders_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Report_Comment">
+          <End Role="Comment" Type="Self.Comment" Multiplicity="1" />
+          <End Role="Report" Type="Self.Report" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Comment">
+              <PropertyRef Name="Comment_id" />
+            </Principal>
+            <Dependent Role="Report">
+              <PropertyRef Name="Comment_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Report_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Report" Type="Self.Report" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="User_id" />
+            </Principal>
+            <Dependent Role="Report">
+              <PropertyRef Name="User_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reward_UP">
+          <End Role="UP" Type="Self.UP" Multiplicity="1" />
+          <End Role="Reward" Type="Self.Reward" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="UP">
+              <PropertyRef Name="UP_id" />
+            </Principal>
+            <Dependent Role="Reward">
+              <PropertyRef Name="Reward_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShoppingCart_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="ShoppingCart" Type="Self.ShoppingCart" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="User_id" />
+            </Principal>
+            <Dependent Role="ShoppingCart">
+              <PropertyRef Name="User_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShoppingCart_Ware">
+          <End Role="Ware" Type="Self.Ware" Multiplicity="1" />
+          <End Role="ShoppingCart" Type="Self.ShoppingCart" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ware">
+              <PropertyRef Name="Ware_id" />
+            </Principal>
+            <Dependent Role="ShoppingCart">
+              <PropertyRef Name="Ware_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Subscribe_Comic_chapter">
+          <End Role="Comic_chapter" Type="Self.Comic_chapter" Multiplicity="1" />
+          <End Role="Subscribe" Type="Self.Subscribe" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Comic_chapter">
+              <PropertyRef Name="Comic_chapter_id" />
+            </Principal>
+            <Dependent Role="Subscribe">
+              <PropertyRef Name="Comic_detail_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Subscribe_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Subscribe" Type="Self.Subscribe" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="User_id" />
+            </Principal>
+            <Dependent Role="Subscribe">
+              <PropertyRef Name="User_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UP_User_detail">
+          <End Role="User_detail" Type="Self.User_detail" Multiplicity="0..1" />
+          <End Role="UP" Type="Self.UP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User_detail">
+              <PropertyRef Name="User_detail_id" />
+            </Principal>
+            <Dependent Role="UP">
+              <PropertyRef Name="User_detail_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_User_detail">
+          <End Role="User_detail" Type="Self.User_detail" Multiplicity="1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User_detail">
+              <PropertyRef Name="User_detail_id" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="User_detail_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Video_Access_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Video_Access" Type="Self.Video_Access" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="User_id" />
+            </Principal>
+            <Dependent Role="Video_Access">
+              <PropertyRef Name="Video_Access_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Video_detail_Video">
+          <End Role="Video" Type="Self.Video" Multiplicity="1" />
+          <End Role="Video_detail" Type="Self.Video_detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Video">
+              <PropertyRef Name="Video_id" />
+            </Principal>
+            <Dependent Role="Video_detail">
+              <PropertyRef Name="Video_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Video_UP">
+          <End Role="UP" Type="Self.UP" Multiplicity="1" />
+          <End Role="Video" Type="Self.Video" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UP">
+              <PropertyRef Name="UP_id" />
+            </Principal>
+            <Dependent Role="Video">
+              <PropertyRef Name="UP_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ware_Assess_User">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Ware_Assess" Type="Self.Ware_Assess" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="User_id" />
+            </Principal>
+            <Dependent Role="Ware_Assess">
+              <PropertyRef Name="User_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ware_Cate_Goods_Cate">
+          <End Role="Goods_Cate" Type="Self.Goods_Cate" Multiplicity="0..1" />
+          <End Role="Ware_Cate" Type="Self.Ware_Cate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Goods_Cate">
+              <PropertyRef Name="Ware_Cate_id" />
+            </Principal>
+            <Dependent Role="Ware_Cate">
+              <PropertyRef Name="Cate_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ware_Cate_Ware">
+          <End Role="Ware" Type="Self.Ware" Multiplicity="0..1" />
+          <End Role="Ware_Cate" Type="Self.Ware_Cate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ware">
+              <PropertyRef Name="Ware_id" />
+            </Principal>
+            <Dependent Role="Ware_Cate">
+              <PropertyRef Name="Ware_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="dongdongdongModelStoreContainer">
+          <EntitySet Name="Address" EntityType="Self.Address" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Collection" EntityType="Self.Collection" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Comic" EntityType="Self.Comic" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Comic_Cate" EntityType="Self.Comic_Cate" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Comic_Cate_Comic" EntityType="Self.Comic_Cate_Comic" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Comic_chapter" EntityType="Self.Comic_chapter" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Comment" EntityType="Self.Comment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Follow" EntityType="Self.Follow" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Goods_Cate" EntityType="Self.Goods_Cate" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Order_details" EntityType="Self.Order_details" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Report" EntityType="Self.Report" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Reward" EntityType="Self.Reward" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ShoppingCart" EntityType="Self.ShoppingCart" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Subscribe" EntityType="Self.Subscribe" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UP" EntityType="Self.UP" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User_detail" EntityType="Self.User_detail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Video" EntityType="Self.Video" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Video_Access" EntityType="Self.Video_Access" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Video_Cate" EntityType="Self.Video_Cate" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Video_detail" EntityType="Self.Video_detail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ware" EntityType="Self.Ware" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ware_Assess" EntityType="Self.Ware_Assess" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ware_Cate" EntityType="Self.Ware_Cate" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Address_User" Association="Self.FK_Address_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Address" EntitySet="Address" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Collection_User" Association="Self.FK_Collection_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Collection" EntitySet="Collection" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Collection_Video" Association="Self.FK_Collection_Video">
+            <End Role="Video" EntitySet="Video" />
+            <End Role="Collection" EntitySet="Collection" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comic_Cate_Comic_Comic" Association="Self.FK_Comic_Cate_Comic_Comic">
+            <End Role="Comic" EntitySet="Comic" />
+            <End Role="Comic_Cate_Comic" EntitySet="Comic_Cate_Comic" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comic_Cate_Comic_Comic_Cate" Association="Self.FK_Comic_Cate_Comic_Comic_Cate">
+            <End Role="Comic_Cate" EntitySet="Comic_Cate" />
+            <End Role="Comic_Cate_Comic" EntitySet="Comic_Cate_Comic" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comic_chapter_Comic" Association="Self.FK_Comic_chapter_Comic">
+            <End Role="Comic" EntitySet="Comic" />
+            <End Role="Comic_chapter" EntitySet="Comic_chapter" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comic_UP" Association="Self.FK_Comic_UP">
+            <End Role="UP" EntitySet="UP" />
+            <End Role="Comic" EntitySet="Comic" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comment_Comic" Association="Self.FK_Comment_Comic">
+            <End Role="Comic" EntitySet="Comic" />
+            <End Role="Comment" EntitySet="Comment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comment_Comment" Association="Self.FK_Comment_Comment">
+            <End Role="Comment" EntitySet="Comment" />
+            <End Role="Comment1" EntitySet="Comment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comment_User" Association="Self.FK_Comment_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Comment" EntitySet="Comment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Follow_Comic" Association="Self.FK_Follow_Comic">
+            <End Role="Comic" EntitySet="Comic" />
+            <End Role="Follow" EntitySet="Follow" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Follow_User" Association="Self.FK_Follow_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Follow" EntitySet="Follow" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_Address" Association="Self.FK_Orders_Address">
+            <End Role="Address" EntitySet="Address" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_User" Association="Self.FK_Orders_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Report_Comment" Association="Self.FK_Report_Comment">
+            <End Role="Comment" EntitySet="Comment" />
+            <End Role="Report" EntitySet="Report" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Report_User" Association="Self.FK_Report_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Report" EntitySet="Report" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reward_UP" Association="Self.FK_Reward_UP">
+            <End Role="UP" EntitySet="UP" />
+            <End Role="Reward" EntitySet="Reward" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShoppingCart_User" Association="Self.FK_ShoppingCart_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="ShoppingCart" EntitySet="ShoppingCart" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShoppingCart_Ware" Association="Self.FK_ShoppingCart_Ware">
+            <End Role="Ware" EntitySet="Ware" />
+            <End Role="ShoppingCart" EntitySet="ShoppingCart" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Subscribe_Comic_chapter" Association="Self.FK_Subscribe_Comic_chapter">
+            <End Role="Comic_chapter" EntitySet="Comic_chapter" />
+            <End Role="Subscribe" EntitySet="Subscribe" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Subscribe_User" Association="Self.FK_Subscribe_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Subscribe" EntitySet="Subscribe" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UP_User_detail" Association="Self.FK_UP_User_detail">
+            <End Role="User_detail" EntitySet="User_detail" />
+            <End Role="UP" EntitySet="UP" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_User_detail" Association="Self.FK_User_User_detail">
+            <End Role="User_detail" EntitySet="User_detail" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Video_Access_User" Association="Self.FK_Video_Access_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Video_Access" EntitySet="Video_Access" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Video_detail_Video" Association="Self.FK_Video_detail_Video">
+            <End Role="Video" EntitySet="Video" />
+            <End Role="Video_detail" EntitySet="Video_detail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Video_UP" Association="Self.FK_Video_UP">
+            <End Role="UP" EntitySet="UP" />
+            <End Role="Video" EntitySet="Video" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ware_Assess_User" Association="Self.FK_Ware_Assess_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Ware_Assess" EntitySet="Ware_Assess" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ware_Cate_Goods_Cate" Association="Self.FK_Ware_Cate_Goods_Cate">
+            <End Role="Goods_Cate" EntitySet="Goods_Cate" />
+            <End Role="Ware_Cate" EntitySet="Ware_Cate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ware_Cate_Ware" Association="Self.FK_Ware_Cate_Ware">
+            <End Role="Ware" EntitySet="Ware" />
+            <End Role="Ware_Cate" EntitySet="Ware_Cate" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="dongdongdongModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Address">
+          <Key>
+            <PropertyRef Name="Address_id" />
+          </Key>
+          <Property Name="Address_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="User_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Address_province" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Address_city" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Address_detail" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Address_phone" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Address_name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Address_User" FromRole="Address" ToRole="User" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK_Orders_Address" FromRole="Address" ToRole="Orders" />
+        </EntityType>
+        <EntityType Name="Collection">
+          <Key>
+            <PropertyRef Name="Collection_id" />
+          </Key>
+          <Property Name="Collection_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="User_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Video_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Collection_time" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Collection_User" FromRole="Collection" ToRole="User" />
+          <NavigationProperty Name="Video" Relationship="Self.FK_Collection_Video" FromRole="Collection" ToRole="Video" />
+        </EntityType>
+        <EntityType Name="Comic">
+          <Key>
+            <PropertyRef Name="Comic_id" />
+          </Key>
+          <Property Name="Comic_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="UP_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Comic_cover" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Comic_name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Comic_writer" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Comic_intro" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Comic_chapter_nums" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Comic_Cate_Comic" Relationship="Self.FK_Comic_Cate_Comic_Comic" FromRole="Comic" ToRole="Comic_Cate_Comic" />
+          <NavigationProperty Name="Comic_chapter" Relationship="Self.FK_Comic_chapter_Comic" FromRole="Comic" ToRole="Comic_chapter" />
+          <NavigationProperty Name="UP" Relationship="Self.FK_Comic_UP" FromRole="Comic" ToRole="UP" />
+          <NavigationProperty Name="Comment" Relationship="Self.FK_Comment_Comic" FromRole="Comic" ToRole="Comment" />
+          <NavigationProperty Name="Follow" Relationship="Self.FK_Follow_Comic" FromRole="Comic" ToRole="Follow" />
+        </EntityType>
+        <EntityType Name="Comic_Cate">
+          <Key>
+            <PropertyRef Name="Comic_cate_id" />
+          </Key>
+          <Property Name="Comic_cate_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Comic_cate_name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Comic_cate_nums" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Comic_Cate_Comic" Relationship="Self.FK_Comic_Cate_Comic_Comic_Cate" FromRole="Comic_Cate" ToRole="Comic_Cate_Comic" />
+        </EntityType>
+        <EntityType Name="Comic_Cate_Comic">
+          <Key>
+            <PropertyRef Name="Comic_Cate_Comic_id" />
+          </Key>
+          <Property Name="Comic_Cate_Comic_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Comic_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Comic_cate_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Comic" Relationship="Self.FK_Comic_Cate_Comic_Comic" FromRole="Comic_Cate_Comic" ToRole="Comic" />
+          <NavigationProperty Name="Comic_Cate" Relationship="Self.FK_Comic_Cate_Comic_Comic_Cate" FromRole="Comic_Cate_Comic" ToRole="Comic_Cate" />
+        </EntityType>
+        <EntityType Name="Comic_chapter">
+          <Key>
+            <PropertyRef Name="Comic_chapter_id" />
+          </Key>
+          <Property Name="Comic_chapter_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Comic_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Comic_chapter_detail" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Comic_chapter_title" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Comic_update_time" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Comic" Relationship="Self.FK_Comic_chapter_Comic" FromRole="Comic_chapter" ToRole="Comic" />
+          <NavigationProperty Name="Subscribe" Relationship="Self.FK_Subscribe_Comic_chapter" FromRole="Comic_chapter" ToRole="Subscribe" />
+        </EntityType>
+        <EntityType Name="Comment">
+          <Key>
+            <PropertyRef Name="Comment_id" />
+          </Key>
+          <Property Name="Comment_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Reback_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Comic_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="User_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Comment_intro" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Comment_time" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Comic" Relationship="Self.FK_Comment_Comic" FromRole="Comment" ToRole="Comic" />
+          <NavigationProperty Name="Comment1" Relationship="Self.FK_Comment_Comment" FromRole="Comment" ToRole="Comment1" />
+          <NavigationProperty Name="Comment2" Relationship="Self.FK_Comment_Comment" FromRole="Comment1" ToRole="Comment" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Comment_User" FromRole="Comment" ToRole="User" />
+          <NavigationProperty Name="Report" Relationship="Self.FK_Report_Comment" FromRole="Comment" ToRole="Report" />
+        </EntityType>
+        <EntityType Name="Follow">
+          <Key>
+            <PropertyRef Name="Follow_id" />
+          </Key>
+          <Property Name="Follow_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Comic_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="User_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Follow_time" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Comic" Relationship="Self.FK_Follow_Comic" FromRole="Follow" ToRole="Comic" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Follow_User" FromRole="Follow" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Goods_Cate">
+          <Key>
+            <PropertyRef Name="Ware_Cate_id" />
+          </Key>
+          <Property Name="Ware_Cate_id" Type="Int32" Nullable="false" />
+          <Property Name="Ware_Cate_name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Ware_Cate_series" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Ware_Cate" Relationship="Self.FK_Ware_Cate_Goods_Cate" FromRole="Goods_Cate" ToRole="Ware_Cate" />
+        </EntityType>
+        <EntityType Name="Order_details">
+          <Key>
+            <PropertyRef Name="Order_details_id" />
+          </Key>
+          <Property Name="Order_details_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Orders_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Ware_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Ware_num" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="Orders_id" />
+          </Key>
+          <Property Name="Orders_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Address_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="User_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Orders_time" Type="DateTime" Precision="3" />
+          <Property Name="Orders_mon" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Address" Relationship="Self.FK_Orders_Address" FromRole="Orders" ToRole="Address" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Orders_User" FromRole="Orders" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Report">
+          <Key>
+            <PropertyRef Name="Report_id" />
+          </Key>
+          <Property Name="Report_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="User_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Comment_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Report_category" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Report_intro" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Comment" Relationship="Self.FK_Report_Comment" FromRole="Report" ToRole="Comment" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Report_User" FromRole="Report" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Reward">
+          <Key>
+            <PropertyRef Name="Reward_id" />
+          </Key>
+          <Property Name="Reward_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="UP_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Reward_num" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Reward_time" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="UP" Relationship="Self.FK_Reward_UP" FromRole="Reward" ToRole="UP" />
+        </EntityType>
+        <EntityType Name="ShoppingCart">
+          <Key>
+            <PropertyRef Name="Cart_id" />
+          </Key>
+          <Property Name="Cart_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Ware_id" Type="Int32" Nullable="false" />
+          <Property Name="User_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Ware_num" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="Self.FK_ShoppingCart_User" FromRole="ShoppingCart" ToRole="User" />
+          <NavigationProperty Name="Ware" Relationship="Self.FK_ShoppingCart_Ware" FromRole="ShoppingCart" ToRole="Ware" />
+        </EntityType>
+        <EntityType Name="Subscribe">
+          <Key>
+            <PropertyRef Name="Subscribe_id" />
+          </Key>
+          <Property Name="Subscribe_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="User_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Comic_detail_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Subscribe_time" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Subscribe_nums" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Subscribe_price" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Comic_chapter" Relationship="Self.FK_Subscribe_Comic_chapter" FromRole="Subscribe" ToRole="Comic_chapter" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Subscribe_User" FromRole="Subscribe" ToRole="User" />
+        </EntityType>
+        <EntityType Name="UP">
+          <Key>
+            <PropertyRef Name="UP_id" />
+          </Key>
+          <Property Name="UP_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="User_detail_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="UP_account" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="UP_password" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="UP_money" Type="Int32" />
+          <NavigationProperty Name="Comic" Relationship="Self.FK_Comic_UP" FromRole="UP" ToRole="Comic" />
+          <NavigationProperty Name="Reward" Relationship="Self.FK_Reward_UP" FromRole="UP" ToRole="Reward" />
+          <NavigationProperty Name="User_detail" Relationship="Self.FK_UP_User_detail" FromRole="UP" ToRole="User_detail" />
+          <NavigationProperty Name="Video" Relationship="Self.FK_Video_UP" FromRole="UP" ToRole="Video" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="User_id" />
+          </Key>
+          <Property Name="User_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="User_detail_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="User_account" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="User_password" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Address" Relationship="Self.FK_Address_User" FromRole="User" ToRole="Address" />
+          <NavigationProperty Name="Collection" Relationship="Self.FK_Collection_User" FromRole="User" ToRole="Collection" />
+          <NavigationProperty Name="Comment" Relationship="Self.FK_Comment_User" FromRole="User" ToRole="Comment" />
+          <NavigationProperty Name="Follow" Relationship="Self.FK_Follow_User" FromRole="User" ToRole="Follow" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK_Orders_User" FromRole="User" ToRole="Orders" />
+          <NavigationProperty Name="Report" Relationship="Self.FK_Report_User" FromRole="User" ToRole="Report" />
+          <NavigationProperty Name="ShoppingCart" Relationship="Self.FK_ShoppingCart_User" FromRole="User" ToRole="ShoppingCart" />
+          <NavigationProperty Name="Subscribe" Relationship="Self.FK_Subscribe_User" FromRole="User" ToRole="Subscribe" />
+          <NavigationProperty Name="User_detail" Relationship="Self.FK_User_User_detail" FromRole="User" ToRole="User_detail" />
+          <NavigationProperty Name="Video_Access" Relationship="Self.FK_Video_Access_User" FromRole="User" ToRole="Video_Access" />
+          <NavigationProperty Name="Ware_Assess" Relationship="Self.FK_Ware_Assess_User" FromRole="User" ToRole="Ware_Assess" />
+        </EntityType>
+        <EntityType Name="User_detail">
+          <Key>
+            <PropertyRef Name="User_detail_id" />
+          </Key>
+          <Property Name="User_detail_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="User_name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="User_head" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="User_realname" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="User_email" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="UP" Relationship="Self.FK_UP_User_detail" FromRole="User_detail" ToRole="UP" />
+          <NavigationProperty Name="User" Relationship="Self.FK_User_User_detail" FromRole="User_detail" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Video">
+          <Key>
+            <PropertyRef Name="Video_id" />
+          </Key>
+          <Property Name="Video_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="UP_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Video_name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Video_intro" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Video_nums" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Collection" Relationship="Self.FK_Collection_Video" FromRole="Video" ToRole="Collection" />
+          <NavigationProperty Name="UP" Relationship="Self.FK_Video_UP" FromRole="Video" ToRole="UP" />
+          <NavigationProperty Name="Video_detail" Relationship="Self.FK_Video_detail_Video" FromRole="Video" ToRole="Video_detail" />
+        </EntityType>
+        <EntityType Name="Video_Access">
+          <Key>
+            <PropertyRef Name="Video_Access_id" />
+          </Key>
+          <Property Name="Video_Access_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Video_intro" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="User_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Video_Access_User" FromRole="Video_Access" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Video_Cate">
+          <Key>
+            <PropertyRef Name="Video_Cate_id" />
+          </Key>
+          <Property Name="Video_Cate_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Video_Cate_name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Video_series" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Video_detail">
+          <Key>
+            <PropertyRef Name="Video_detail_id" />
+          </Key>
+          <Property Name="Video_detail_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Video_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Video_detail_name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Video_num" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Video_detail_info" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Video" Relationship="Self.FK_Video_detail_Video" FromRole="Video_detail" ToRole="Video" />
+        </EntityType>
+        <EntityType Name="Ware">
+          <Key>
+            <PropertyRef Name="Ware_id" />
+          </Key>
+          <Property Name="Ware_id" Type="Int32" Nullable="false" />
+          <Property Name="Ware_name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Ware_price" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Ware_intro" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Ware_photo" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="ShoppingCart" Relationship="Self.FK_ShoppingCart_Ware" FromRole="Ware" ToRole="ShoppingCart" />
+          <NavigationProperty Name="Ware_Cate" Relationship="Self.FK_Ware_Cate_Ware" FromRole="Ware" ToRole="Ware_Cate" />
+        </EntityType>
+        <EntityType Name="Ware_Assess">
+          <Key>
+            <PropertyRef Name="Assess_id" />
+          </Key>
+          <Property Name="Assess_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Assess_intro" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Assess_photo" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Assess_star" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Assess_time" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="User_id" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Ware_Assess_User" FromRole="Ware_Assess" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Ware_Cate">
+          <Key>
+            <PropertyRef Name="Ware_Cate_id" />
+          </Key>
+          <Property Name="Cate_id" Type="Int32" />
+          <Property Name="Ware_id" Type="Int32" />
+          <Property Name="Ware_Cate_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Goods_Cate" Relationship="Self.FK_Ware_Cate_Goods_Cate" FromRole="Ware_Cate" ToRole="Goods_Cate" />
+          <NavigationProperty Name="Ware" Relationship="Self.FK_Ware_Cate_Ware" FromRole="Ware_Cate" ToRole="Ware" />
+        </EntityType>
+        <Association Name="FK_Address_User">
+          <End Role="User" Type="Self.User" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Address" Type="Self.Address" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="User_id" />
+            </Principal>
+            <Dependent Role="Address">
+              <PropertyRef Name="User_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_Address">
+          <End Role="Address" Type="Self.Address" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Address">
+              <PropertyRef Name="Address_id" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="Orders_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Collection_User">
+          <End Role="User" Type="Self.User" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Collection" Type="Self.Collection" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="User_id" />
+            </Principal>
+            <Dependent Role="Collection">
+              <PropertyRef Name="Collection_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Collection_Video">
+          <End Role="Video" Type="Self.Video" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Collection" Type="Self.Collection" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Video">
+              <PropertyRef Name="Video_id" />
+            </Principal>
+            <Dependent Role="Collection">
+              <PropertyRef Name="Collection_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comic_Cate_Comic_Comic">
+          <End Role="Comic" Type="Self.Comic" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Comic_Cate_Comic" Type="Self.Comic_Cate_Comic" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Comic">
+              <PropertyRef Name="Comic_id" />
+            </Principal>
+            <Dependent Role="Comic_Cate_Comic">
+              <PropertyRef Name="Comic_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comic_chapter_Comic">
+          <End Role="Comic" Type="Self.Comic" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Comic_chapter" Type="Self.Comic_chapter" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Comic">
+              <PropertyRef Name="Comic_id" />
+            </Principal>
+            <Dependent Role="Comic_chapter">
+              <PropertyRef Name="Comic_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comic_UP">
+          <End Role="UP" Type="Self.UP" Multiplicity="1" />
+          <End Role="Comic" Type="Self.Comic" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="UP">
+              <PropertyRef Name="UP_id" />
+            </Principal>
+            <Dependent Role="Comic">
+              <PropertyRef Name="Comic_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comment_Comic">
+          <End Role="Comic" Type="Self.Comic" Multiplicity="1" />
+          <End Role="Comment" Type="Self.Comment" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Comic">
+              <PropertyRef Name="Comic_id" />
+            </Principal>
+            <Dependent Role="Comment">
+              <PropertyRef Name="Comment_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Follow_Comic">
+          <End Role="Comic" Type="Self.Comic" Multiplicity="1" />
+          <End Role="Follow" Type="Self.Follow" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Comic">
+              <PropertyRef Name="Comic_id" />
+            </Principal>
+            <Dependent Role="Follow">
+              <PropertyRef Name="Comic_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comic_Cate_Comic_Comic_Cate">
+          <End Role="Comic_Cate" Type="Self.Comic_Cate" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Comic_Cate_Comic" Type="Self.Comic_Cate_Comic" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Comic_Cate">
+              <PropertyRef Name="Comic_cate_id" />
+            </Principal>
+            <Dependent Role="Comic_Cate_Comic">
+              <PropertyRef Name="Comic_cate_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Subscribe_Comic_chapter">
+          <End Role="Comic_chapter" Type="Self.Comic_chapter" Multiplicity="1" />
+          <End Role="Subscribe" Type="Self.Subscribe" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Comic_chapter">
+              <PropertyRef Name="Comic_chapter_id" />
+            </Principal>
+            <Dependent Role="Subscribe">
+              <PropertyRef Name="Comic_detail_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comment_Comment">
+          <End Role="Comment" Type="Self.Comment" Multiplicity="1" />
+          <End Role="Comment1" Type="Self.Comment" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Comment">
+              <PropertyRef Name="Comment_id" />
+            </Principal>
+            <Dependent Role="Comment1">
+              <PropertyRef Name="Comment_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comment_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Comment" Type="Self.Comment" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="User_id" />
+            </Principal>
+            <Dependent Role="Comment">
+              <PropertyRef Name="Comment_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Report_Comment">
+          <End Role="Comment" Type="Self.Comment" Multiplicity="1" />
+          <End Role="Report" Type="Self.Report" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Comment">
+              <PropertyRef Name="Comment_id" />
+            </Principal>
+            <Dependent Role="Report">
+              <PropertyRef Name="Comment_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Follow_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Follow" Type="Self.Follow" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="User_id" />
+            </Principal>
+            <Dependent Role="Follow">
+              <PropertyRef Name="User_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ware_Cate_Goods_Cate">
+          <End Role="Goods_Cate" Type="Self.Goods_Cate" Multiplicity="0..1" />
+          <End Role="Ware_Cate" Type="Self.Ware_Cate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Goods_Cate">
+              <PropertyRef Name="Ware_Cate_id" />
+            </Principal>
+            <Dependent Role="Ware_Cate">
+              <PropertyRef Name="Cate_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="User_id" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="Orders_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Report_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Report" Type="Self.Report" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="User_id" />
+            </Principal>
+            <Dependent Role="Report">
+              <PropertyRef Name="User_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reward_UP">
+          <End Role="UP" Type="Self.UP" Multiplicity="1" />
+          <End Role="Reward" Type="Self.Reward" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="UP">
+              <PropertyRef Name="UP_id" />
+            </Principal>
+            <Dependent Role="Reward">
+              <PropertyRef Name="Reward_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShoppingCart_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="ShoppingCart" Type="Self.ShoppingCart" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="User_id" />
+            </Principal>
+            <Dependent Role="ShoppingCart">
+              <PropertyRef Name="User_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShoppingCart_Ware">
+          <End Role="Ware" Type="Self.Ware" Multiplicity="1" />
+          <End Role="ShoppingCart" Type="Self.ShoppingCart" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ware">
+              <PropertyRef Name="Ware_id" />
+            </Principal>
+            <Dependent Role="ShoppingCart">
+              <PropertyRef Name="Ware_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Subscribe_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Subscribe" Type="Self.Subscribe" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="User_id" />
+            </Principal>
+            <Dependent Role="Subscribe">
+              <PropertyRef Name="User_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UP_User_detail">
+          <End Role="User_detail" Type="Self.User_detail" Multiplicity="0..1" />
+          <End Role="UP" Type="Self.UP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User_detail">
+              <PropertyRef Name="User_detail_id" />
+            </Principal>
+            <Dependent Role="UP">
+              <PropertyRef Name="User_detail_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Video_UP">
+          <End Role="UP" Type="Self.UP" Multiplicity="1" />
+          <End Role="Video" Type="Self.Video" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UP">
+              <PropertyRef Name="UP_id" />
+            </Principal>
+            <Dependent Role="Video">
+              <PropertyRef Name="UP_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_User_detail">
+          <End Role="User_detail" Type="Self.User_detail" Multiplicity="1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User_detail">
+              <PropertyRef Name="User_detail_id" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="User_detail_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Video_Access_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Video_Access" Type="Self.Video_Access" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="User_id" />
+            </Principal>
+            <Dependent Role="Video_Access">
+              <PropertyRef Name="Video_Access_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ware_Assess_User">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Ware_Assess" Type="Self.Ware_Assess" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="User_id" />
+            </Principal>
+            <Dependent Role="Ware_Assess">
+              <PropertyRef Name="User_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Video_detail_Video">
+          <End Role="Video" Type="Self.Video" Multiplicity="1" />
+          <End Role="Video_detail" Type="Self.Video_detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Video">
+              <PropertyRef Name="Video_id" />
+            </Principal>
+            <Dependent Role="Video_detail">
+              <PropertyRef Name="Video_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ware_Cate_Ware">
+          <End Role="Ware" Type="Self.Ware" Multiplicity="0..1" />
+          <End Role="Ware_Cate" Type="Self.Ware_Cate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ware">
+              <PropertyRef Name="Ware_id" />
+            </Principal>
+            <Dependent Role="Ware_Cate">
+              <PropertyRef Name="Ware_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="dongdongdongEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Address" EntityType="Self.Address" />
+          <EntitySet Name="Collection" EntityType="Self.Collection" />
+          <EntitySet Name="Comic" EntityType="Self.Comic" />
+          <EntitySet Name="Comic_Cate" EntityType="Self.Comic_Cate" />
+          <EntitySet Name="Comic_Cate_Comic" EntityType="Self.Comic_Cate_Comic" />
+          <EntitySet Name="Comic_chapter" EntityType="Self.Comic_chapter" />
+          <EntitySet Name="Comment" EntityType="Self.Comment" />
+          <EntitySet Name="Follow" EntityType="Self.Follow" />
+          <EntitySet Name="Goods_Cate" EntityType="Self.Goods_Cate" />
+          <EntitySet Name="Order_details" EntityType="Self.Order_details" />
+          <EntitySet Name="Orders" EntityType="Self.Orders" />
+          <EntitySet Name="Report" EntityType="Self.Report" />
+          <EntitySet Name="Reward" EntityType="Self.Reward" />
+          <EntitySet Name="ShoppingCart" EntityType="Self.ShoppingCart" />
+          <EntitySet Name="Subscribe" EntityType="Self.Subscribe" />
+          <EntitySet Name="UP" EntityType="Self.UP" />
+          <EntitySet Name="User" EntityType="Self.User" />
+          <EntitySet Name="User_detail" EntityType="Self.User_detail" />
+          <EntitySet Name="Video" EntityType="Self.Video" />
+          <EntitySet Name="Video_Access" EntityType="Self.Video_Access" />
+          <EntitySet Name="Video_Cate" EntityType="Self.Video_Cate" />
+          <EntitySet Name="Video_detail" EntityType="Self.Video_detail" />
+          <EntitySet Name="Ware" EntityType="Self.Ware" />
+          <EntitySet Name="Ware_Assess" EntityType="Self.Ware_Assess" />
+          <EntitySet Name="Ware_Cate" EntityType="Self.Ware_Cate" />
+          <AssociationSet Name="FK_Address_User" Association="Self.FK_Address_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Address" EntitySet="Address" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_Address" Association="Self.FK_Orders_Address">
+            <End Role="Address" EntitySet="Address" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Collection_User" Association="Self.FK_Collection_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Collection" EntitySet="Collection" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Collection_Video" Association="Self.FK_Collection_Video">
+            <End Role="Video" EntitySet="Video" />
+            <End Role="Collection" EntitySet="Collection" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comic_Cate_Comic_Comic" Association="Self.FK_Comic_Cate_Comic_Comic">
+            <End Role="Comic" EntitySet="Comic" />
+            <End Role="Comic_Cate_Comic" EntitySet="Comic_Cate_Comic" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comic_chapter_Comic" Association="Self.FK_Comic_chapter_Comic">
+            <End Role="Comic" EntitySet="Comic" />
+            <End Role="Comic_chapter" EntitySet="Comic_chapter" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comic_UP" Association="Self.FK_Comic_UP">
+            <End Role="UP" EntitySet="UP" />
+            <End Role="Comic" EntitySet="Comic" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comment_Comic" Association="Self.FK_Comment_Comic">
+            <End Role="Comic" EntitySet="Comic" />
+            <End Role="Comment" EntitySet="Comment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Follow_Comic" Association="Self.FK_Follow_Comic">
+            <End Role="Comic" EntitySet="Comic" />
+            <End Role="Follow" EntitySet="Follow" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comic_Cate_Comic_Comic_Cate" Association="Self.FK_Comic_Cate_Comic_Comic_Cate">
+            <End Role="Comic_Cate" EntitySet="Comic_Cate" />
+            <End Role="Comic_Cate_Comic" EntitySet="Comic_Cate_Comic" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Subscribe_Comic_chapter" Association="Self.FK_Subscribe_Comic_chapter">
+            <End Role="Comic_chapter" EntitySet="Comic_chapter" />
+            <End Role="Subscribe" EntitySet="Subscribe" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comment_Comment" Association="Self.FK_Comment_Comment">
+            <End Role="Comment" EntitySet="Comment" />
+            <End Role="Comment1" EntitySet="Comment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comment_User" Association="Self.FK_Comment_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Comment" EntitySet="Comment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Report_Comment" Association="Self.FK_Report_Comment">
+            <End Role="Comment" EntitySet="Comment" />
+            <End Role="Report" EntitySet="Report" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Follow_User" Association="Self.FK_Follow_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Follow" EntitySet="Follow" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ware_Cate_Goods_Cate" Association="Self.FK_Ware_Cate_Goods_Cate">
+            <End Role="Goods_Cate" EntitySet="Goods_Cate" />
+            <End Role="Ware_Cate" EntitySet="Ware_Cate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_User" Association="Self.FK_Orders_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Report_User" Association="Self.FK_Report_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Report" EntitySet="Report" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reward_UP" Association="Self.FK_Reward_UP">
+            <End Role="UP" EntitySet="UP" />
+            <End Role="Reward" EntitySet="Reward" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShoppingCart_User" Association="Self.FK_ShoppingCart_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="ShoppingCart" EntitySet="ShoppingCart" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShoppingCart_Ware" Association="Self.FK_ShoppingCart_Ware">
+            <End Role="Ware" EntitySet="Ware" />
+            <End Role="ShoppingCart" EntitySet="ShoppingCart" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Subscribe_User" Association="Self.FK_Subscribe_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Subscribe" EntitySet="Subscribe" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UP_User_detail" Association="Self.FK_UP_User_detail">
+            <End Role="User_detail" EntitySet="User_detail" />
+            <End Role="UP" EntitySet="UP" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Video_UP" Association="Self.FK_Video_UP">
+            <End Role="UP" EntitySet="UP" />
+            <End Role="Video" EntitySet="Video" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_User_detail" Association="Self.FK_User_User_detail">
+            <End Role="User_detail" EntitySet="User_detail" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Video_Access_User" Association="Self.FK_Video_Access_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Video_Access" EntitySet="Video_Access" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ware_Assess_User" Association="Self.FK_Ware_Assess_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Ware_Assess" EntitySet="Ware_Assess" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Video_detail_Video" Association="Self.FK_Video_detail_Video">
+            <End Role="Video" EntitySet="Video" />
+            <End Role="Video_detail" EntitySet="Video_detail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ware_Cate_Ware" Association="Self.FK_Ware_Cate_Ware">
+            <End Role="Ware" EntitySet="Ware" />
+            <End Role="Ware_Cate" EntitySet="Ware_Cate" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="dongdongdongModelStoreContainer" CdmEntityContainer="dongdongdongEntities">
+          <EntitySetMapping Name="Address">
+            <EntityTypeMapping TypeName="dongdongdongModel.Address">
+              <MappingFragment StoreEntitySet="Address">
+                <ScalarProperty Name="Address_id" ColumnName="Address_id" />
+                <ScalarProperty Name="User_id" ColumnName="User_id" />
+                <ScalarProperty Name="Address_province" ColumnName="Address_province" />
+                <ScalarProperty Name="Address_city" ColumnName="Address_city" />
+                <ScalarProperty Name="Address_detail" ColumnName="Address_detail" />
+                <ScalarProperty Name="Address_phone" ColumnName="Address_phone" />
+                <ScalarProperty Name="Address_name" ColumnName="Address_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Collection">
+            <EntityTypeMapping TypeName="dongdongdongModel.Collection">
+              <MappingFragment StoreEntitySet="Collection">
+                <ScalarProperty Name="Collection_id" ColumnName="Collection_id" />
+                <ScalarProperty Name="User_id" ColumnName="User_id" />
+                <ScalarProperty Name="Video_id" ColumnName="Video_id" />
+                <ScalarProperty Name="Collection_time" ColumnName="Collection_time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Comic">
+            <EntityTypeMapping TypeName="dongdongdongModel.Comic">
+              <MappingFragment StoreEntitySet="Comic">
+                <ScalarProperty Name="Comic_id" ColumnName="Comic_id" />
+                <ScalarProperty Name="UP_id" ColumnName="UP_id" />
+                <ScalarProperty Name="Comic_cover" ColumnName="Comic_cover" />
+                <ScalarProperty Name="Comic_name" ColumnName="Comic_name" />
+                <ScalarProperty Name="Comic_writer" ColumnName="Comic_writer" />
+                <ScalarProperty Name="Comic_intro" ColumnName="Comic_intro" />
+                <ScalarProperty Name="Comic_chapter_nums" ColumnName="Comic_chapter_nums" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Comic_Cate">
+            <EntityTypeMapping TypeName="dongdongdongModel.Comic_Cate">
+              <MappingFragment StoreEntitySet="Comic_Cate">
+                <ScalarProperty Name="Comic_cate_id" ColumnName="Comic_cate_id" />
+                <ScalarProperty Name="Comic_cate_name" ColumnName="Comic_cate_name" />
+                <ScalarProperty Name="Comic_cate_nums" ColumnName="Comic_cate_nums" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Comic_Cate_Comic">
+            <EntityTypeMapping TypeName="dongdongdongModel.Comic_Cate_Comic">
+              <MappingFragment StoreEntitySet="Comic_Cate_Comic">
+                <ScalarProperty Name="Comic_Cate_Comic_id" ColumnName="Comic_Cate_Comic_id" />
+                <ScalarProperty Name="Comic_id" ColumnName="Comic_id" />
+                <ScalarProperty Name="Comic_cate_id" ColumnName="Comic_cate_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Comic_chapter">
+            <EntityTypeMapping TypeName="dongdongdongModel.Comic_chapter">
+              <MappingFragment StoreEntitySet="Comic_chapter">
+                <ScalarProperty Name="Comic_chapter_id" ColumnName="Comic_chapter_id" />
+                <ScalarProperty Name="Comic_id" ColumnName="Comic_id" />
+                <ScalarProperty Name="Comic_chapter_detail" ColumnName="Comic_chapter_detail" />
+                <ScalarProperty Name="Comic_chapter_title" ColumnName="Comic_chapter_title" />
+                <ScalarProperty Name="Comic_update_time" ColumnName="Comic_update_time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Comment">
+            <EntityTypeMapping TypeName="dongdongdongModel.Comment">
+              <MappingFragment StoreEntitySet="Comment">
+                <ScalarProperty Name="Comment_id" ColumnName="Comment_id" />
+                <ScalarProperty Name="Reback_id" ColumnName="Reback_id" />
+                <ScalarProperty Name="Comic_id" ColumnName="Comic_id" />
+                <ScalarProperty Name="User_id" ColumnName="User_id" />
+                <ScalarProperty Name="Comment_intro" ColumnName="Comment_intro" />
+                <ScalarProperty Name="Comment_time" ColumnName="Comment_time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Follow">
+            <EntityTypeMapping TypeName="dongdongdongModel.Follow">
+              <MappingFragment StoreEntitySet="Follow">
+                <ScalarProperty Name="Follow_id" ColumnName="Follow_id" />
+                <ScalarProperty Name="Comic_id" ColumnName="Comic_id" />
+                <ScalarProperty Name="User_id" ColumnName="User_id" />
+                <ScalarProperty Name="Follow_time" ColumnName="Follow_time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Goods_Cate">
+            <EntityTypeMapping TypeName="dongdongdongModel.Goods_Cate">
+              <MappingFragment StoreEntitySet="Goods_Cate">
+                <ScalarProperty Name="Ware_Cate_id" ColumnName="Ware_Cate_id" />
+                <ScalarProperty Name="Ware_Cate_name" ColumnName="Ware_Cate_name" />
+                <ScalarProperty Name="Ware_Cate_series" ColumnName="Ware_Cate_series" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Order_details">
+            <EntityTypeMapping TypeName="dongdongdongModel.Order_details">
+              <MappingFragment StoreEntitySet="Order_details">
+                <ScalarProperty Name="Order_details_id" ColumnName="Order_details_id" />
+                <ScalarProperty Name="Orders_id" ColumnName="Orders_id" />
+                <ScalarProperty Name="Ware_id" ColumnName="Ware_id" />
+                <ScalarProperty Name="Ware_num" ColumnName="Ware_num" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orders">
+            <EntityTypeMapping TypeName="dongdongdongModel.Orders">
+              <MappingFragment StoreEntitySet="Orders">
+                <ScalarProperty Name="Orders_id" ColumnName="Orders_id" />
+                <ScalarProperty Name="Address_id" ColumnName="Address_id" />
+                <ScalarProperty Name="User_id" ColumnName="User_id" />
+                <ScalarProperty Name="Orders_time" ColumnName="Orders_time" />
+                <ScalarProperty Name="Orders_mon" ColumnName="Orders_mon" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Report">
+            <EntityTypeMapping TypeName="dongdongdongModel.Report">
+              <MappingFragment StoreEntitySet="Report">
+                <ScalarProperty Name="Report_id" ColumnName="Report_id" />
+                <ScalarProperty Name="User_id" ColumnName="User_id" />
+                <ScalarProperty Name="Comment_id" ColumnName="Comment_id" />
+                <ScalarProperty Name="Report_category" ColumnName="Report_category" />
+                <ScalarProperty Name="Report_intro" ColumnName="Report_intro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reward">
+            <EntityTypeMapping TypeName="dongdongdongModel.Reward">
+              <MappingFragment StoreEntitySet="Reward">
+                <ScalarProperty Name="Reward_id" ColumnName="Reward_id" />
+                <ScalarProperty Name="UP_id" ColumnName="UP_id" />
+                <ScalarProperty Name="Reward_num" ColumnName="Reward_num" />
+                <ScalarProperty Name="Reward_time" ColumnName="Reward_time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ShoppingCart">
+            <EntityTypeMapping TypeName="dongdongdongModel.ShoppingCart">
+              <MappingFragment StoreEntitySet="ShoppingCart">
+                <ScalarProperty Name="Cart_id" ColumnName="Cart_id" />
+                <ScalarProperty Name="Ware_id" ColumnName="Ware_id" />
+                <ScalarProperty Name="User_id" ColumnName="User_id" />
+                <ScalarProperty Name="Ware_num" ColumnName="Ware_num" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Subscribe">
+            <EntityTypeMapping TypeName="dongdongdongModel.Subscribe">
+              <MappingFragment StoreEntitySet="Subscribe">
+                <ScalarProperty Name="Subscribe_id" ColumnName="Subscribe_id" />
+                <ScalarProperty Name="User_id" ColumnName="User_id" />
+                <ScalarProperty Name="Comic_detail_id" ColumnName="Comic_detail_id" />
+                <ScalarProperty Name="Subscribe_time" ColumnName="Subscribe_time" />
+                <ScalarProperty Name="Subscribe_nums" ColumnName="Subscribe_nums" />
+                <ScalarProperty Name="Subscribe_price" ColumnName="Subscribe_price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UP">
+            <EntityTypeMapping TypeName="dongdongdongModel.UP">
+              <MappingFragment StoreEntitySet="UP">
+                <ScalarProperty Name="UP_id" ColumnName="UP_id" />
+                <ScalarProperty Name="User_detail_id" ColumnName="User_detail_id" />
+                <ScalarProperty Name="UP_account" ColumnName="UP_account" />
+                <ScalarProperty Name="UP_password" ColumnName="UP_password" />
+                <ScalarProperty Name="UP_money" ColumnName="UP_money" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User">
+            <EntityTypeMapping TypeName="dongdongdongModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="User_id" ColumnName="User_id" />
+                <ScalarProperty Name="User_detail_id" ColumnName="User_detail_id" />
+                <ScalarProperty Name="User_account" ColumnName="User_account" />
+                <ScalarProperty Name="User_password" ColumnName="User_password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User_detail">
+            <EntityTypeMapping TypeName="dongdongdongModel.User_detail">
+              <MappingFragment StoreEntitySet="User_detail">
+                <ScalarProperty Name="User_detail_id" ColumnName="User_detail_id" />
+                <ScalarProperty Name="User_name" ColumnName="User_name" />
+                <ScalarProperty Name="User_head" ColumnName="User_head" />
+                <ScalarProperty Name="User_realname" ColumnName="User_realname" />
+                <ScalarProperty Name="User_email" ColumnName="User_email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Video">
+            <EntityTypeMapping TypeName="dongdongdongModel.Video">
+              <MappingFragment StoreEntitySet="Video">
+                <ScalarProperty Name="Video_id" ColumnName="Video_id" />
+                <ScalarProperty Name="UP_id" ColumnName="UP_id" />
+                <ScalarProperty Name="Video_name" ColumnName="Video_name" />
+                <ScalarProperty Name="Video_intro" ColumnName="Video_intro" />
+                <ScalarProperty Name="Video_nums" ColumnName="Video_nums" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Video_Access">
+            <EntityTypeMapping TypeName="dongdongdongModel.Video_Access">
+              <MappingFragment StoreEntitySet="Video_Access">
+                <ScalarProperty Name="Video_Access_id" ColumnName="Video_Access_id" />
+                <ScalarProperty Name="Video_intro" ColumnName="Video_intro" />
+                <ScalarProperty Name="User_id" ColumnName="User_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Video_Cate">
+            <EntityTypeMapping TypeName="dongdongdongModel.Video_Cate">
+              <MappingFragment StoreEntitySet="Video_Cate">
+                <ScalarProperty Name="Video_Cate_id" ColumnName="Video_Cate_id" />
+                <ScalarProperty Name="Video_Cate_name" ColumnName="Video_Cate_name" />
+                <ScalarProperty Name="Video_series" ColumnName="Video_series" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Video_detail">
+            <EntityTypeMapping TypeName="dongdongdongModel.Video_detail">
+              <MappingFragment StoreEntitySet="Video_detail">
+                <ScalarProperty Name="Video_detail_id" ColumnName="Video_detail_id" />
+                <ScalarProperty Name="Video_id" ColumnName="Video_id" />
+                <ScalarProperty Name="Video_detail_name" ColumnName="Video_detail_name" />
+                <ScalarProperty Name="Video_num" ColumnName="Video_num" />
+                <ScalarProperty Name="Video_detail_info" ColumnName="Video_detail_info" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ware">
+            <EntityTypeMapping TypeName="dongdongdongModel.Ware">
+              <MappingFragment StoreEntitySet="Ware">
+                <ScalarProperty Name="Ware_id" ColumnName="Ware_id" />
+                <ScalarProperty Name="Ware_name" ColumnName="Ware_name" />
+                <ScalarProperty Name="Ware_price" ColumnName="Ware_price" />
+                <ScalarProperty Name="Ware_intro" ColumnName="Ware_intro" />
+                <ScalarProperty Name="Ware_photo" ColumnName="Ware_photo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ware_Assess">
+            <EntityTypeMapping TypeName="dongdongdongModel.Ware_Assess">
+              <MappingFragment StoreEntitySet="Ware_Assess">
+                <ScalarProperty Name="Assess_id" ColumnName="Assess_id" />
+                <ScalarProperty Name="Assess_intro" ColumnName="Assess_intro" />
+                <ScalarProperty Name="Assess_photo" ColumnName="Assess_photo" />
+                <ScalarProperty Name="Assess_star" ColumnName="Assess_star" />
+                <ScalarProperty Name="Assess_time" ColumnName="Assess_time" />
+                <ScalarProperty Name="User_id" ColumnName="User_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ware_Cate">
+            <EntityTypeMapping TypeName="dongdongdongModel.Ware_Cate">
+              <MappingFragment StoreEntitySet="Ware_Cate">
+                <ScalarProperty Name="Cate_id" ColumnName="Cate_id" />
+                <ScalarProperty Name="Ware_id" ColumnName="Ware_id" />
+                <ScalarProperty Name="Ware_Cate_id" ColumnName="Ware_Cate_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
