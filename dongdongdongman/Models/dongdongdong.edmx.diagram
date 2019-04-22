@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="dc2793fdccb24c5d8c2aa2fcb6737c15" Name="Diagram1" ZoomLevel="72">
+        <EntityTypeShape EntityType="dongdongdongModel.Address" Width="1.5" PointX="5.25" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="dongdongdongModel.Collection" Width="1.5" PointX="7.5" PointY="22.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dongdongdongModel.Comic" Width="1.5" PointX="5.25" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="dongdongdongModel.Comic_Cate" Width="1.5" PointX="5.25" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="dongdongdongModel.Comic_Cate_Comic" Width="1.5" PointX="7.5" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="dongdongdongModel.Comic_chapter" Width="1.5" PointX="7.5" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dongdongdongModel.Comment" Width="1.5" PointX="10.5" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dongdongdongModel.Follow" Width="1.5" PointX="10.5" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="dongdongdongModel.Goods_Cate" Width="1.5" PointX="6" PointY="34.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dongdongdongModel.Order_details" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dongdongdongModel.Orders" Width="1.5" PointX="10.5" PointY="24.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="dongdongdongModel.Report" Width="1.5" PointX="12.75" PointY="18.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="dongdongdongModel.Reward" Width="1.5" PointX="5.25" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="dongdongdongModel.ShoppingCart" Width="1.5" PointX="8.25" PointY="26.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="dongdongdongModel.Subscribe" Width="1.5" PointX="9.75" PointY="17.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dongdongdongModel.UP" Width="1.5" PointX="3" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dongdongdongModel.User" Width="1.5" PointX="3" PointY="21.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dongdongdongModel.User_detail" Width="1.5" PointX="0.75" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="dongdongdongModel.Video" Width="1.5" PointX="5.25" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="dongdongdongModel.Video_Access" Width="1.5" PointX="5.25" PointY="25.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dongdongdongModel.Video_Cate" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dongdongdongModel.Video_detail" Width="1.5" PointX="7.5" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="dongdongdongModel.Ware" Width="1.5" PointX="6" PointY="31.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="dongdongdongModel.Ware_Assess" Width="1.5" PointX="5.25" PointY="28" IsExpanded="true" />
+        <EntityTypeShape EntityType="dongdongdongModel.Ware_Cate" Width="1.5" PointX="8.25" PointY="31.375" IsExpanded="true" />
+        <AssociationConnector Association="dongdongdongModel.FK_Address_User" ManuallyRouted="false" />
+        <AssociationConnector Association="dongdongdongModel.FK_Orders_Address" ManuallyRouted="false" />
+        <AssociationConnector Association="dongdongdongModel.FK_Collection_User" ManuallyRouted="false" />
+        <AssociationConnector Association="dongdongdongModel.FK_Collection_Video" ManuallyRouted="false" />
+        <AssociationConnector Association="dongdongdongModel.FK_Comic_Cate_Comic_Comic" ManuallyRouted="false" />
+        <AssociationConnector Association="dongdongdongModel.FK_Comic_chapter_Comic" ManuallyRouted="false" />
+        <AssociationConnector Association="dongdongdongModel.FK_Comic_UP" ManuallyRouted="false" />
+        <AssociationConnector Association="dongdongdongModel.FK_Comment_Comic" ManuallyRouted="false" />
+        <AssociationConnector Association="dongdongdongModel.FK_Follow_Comic" ManuallyRouted="false" />
+        <AssociationConnector Association="dongdongdongModel.FK_Comic_Cate_Comic_Comic_Cate" ManuallyRouted="false" />
+        <AssociationConnector Association="dongdongdongModel.FK_Subscribe_Comic_chapter" ManuallyRouted="false" />
+        <AssociationConnector Association="dongdongdongModel.FK_Comment_Comment" ManuallyRouted="false" />
+        <AssociationConnector Association="dongdongdongModel.FK_Comment_User" ManuallyRouted="false" />
+        <AssociationConnector Association="dongdongdongModel.FK_Report_Comment" ManuallyRouted="false" />
+        <AssociationConnector Association="dongdongdongModel.FK_Follow_User" ManuallyRouted="false" />
+        <AssociationConnector Association="dongdongdongModel.FK_Ware_Cate_Goods_Cate" ManuallyRouted="false" />
+        <AssociationConnector Association="dongdongdongModel.FK_Orders_User" ManuallyRouted="false" />
+        <AssociationConnector Association="dongdongdongModel.FK_Report_User" ManuallyRouted="false" />
+        <AssociationConnector Association="dongdongdongModel.FK_Reward_UP" ManuallyRouted="false" />
+        <AssociationConnector Association="dongdongdongModel.FK_ShoppingCart_User" ManuallyRouted="false" />
+        <AssociationConnector Association="dongdongdongModel.FK_ShoppingCart_Ware" ManuallyRouted="false" />
+        <AssociationConnector Association="dongdongdongModel.FK_Subscribe_User" ManuallyRouted="false" />
+        <AssociationConnector Association="dongdongdongModel.FK_UP_User_detail" ManuallyRouted="false" />
+        <AssociationConnector Association="dongdongdongModel.FK_Video_UP" ManuallyRouted="false" />
+        <AssociationConnector Association="dongdongdongModel.FK_User_User_detail" ManuallyRouted="false" />
+        <AssociationConnector Association="dongdongdongModel.FK_Video_Access_User" ManuallyRouted="false" />
+        <AssociationConnector Association="dongdongdongModel.FK_Ware_Assess_User" ManuallyRouted="false" />
+        <AssociationConnector Association="dongdongdongModel.FK_Video_detail_Video" ManuallyRouted="false" />
+        <AssociationConnector Association="dongdongdongModel.FK_Ware_Cate_Ware" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
