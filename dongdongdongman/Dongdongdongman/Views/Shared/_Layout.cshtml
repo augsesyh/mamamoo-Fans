@@ -19,22 +19,23 @@
                     <span class="icon-bar"></span>
                 </button>
                 @Html.ActionLink("咚咚咚动漫", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
+            </div><!--shiyonhui-->
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav navbar-left">
                     <li>@Html.ActionLink("首页", "Index", "Login")</li>
-                    <li>@Html.ActionLink("动漫", "About", "Home")</li>
+                    <li>@Html.ActionLink("动漫", "About", "Login")</li>
                     <li>@Html.ActionLink("漫画", "Contact", "Home")</li>
                     <li>@Html.ActionLink("商城", "Contact", "Home")</li>
                     <li>@Html.ActionLink("UP主专区", "Contact", "Home")</li>
                 </ul>
+                <div class="navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li><a class="nav-login" href="javascript:;"> 登陆</a></li>
+                        <li>@Html.ActionLink("注册", "Add", "Login")</li>
+                    </ul>
+                </div>
             </div>
-            <div class="navbar-right">
-                <ul class="nav navbar-nav">
-                    <li><a class="nav-login" href="javascript:;"> 登陆</a></li>
-                    <li>@Html.ActionLink("注册", "Add", "Login")</li>
-                </ul>
-            </div>
+           
         </div>
     </div>
     <div class="container body-content">
