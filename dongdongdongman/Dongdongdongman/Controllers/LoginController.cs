@@ -17,5 +17,11 @@ namespace Dongdongdongman.Controllers
         {
             return View();
         }
+        BindAttribute[]
+        public ActionResult AddUser()
+        {
+
+            return View();
+        }
     }
 }

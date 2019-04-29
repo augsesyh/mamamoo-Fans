@@ -28,6 +28,11 @@ namespace Dongdongdongman
                       "~/Content/shiyonghui/Login_Layout.css"));
             bundles.Add(new ScriptBundle("~/bundles/Login_Layout").Include(
                 "~/Scripts/shiyonghui/Login_Layout.js"));
+            bundles.Add(new StyleBundle("~/Content/Add_user.css").Include(
+                   "~/Content/shiyonghui/AddUser_AddUser.css"));
+            bundles.Add(new ScriptBundle("~/bundles/Add_User").Include(
+                "~/Scripts/shiyonghui/Add_user_Slider.js",
+                "~/Scripts/shiyonghui/Add_User.js"));
         }
     }
 }
