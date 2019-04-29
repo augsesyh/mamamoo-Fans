@@ -7,7 +7,7 @@
     <title>咚咚咚动漫网</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    
+  
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -31,11 +31,11 @@
                 <div class="navbar-right">
                     <ul class="nav navbar-nav">
                         <li><a class="nav-login" href="javascript:;"> 登陆</a></li>
-                        <li>@Html.ActionLink("注册", "Add", "Login")</li>
+                        <li>@Html.ActionLink("注册", "AddUser", "Login")</li>
                     </ul>
                 </div>
             </div>
-           
+
         </div>
     </div>
     <div class="container body-content">
@@ -44,19 +44,21 @@
         <div class="login-form">
             <div class="login-header">
                 <a href="javascript:;" title="关闭" class="login-close close">×</a>
-               <div class=""> <h3 class="loginlabel">用户登录</h3>
+                <div class="">
+                    <h3 class="loginlabel">用户登录</h3>
                 </div>
                 <hr>
             </div>
             <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
-                <form action="@Url.Action("Login")" method="get">
+                <form action="@Url.Action("Login")" method="post" id="Login_form">
+                    @Html.AntiForgeryToken()
                     <div class="form-group">
                         <label class="control-label col-md-3">用户名</label>
                         <input type="text" class="uname form-control col-md-9" id="uname" name="uname" autocomplete="off" spellcheck="false" placeholder="请使用注册邮箱或手机号登录">
                     </div>
                     <div class="form-group">
                         <label class="col-md-3">密码</label>
-                        <input type="password" class="upwd form-control col-md-9" id="upwd" name="upwd" autocomplete="off" spellcheck="false" placeholder="请输入密码" class="">
+                        <input type="password" class="upwd form-control col-md-9" id="upwd" name="upwd" autocomplete="off" spellcheck="false" placeholder="请输入密码">
                     </div>
                     <div class="form-group">
                         <div class="checkbox">
@@ -86,7 +88,8 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/Login_Layout")
-    @Scripts.Render("~/bund")
+    @Scripts.Render("~/bundles/Add_User")
     @RenderSection("scripts", required: false)
+  
 </body>
 </html>

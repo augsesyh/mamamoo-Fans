@@ -40,3 +40,10 @@
 .form-group{
     height:35px;
 }
+input.error {
+    border: 1px solid red;
+}
+label.error {
+    padding-left:100px;
+    color:red;
+}
