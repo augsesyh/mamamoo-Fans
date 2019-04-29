@@ -12,16 +12,17 @@ namespace Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Subscribe
+    public partial class Goods_Assess
     {
-        public int Subscribe_id { get; set; }
-        public int User_id { get; set; }
-        public int Comic_detail_id { get; set; }
-        public System.DateTime Subscribe_time { get; set; }
-        public int Subscribe_nums { get; set; }
-        public decimal Subscribe_price { get; set; }
+        public int Assess_id { get; set; }
+        public string Assess_intro { get; set; }
+        public string Assess_photo { get; set; }
+        public Nullable<int> Assess_star { get; set; }
+        public Nullable<System.DateTime> Assess_time { get; set; }
+        public Nullable<int> User_id { get; set; }
+        public Nullable<int> Goods_id { get; set; }
     
-        public virtual Comic_chapter Comic_chapter { get; set; }
+        public virtual Goods Goods { get; set; }
         public virtual User User { get; set; }
     }
 }

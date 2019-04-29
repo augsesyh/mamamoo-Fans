@@ -17,20 +17,19 @@ namespace Dongdongdongman.Controllers
         {
             return View();
         }
+       
        [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Login(string uname,string upwd)
+        public int Login(string uname,string upwd)
         {
             var da = us.FindUser(uname, upwd);
-            if(da==null)
-            {
-                return Content("<script>alert('登录失败，账号密码错误');window.location.reload();</script>");
+            if(da!=null)
+            { 
+                Session["User_name"] = da.User_detail.User_name;
+                return 1;
             }
             else
-            {
-                Session["User"] = da;
-                return Content("<script>alert('登录成功');window.location.reload();</script>");
-            }
+            { return 0; }
            
         }
         
@@ -39,11 +38,7 @@ namespace Dongdongdongman.Controllers
 
             return View();
         }
-        BindAttribute[]
-        public ActionResult AddUser()
-        {
-
-            return View();
-        }
+      
+       
     }
 }

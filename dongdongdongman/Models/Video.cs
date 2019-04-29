@@ -17,17 +17,22 @@ namespace Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Video()
         {
+            this.Collection = new HashSet<Collection>();
+            this.Video_Access = new HashSet<Video_Access>();
             this.Video_detail = new HashSet<Video_detail>();
         }
     
-        public string Video_id { get; set; }
-        public string UP_id { get; set; }
+        public int Video_id { get; set; }
+        public int UP_id { get; set; }
         public string Video_name { get; set; }
         public string Video_intro { get; set; }
-        public string Video_nums { get; set; }
+        public int Video_nums { get; set; }
     
-        public virtual Collection Collection { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Collection> Collection { get; set; }
         public virtual UP UP { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Video_Access> Video_Access { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Video_detail> Video_detail { get; set; }
     }

@@ -14,10 +14,12 @@ namespace Models
     
     public partial class Video_Access
     {
-        public string Video_Access_id { get; set; }
+        public int Video_Access_id { get; set; }
         public string Video_intro { get; set; }
-        public string User_id { get; set; }
+        public int User_id { get; set; }
+        public int Video_id { get; set; }
     
         public virtual User User { get; set; }
+        public virtual Video Video { get; set; }
     }
 }

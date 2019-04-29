@@ -21,7 +21,7 @@ namespace Models
             this.User = new HashSet<User>();
         }
     
-        public string User_detail_id { get; set; }
+        public int User_detail_id { get; set; }
         public string User_name { get; set; }
         public string User_head { get; set; }
         public string User_realname { get; set; }

@@ -14,11 +14,13 @@ namespace Models
     
     public partial class Reward
     {
-        public string Reward_id { get; set; }
-        public string UP_id { get; set; }
-        public string Reward_num { get; set; }
-        public string Reward_time { get; set; }
+        public int Reward_id { get; set; }
+        public int UP_id { get; set; }
+        public decimal Reward_num { get; set; }
+        public System.DateTime Reward_time { get; set; }
+        public int User_id { get; set; }
     
         public virtual UP UP { get; set; }
+        public virtual User User { get; set; }
     }
 }

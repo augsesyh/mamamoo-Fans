@@ -14,8 +14,7 @@ namespace Models
     
     public partial class Video_Cate
     {
-        public string Video_Cate_id { get; set; }
+        public int Video_Cate_id { get; set; }
         public string Video_Cate_name { get; set; }
-        public string Video_series { get; set; }
     }
 }

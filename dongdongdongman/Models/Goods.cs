@@ -12,28 +12,30 @@ namespace Models
     using System;
     using System.Collections.Generic;
     
-    public partial class UP
+    public partial class Goods
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public UP()
+        public Goods()
         {
-            this.Comic = new HashSet<Comic>();
-            this.Reward = new HashSet<Reward>();
-            this.Video = new HashSet<Video>();
+            this.Goods_Assess = new HashSet<Goods_Assess>();
+            this.Goods_Cate_Goods = new HashSet<Goods_Cate_Goods>();
+            this.Order_details = new HashSet<Order_details>();
+            this.ShoppingCart = new HashSet<ShoppingCart>();
         }
     
-        public int UP_id { get; set; }
-        public Nullable<int> UP_detail_id { get; set; }
-        public string UP_account { get; set; }
-        public string UP_password { get; set; }
-        public Nullable<int> UP_money { get; set; }
+        public int Goods_id { get; set; }
+        public string Goods_name { get; set; }
+        public double Goods_price { get; set; }
+        public string Goods_intro { get; set; }
+        public string Goods_photo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Comic> Comic { get; set; }
+        public virtual ICollection<Goods_Assess> Goods_Assess { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Reward> Reward { get; set; }
-        public virtual User_detail User_detail { get; set; }
+        public virtual ICollection<Goods_Cate_Goods> Goods_Cate_Goods { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Video> Video { get; set; }
+        public virtual ICollection<Order_details> Order_details { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ShoppingCart> ShoppingCart { get; set; }
     }
 }

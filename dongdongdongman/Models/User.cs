@@ -18,34 +18,45 @@ namespace Models
         public User()
         {
             this.Address = new HashSet<Address>();
+            this.Collection = new HashSet<Collection>();
+            this.Comment = new HashSet<Comment>();
             this.Follow = new HashSet<Follow>();
+            this.Goods_Assess = new HashSet<Goods_Assess>();
+            this.Orders = new HashSet<Orders>();
             this.Report = new HashSet<Report>();
+            this.Reward = new HashSet<Reward>();
             this.ShoppingCart = new HashSet<ShoppingCart>();
             this.Subscribe = new HashSet<Subscribe>();
-            this.Ware_Assess = new HashSet<Ware_Assess>();
+            this.Video_Access = new HashSet<Video_Access>();
         }
     
-        public string User_id { get; set; }
-        public string User_detail_id { get; set; }
+        public int User_id { get; set; }
+        public int User_detail_id { get; set; }
         public string User_account { get; set; }
         public string User_password { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Address> Address { get; set; }
-        public virtual Collection Collection { get; set; }
-        public virtual Comment Comment { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Collection> Collection { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Comment> Comment { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Follow> Follow { get; set; }
-        public virtual Orders Orders { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Goods_Assess> Goods_Assess { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Orders> Orders { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Report> Report { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Reward> Reward { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ShoppingCart> ShoppingCart { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Subscribe> Subscribe { get; set; }
         public virtual User_detail User_detail { get; set; }
-        public virtual Video_Access Video_Access { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Ware_Assess> Ware_Assess { get; set; }
+        public virtual ICollection<Video_Access> Video_Access { get; set; }
     }
 }

@@ -14,12 +14,12 @@ namespace Models
     
     public partial class ShoppingCart
     {
-        public string Cart_id { get; set; }
-        public int Ware_id { get; set; }
-        public string User_id { get; set; }
-        public string Ware_num { get; set; }
+        public int Cart_id { get; set; }
+        public int Goods_id { get; set; }
+        public int User_id { get; set; }
+        public int Goods_num { get; set; }
     
+        public virtual Goods Goods { get; set; }
         public virtual User User { get; set; }
-        public virtual Ware Ware { get; set; }
     }
 }

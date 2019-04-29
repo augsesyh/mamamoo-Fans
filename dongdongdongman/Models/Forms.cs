@@ -12,24 +12,17 @@ namespace Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Ware
+    public partial class Forms
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Ware()
+        public Forms()
         {
-            this.ShoppingCart = new HashSet<ShoppingCart>();
-            this.Ware_Cate = new HashSet<Ware_Cate>();
+            this.Comic = new HashSet<Comic>();
         }
     
-        public int Ware_id { get; set; }
-        public string Ware_name { get; set; }
-        public string Ware_price { get; set; }
-        public string Ware_intro { get; set; }
-        public string Ware_photo { get; set; }
+        public string CateName_Forms { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ShoppingCart> ShoppingCart { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Ware_Cate> Ware_Cate { get; set; }
+        public virtual ICollection<Comic> Comic { get; set; }
     }
 }

@@ -17,25 +17,34 @@ namespace Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Comic()
         {
-            this.Comic_Cate_Comic = new HashSet<Comic_Cate_Comic>();
             this.Comic_chapter = new HashSet<Comic_chapter>();
+            this.Comment = new HashSet<Comment>();
             this.Follow = new HashSet<Follow>();
         }
     
-        public string Comic_id { get; set; }
-        public string UP_id { get; set; }
+        public int Comic_id { get; set; }
+        public int UP_id { get; set; }
         public string Comic_cover { get; set; }
         public string Comic_name { get; set; }
         public string Comic_writer { get; set; }
         public string Comic_intro { get; set; }
-        public string Comic_chapter_nums { get; set; }
+        public Nullable<int> Comic_chapter_nums { get; set; }
+        public string Audiences { get; set; }
+        public string Colors { get; set; }
+        public string Contents { get; set; }
+        public string Forms { get; set; }
+        public string Territory { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Comic_Cate_Comic> Comic_Cate_Comic { get; set; }
+        public virtual Audiences Audiences1 { get; set; }
+        public virtual Colors Colors1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Comic_chapter> Comic_chapter { get; set; }
+        public virtual Contents Contents1 { get; set; }
+        public virtual Forms Forms1 { get; set; }
+        public virtual Territory Territory1 { get; set; }
         public virtual UP UP { get; set; }
-        public virtual Comment Comment { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Comment> Comment { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Follow> Follow { get; set; }
     }

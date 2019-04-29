@@ -12,13 +12,8 @@ namespace Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Comic_Cate_Comic
+    public partial class Usage
     {
-        public string Comic_Cate_Comic_id { get; set; }
-        public string Comic_id { get; set; }
-        public string Comic_cate_id { get; set; }
-    
-        public virtual Comic Comic { get; set; }
-        public virtual Comic_Cate Comic_Cate { get; set; }
+        public string CateName_Usage { get; set; }
     }
 }

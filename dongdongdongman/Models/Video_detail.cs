@@ -14,11 +14,11 @@ namespace Models
     
     public partial class Video_detail
     {
-        public string Video_detail_id { get; set; }
-        public string Video_id { get; set; }
+        public int Video_detail_id { get; set; }
+        public int Video_id { get; set; }
         public string Video_detail_name { get; set; }
-        public string Video_num { get; set; }
-        public string Video_detail_info { get; set; }
+        public int Video_num { get; set; }
+        public string Video_address { get; set; }
     
         public virtual Video Video { get; set; }
     }

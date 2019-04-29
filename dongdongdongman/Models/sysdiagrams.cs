@@ -12,16 +12,12 @@ namespace Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Subscribe
+    public partial class sysdiagrams
     {
-        public int Subscribe_id { get; set; }
-        public int User_id { get; set; }
-        public int Comic_detail_id { get; set; }
-        public System.DateTime Subscribe_time { get; set; }
-        public int Subscribe_nums { get; set; }
-        public decimal Subscribe_price { get; set; }
-    
-        public virtual Comic_chapter Comic_chapter { get; set; }
-        public virtual User User { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

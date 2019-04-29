@@ -14,13 +14,21 @@ namespace Models
     
     public partial class Orders
     {
-        public string Orders_id { get; set; }
-        public string Address_id { get; set; }
-        public string User_id { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Orders()
+        {
+            this.Order_details = new HashSet<Order_details>();
+        }
+    
+        public int Orders_id { get; set; }
+        public int Address_id { get; set; }
+        public int User_id { get; set; }
         public Nullable<System.DateTime> Orders_time { get; set; }
-        public string Orders_mon { get; set; }
+        public Nullable<decimal> Orders_mon { get; set; }
     
         public virtual Address Address { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Order_details> Order_details { get; set; }
         public virtual User User { get; set; }
     }
 }

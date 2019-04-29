@@ -10,17 +10,13 @@
 namespace Models
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class Ware_Assess
+    public partial class sp_helpdiagrams_Result
     {
-        public string Assess_id { get; set; }
-        public string Assess_intro { get; set; }
-        public string Assess_photo { get; set; }
-        public string Assess_star { get; set; }
-        public string Assess_time { get; set; }
-        public string User_id { get; set; }
-    
-        public virtual User User { get; set; }
+        public string Database { get; set; }
+        public string Name { get; set; }
+        public int ID { get; set; }
+        public string Owner { get; set; }
+        public int OwnerID { get; set; }
     }
 }

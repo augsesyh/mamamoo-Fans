@@ -14,8 +14,14 @@ namespace Models
     
     public partial class Address
     {
-        public string Address_id { get; set; }
-        public string User_id { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Address()
+        {
+            this.Orders = new HashSet<Orders>();
+        }
+    
+        public int Address_id { get; set; }
+        public int User_id { get; set; }
         public string Address_province { get; set; }
         public string Address_city { get; set; }
         public string Address_detail { get; set; }
@@ -23,6 +29,7 @@ namespace Models
         public string Address_name { get; set; }
     
         public virtual User User { get; set; }
-        public virtual Orders Orders { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Orders> Orders { get; set; }
     }
 }

@@ -20,11 +20,12 @@ namespace Models
             this.Subscribe = new HashSet<Subscribe>();
         }
     
-        public string Comic_chapter_id { get; set; }
-        public string Comic_id { get; set; }
+        public int Comic_chapter_id { get; set; }
+        public int Comic_id { get; set; }
         public string Comic_chapter_detail { get; set; }
         public string Comic_chapter_title { get; set; }
-        public string Comic_update_time { get; set; }
+        public System.DateTime Comic_update_time { get; set; }
+        public int Comic_chapter_num { get; set; }
     
         public virtual Comic Comic { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

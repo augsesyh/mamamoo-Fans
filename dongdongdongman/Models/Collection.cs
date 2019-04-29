@@ -14,9 +14,9 @@ namespace Models
     
     public partial class Collection
     {
-        public string Collection_id { get; set; }
-        public string User_id { get; set; }
-        public string Video_id { get; set; }
+        public int Collection_id { get; set; }
+        public int User_id { get; set; }
+        public int Video_id { get; set; }
         public string Collection_time { get; set; }
     
         public virtual User User { get; set; }

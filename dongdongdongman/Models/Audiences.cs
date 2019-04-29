@@ -12,26 +12,17 @@ namespace Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Comment
+    public partial class Audiences
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Comment()
+        public Audiences()
         {
-            this.Report = new HashSet<Report>();
+            this.Comic = new HashSet<Comic>();
         }
     
-        public int Comment_id { get; set; }
-        public Nullable<int> Reback_id { get; set; }
-        public int Comic_id { get; set; }
-        public int User_id { get; set; }
-        public string Comment_intro { get; set; }
-        public System.DateTime Comment_time { get; set; }
+        public string CateName_Audiences { get; set; }
     
-        public virtual Comic Comic { get; set; }
-        public virtual Comment Comment1 { get; set; }
-        public virtual Comment Comment2 { get; set; }
-        public virtual User User { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Report> Report { get; set; }
+        public virtual ICollection<Comic> Comic { get; set; }
     }
 }

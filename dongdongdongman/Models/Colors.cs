@@ -12,19 +12,17 @@ namespace Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Comic_Cate
+    public partial class Colors
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Comic_Cate()
+        public Colors()
         {
-            this.Comic_Cate_Comic = new HashSet<Comic_Cate_Comic>();
+            this.Comic = new HashSet<Comic>();
         }
     
-        public string Comic_cate_id { get; set; }
-        public string Comic_cate_name { get; set; }
-        public string Comic_cate_nums { get; set; }
+        public string CateName_Colors { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Comic_Cate_Comic> Comic_Cate_Comic { get; set; }
+        public virtual ICollection<Comic> Comic { get; set; }
     }
 }

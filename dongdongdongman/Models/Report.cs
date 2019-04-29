@@ -14,9 +14,9 @@ namespace Models
     
     public partial class Report
     {
-        public string Report_id { get; set; }
-        public string User_id { get; set; }
-        public string Comment_id { get; set; }
+        public int Report_id { get; set; }
+        public int User_id { get; set; }
+        public int Comment_id { get; set; }
         public string Report_category { get; set; }
         public string Report_intro { get; set; }
     

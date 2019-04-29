@@ -14,10 +14,10 @@ namespace Models
     
     public partial class Follow
     {
-        public string Follow_id { get; set; }
-        public string Comic_id { get; set; }
-        public string User_id { get; set; }
-        public string Follow_time { get; set; }
+        public int Follow_id { get; set; }
+        public int Comic_id { get; set; }
+        public int User_id { get; set; }
+        public System.DateTime Follow_time { get; set; }
     
         public virtual Comic Comic { get; set; }
         public virtual User User { get; set; }

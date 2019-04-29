@@ -14,9 +14,12 @@ namespace Models
     
     public partial class Order_details
     {
-        public string Order_details_id { get; set; }
-        public string Orders_id { get; set; }
-        public string Ware_id { get; set; }
-        public string Ware_num { get; set; }
+        public int Order_details_id { get; set; }
+        public int Orders_id { get; set; }
+        public int Goods_id { get; set; }
+        public Nullable<int> Goods_num { get; set; }
+    
+        public virtual Goods Goods { get; set; }
+        public virtual Orders Orders { get; set; }
     }
 }

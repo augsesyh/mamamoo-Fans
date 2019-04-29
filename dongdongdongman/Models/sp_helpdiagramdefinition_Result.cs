@@ -10,15 +10,10 @@
 namespace Models
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class Ware_Cate
+    public partial class sp_helpdiagramdefinition_Result
     {
-        public Nullable<int> Cate_id { get; set; }
-        public Nullable<int> Ware_id { get; set; }
-        public int Ware_Cate_id { get; set; }
-    
-        public virtual Goods_Cate Goods_Cate { get; set; }
-        public virtual Ware Ware { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }
