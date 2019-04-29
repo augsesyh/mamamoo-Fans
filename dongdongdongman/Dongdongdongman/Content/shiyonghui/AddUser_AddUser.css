@@ -1,0 +1,81 @@
+﻿body {
+}
+.addUser_back {
+    padding: 20px 100px;
+    margin-top: 20px;
+    min-height: 550px;
+    position: relative;
+    overflow: hidden;
+}
+.content_back {
+    background-image: url("../../Img/beack.jpg");
+    position: fixed;
+    top: 0;
+    opacity: .3;
+    left: 0;
+    background-size: cover;
+    -webkit-filter: blur();
+    -moz-filter: blur();
+    -o-filter: blur();
+    -ms-filter: blur();
+    filter: blur();
+    right: 0;
+    height: 100vh;
+    z-index: -1;
+}
+.AddUser_inputform {
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.15);
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    left: 50%;
+    width: 320px;
+    height: auto;
+    margin-left: -160px;
+    text-align: center;
+}
+.container {
+    padding-left:0px;
+}
+
+.drag {
+    width: 278px;
+    height: 40px;
+    line-height: 40px;
+    background-color: #e8e8e8;
+    position: relative;
+    margin-left:0px;
+}
+
+.bg {
+    width: 40px;
+    height: 100%;
+    position: absolute;
+    background-color: #75CDF9;
+}
+
+.text {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    user-select: none;
+}
+
+.btn1 {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    border: 1px solid #ccc;
+    cursor: move;
+    font-family: "宋体";
+    text-align: center;
+    background-color: #fff;
+    user-select: none;
+    color: #666;
+}
+.btn2{
+    margin-top:10px;
+    width:278px;
+}

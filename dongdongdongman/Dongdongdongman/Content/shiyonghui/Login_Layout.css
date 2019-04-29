@@ -15,20 +15,35 @@
 }
 
 .login-form {
+    border-radius: 5px;
     z-index: 9999;
     position: fixed;
     top: 40%;
     left: 55%;
     width: 500px;
-    height: 500px;
+    height: 400px;
     margin: -180px 0 0 -330px;
     border-radius: 5px;
     border: solid 2px #666;
     background-color: #fff;
     display: none;
     box-shadow: 0 0 10px #666;
+  
 }
+.loginlabel{
+    text-align:center;
 
+}
 .login-close {
     margin-right: 15px;
+}
+.form-group{
+    height:35px;
+}
+input.error {
+    border: 1px solid red;
+}
+label.error {
+    padding-left:100px;
+    color:red;
 }

@@ -9,7 +9,9 @@ namespace Dongdongdongman
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+                        "~/Scripts/jquery-{version}.js",
+                        "~/Scripts/jquery.validate.min.js",
+                        "~/Scripts/messages_zh.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
@@ -28,6 +30,11 @@ namespace Dongdongdongman
                       "~/Content/shiyonghui/Login_Layout.css"));
             bundles.Add(new ScriptBundle("~/bundles/Login_Layout").Include(
                 "~/Scripts/shiyonghui/Login_Layout.js"));
+            bundles.Add(new StyleBundle("~/Content/Add_user.css").Include(
+                   "~/Content/shiyonghui/AddUser_AddUser.css"));
+            bundles.Add(new ScriptBundle("~/bundles/Add_User").Include(
+                "~/Scripts/shiyonghui/Add_user_Slider.js",
+                "~/Scripts/shiyonghui/Add_User.js"));
         }
     }
 }
