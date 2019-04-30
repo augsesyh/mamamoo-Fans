@@ -4,12 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Models;
-
 namespace IDAL
 {
-    public interface IUser
+    public interface IUser_detail
     {
-        User FindUser(string name, string password);
-        User Findaccount(string account);
+        User_detail Findsame(string name);
     }
 }

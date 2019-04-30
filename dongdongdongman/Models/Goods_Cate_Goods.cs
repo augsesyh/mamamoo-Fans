@@ -18,7 +18,6 @@ namespace Models
         public int Cate_id { get; set; }
         public int Goods_id { get; set; }
     
-        public virtual Goods Goods { get; set; }
         public virtual Goods_Cate Goods_Cate { get; set; }
     }
 }

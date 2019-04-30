@@ -18,6 +18,7 @@ namespace Models
         public Video()
         {
             this.Collection = new HashSet<Collection>();
+            this.Goods = new HashSet<Goods>();
             this.Video_Access = new HashSet<Video_Access>();
             this.Video_detail = new HashSet<Video_detail>();
         }
@@ -27,10 +28,22 @@ namespace Models
         public string Video_name { get; set; }
         public string Video_intro { get; set; }
         public int Video_nums { get; set; }
+        public string Audiences { get; set; }
+        public string Colors { get; set; }
+        public string Territory { get; set; }
+        public string Usage { get; set; }
+        public string Contents { get; set; }
     
+        public virtual Audiences Audiences1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Collection> Collection { get; set; }
+        public virtual Colors Colors1 { get; set; }
+        public virtual Contents Contents1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Goods> Goods { get; set; }
+        public virtual Territory Territory1 { get; set; }
         public virtual UP UP { get; set; }
+        public virtual Usage Usage1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Video_Access> Video_Access { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

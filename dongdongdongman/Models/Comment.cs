@@ -17,6 +17,7 @@ namespace Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Comment()
         {
+            this.Comment1 = new HashSet<Comment>();
             this.Report = new HashSet<Report>();
         }
     
@@ -28,7 +29,8 @@ namespace Models
         public System.DateTime Comment_time { get; set; }
     
         public virtual Comic Comic { get; set; }
-        public virtual Comment Comment1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Comment> Comment1 { get; set; }
         public virtual Comment Comment2 { get; set; }
         public virtual User User { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

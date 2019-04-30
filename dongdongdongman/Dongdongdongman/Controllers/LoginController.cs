@@ -12,6 +12,8 @@ namespace Dongdongdongman.Controllers
     {
         dongdongdongEntities db = new dongdongdongEntities();
         UserManager us = new UserManager();
+        User_detailManager ud = new  User_detailManager();
+    
         // GET: Login
         public ActionResult Index()
         {
@@ -32,7 +34,31 @@ namespace Dongdongdongman.Controllers
             { return 0; }
            
         }
-        
+        [HttpPost]
+        public Boolean Findsame(string name)
+        {
+            var da = ud.Findsame(name);
+            if(da!=null)
+            {
+                return true;
+            }else
+            {
+                return false;
+            }
+        }
+        [HttpPost]
+        public Boolean Findaccount(string account)
+        {
+            var fa = us.Findaccount(account);
+            if (fa != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         public ActionResult AddUser()
         {
 

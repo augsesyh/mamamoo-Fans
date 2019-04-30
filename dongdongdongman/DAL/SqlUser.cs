@@ -16,5 +16,10 @@ namespace DAL
             User a = db.User.Where(o=>o.User_account==name).Where(c=>c.User_password==password).FirstOrDefault();
             return a;
         }
+        public User Findaccount(string account)
+        {
+            User b = db.User.Where(o => o.User_account == account).FirstOrDefault();
+            return b;
+        }
     }
 }

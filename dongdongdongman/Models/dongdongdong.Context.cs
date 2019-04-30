@@ -55,7 +55,6 @@ namespace Models
         public virtual DbSet<User_detail> User_detail { get; set; }
         public virtual DbSet<Video> Video { get; set; }
         public virtual DbSet<Video_Access> Video_Access { get; set; }
-        public virtual DbSet<Video_Cate> Video_Cate { get; set; }
         public virtual DbSet<Video_detail> Video_detail { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)

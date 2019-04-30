@@ -34,11 +34,13 @@ namespace Models
         public string Contents { get; set; }
         public string Forms { get; set; }
         public string Territory { get; set; }
+        public string Usage { get; set; }
     
         public virtual Audiences Audiences1 { get; set; }
         public virtual Colors Colors1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Comic_chapter> Comic_chapter { get; set; }
+        public virtual Usage Usage1 { get; set; }
         public virtual Contents Contents1 { get; set; }
         public virtual Forms Forms1 { get; set; }
         public virtual Territory Territory1 { get; set; }

@@ -15,5 +15,9 @@ namespace BLL
         {
             return iuser.FindUser(name, password);
         }
+        public User Findaccount(string account)
+        {
+            return iuser.Findaccount(account);
+        }
     }
 }
