@@ -62,7 +62,7 @@
 
                 //3.成功解锁后的回调函数
                 setTimeout(function () {
-                    alert('解锁成功！');
+                    $("#zhuce").removeAttr("disabled");
                 }, 100);
             }
         }

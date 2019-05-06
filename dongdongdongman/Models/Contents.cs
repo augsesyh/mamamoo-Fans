@@ -18,14 +18,11 @@ namespace Models
         public Contents()
         {
             this.Comic = new HashSet<Comic>();
-            this.Video = new HashSet<Video>();
         }
     
         public string CateName_Contents { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Comic> Comic { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Video> Video { get; set; }
     }
 }

@@ -12,8 +12,8 @@ namespace DALFactory
 {
     public class DataAccess
     {
-        private static string AssemblyName = ConfigurationManager.AppSettings["Path"].ToString();
-        private static string db = ConfigurationManager.AppSettings["DB"].ToString();
+        private static readonly string AssemblyName = ConfigurationManager.AppSettings["Path"].ToString();
+        private static readonly string db = ConfigurationManager.AppSettings["DB"].ToString();
         public static IUser CreateUser()
         {
             string className = AssemblyName + "." + db + "User";
