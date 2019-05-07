@@ -23,16 +23,16 @@
                 data: $('#Login_form').serialize(),
                 success: function (reslut) {
                     //提交成功的提示词或者其他反馈代码
-                    if (reslut == "0") { alert("账号密码不正确"); }
+                    if (reslut === "0") { alert("账号密码不正确"); }
                     else { alert("登陆成功"); }
-                    
-                    window.location.href = window.location.href
+
+                    window.location.href = window.location.href;
                 },
                 error: function () {
                     //提交失败的提示词或者其他反馈代码
                     alert("登陆失败");
                 }
-            })
+            });
             
         }  
     });

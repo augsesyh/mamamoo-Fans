@@ -16,5 +16,9 @@ namespace BLL
         {
             return iud.Findsame(name);
         }
+        public int Add_detail(string name, string realname, string Email)
+        {
+            return iud.Add_detail(name, realname, Email);
+        }
     }
 }

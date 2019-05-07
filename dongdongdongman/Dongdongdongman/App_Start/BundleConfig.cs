@@ -26,7 +26,6 @@ namespace Dongdongdongman
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css",
                       "~/Content/shiyonghui/Login_Layout.css"));
             bundles.Add(new ScriptBundle("~/bundles/Login_Layout").Include(
                 "~/Scripts/shiyonghui/Login_Layout.js"));
@@ -35,6 +34,8 @@ namespace Dongdongdongman
             bundles.Add(new ScriptBundle("~/bundles/Add_User").Include(
                 "~/Scripts/shiyonghui/Add_user_Slider.js",
                 "~/Scripts/shiyonghui/Add_User.js"));
+            bundles.Add(new ScriptBundle("~/bundles/Forgetpassword").Include(
+                "~/Scripts/shiyonghui/Forget_password.js"));
         }
     }
 }

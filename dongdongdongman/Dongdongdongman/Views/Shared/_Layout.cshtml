@@ -32,10 +32,26 @@
                     <ul class="nav navbar-nav">
                         @if (Session["User_name"] != null)
                         {
-                            <li>@Session["User_name"].ToString()</li>
+                            <li></li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" style="color:white;" data-toggle="dropdown" href="#">
+                                    @Session["User_name"].ToString()
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="#">个人中心</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">注销</a>
+                                    </li>
+                                    
+                                </ul>
+                            </li>
                         }
                         else
-                        {<li><a class="nav-login" href="javascript:;"> 登陆</a></li>}
+                        {
+                            <li><a class="nav-login" href="javascript:;"> 登陆</a></li>}
 
                     </ul>
                 </div>
@@ -94,8 +110,8 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/Login_Layout")
-    @Scripts.Render("~/bundles/Add_User")
+   
     @RenderSection("scripts", required: false)
-  
+
 </body>
 </html>
