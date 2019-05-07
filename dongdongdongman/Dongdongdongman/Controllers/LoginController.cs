@@ -95,8 +95,8 @@ namespace Dongdongdongman.Controllers
         }
         [HttpPost]
         public string SendValicode(string inputEmail)
-        {
-            ViewData["User"]=us.FindUser(inputEmail);
+        {   
+            Session["User_account"] = us.FindUser(inputEmail).User_account;
             MailMessage mailMessage = new MailMessage();
             mailMessage.From = new MailAddress("2786250969@qq.com");
             //收件人邮箱地址。
@@ -159,6 +159,31 @@ namespace Dongdongdongman.Controllers
                 return "验证失败";
             }
         }
-
+        public ActionResult LoginOut()
+        {
+            Session["User_name"] = null;
+            Session["User_account"] = null;
+            return RedirectToAction("Index");
+        }
+        [HttpPost]
+        public string Findpassword(string newpw)
+        {
+            string ac = Session["User_account"].ToString();
+            string pw=us.Findpassword(ac).User_password;
+            if(pw==newpw)
+            {
+                return "true";
+            }else
+            {
+                return "false";
+            }
+        }
+        [HttpPost]
+        public ActionResult Changepwd(string newpw)
+        {
+            string dad = Session["User_account"].ToString();
+            us.Changepwd(newpw, dad);
+            return RedirectToAction("Index");
+        }
     }
 }
