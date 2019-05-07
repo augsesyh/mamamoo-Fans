@@ -48,5 +48,18 @@ namespace DAL
                 return dt;
             }
         }
+        public User Findpassword(string account)
+        {
+            var da = db.User.Where(o => o.User_account == account).FirstOrDefault();
+            return da;
+        }
+        public void Changepwd(string pwd,string account)
+        {
+            var da = db.User.Where(o => o.User_account == account).FirstOrDefault();
+            da.User_password = pwd;
+            db.SaveChanges();
+
+        }
     }
+    
 }
