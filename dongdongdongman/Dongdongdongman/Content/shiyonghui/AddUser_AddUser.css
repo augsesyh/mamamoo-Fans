@@ -79,3 +79,23 @@
     margin-top:10px;
     width:278px;
 }
+input.error {
+    border: 1px solid red;
+}
+
+label.error {
+    margin-right:200px;
+    padding-left:0px;
+    width:254px;
+    color: red;
+    text-align:left;
+}
+button[disabled]{
+    color:darkgray;
+}
+.Foget_inputform {
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.15);
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}

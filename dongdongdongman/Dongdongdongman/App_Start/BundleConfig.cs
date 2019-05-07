@@ -26,7 +26,6 @@ namespace Dongdongdongman
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css",
                       "~/Content/shiyonghui/Login_Layout.css"));
             bundles.Add(new ScriptBundle("~/bundles/Login_Layout").Include(
                 "~/Scripts/shiyonghui/Login_Layout.js"));

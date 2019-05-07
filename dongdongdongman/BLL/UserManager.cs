@@ -19,5 +19,9 @@ namespace BLL
         {
             return iuser.Findaccount(account);
         }
+        public void Add_User(string account, string upwd, int a)
+        {
+            iuser.Add_User(account, upwd, a);
+        }
     }
 }

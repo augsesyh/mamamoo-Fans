@@ -21,5 +21,17 @@ namespace DAL
             User b = db.User.Where(o => o.User_account == account).FirstOrDefault();
             return b;
         }
+
+        public void Add_User(string account, string upwd,int a)
+        {
+            User u = new User
+            {
+                User_account = account,
+                User_password=upwd,
+                User_detail_id=a
+            };
+            db.User.Add(u);
+            db.SaveChanges();
+        }
     }
 }
