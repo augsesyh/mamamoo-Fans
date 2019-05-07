@@ -48,61 +48,117 @@
             },
             success: function (data) {  //成功
                 alert(data);  //就将返回的数据显示出来
-                $("#Change_password").load(location.href + " #Change_password");
+                $("#Change_password").load(location.href + " #Change_password", function () { 
+                    $("#changepwd").validate({
+                        //$("#Change_password").on('validate', '#changepwd', function () { 
+
+                        rules: {
+                            newpw: {
+                                required: true,
+                                rangelength: [5, 18],
+                                remote: {
+                                    type: "POST",
+                                    url: "/Login/Findpassword",
+                                    //servlet
+                                    data: {
+                                        newpw: function () { return $("#newpw").val(); }
+                                    }
+                                }
+                            },
+                            conpw: {
+                                required: true,
+                                equalTo: "#newpw"
+                            }
+                        },
+                        messages: {
+                            newpw: {
+                                required: "密码不能为空",
+                                rangelength: "密码长度必须在6到18之间",
+                                remote: "不可与原密码相同"
+                            },
+                            conpw: {
+                                required: "密码不能为空",
+                                equalTo: "密码不一致"
+                            },
+                        },
+                        submitHandler: function (form) {
+                            //$.ajax({
+                            //    type: "POST",
+                            //    url: "/Login/Changepwd",
+                            //    data: $('#changepwd').serialize(),
+                            //    success: function (reslut) {
+                            //        //提交成功的提示词或者其他反馈代码
+                            //        if (reslut === "0") { alert("修改失败"); }
+                            //        else { alert("修改成功"); }
+
+                            //        window.location.href = window.location.href;
+                            //    },
+                            //    error: function () {
+                            //        //提交失败的提示词或者其他反馈代码
+                            //        alert("修改失败");
+                            //    }
+                            //});
+                            alert("验证通过");
+                            form.submit();
+                        }
+                    });
+                });
                 $("#Change_password").show();
             }
 
         });
     });
-    $("#changepwd").validate({
-        rules: {
-            newpw: {
-                required: true,
-                rangelength: [5, 18],
-                remote: {
-                    type: "POST",
-                    url: "/Login/Findpassword",
-                    //servlet
-                    data: {
-                        newpw: function () { return $("#newpw").val(); }
-                    }
-                }
-            },
-            conpw: {
-                required: true,
-                equalTo:"#newpw"
-            }
-        },
-        messages: {
-            newpw: {
-                required: "密码不能为空",
-                rangelength: "密码长度必须在6到18之间",
-                remote:"不可与原密码相同"
-            },
-            conpw: {
-                required: "密码不能为空",
-                equalTo: "密码不一致"
-            },
-        },
-        submitHandler: function (form) {
-            //$.ajax({
-            //    type: "POST",
-            //    url: "/Login/Changepwd",
-            //    data: $('#changepwd').serialize(),
-            //    success: function (reslut) {
-            //        //提交成功的提示词或者其他反馈代码
-            //        if (reslut === "0") { alert("修改失败"); }
-            //        else { alert("修改成功"); }
+    //$("#changepwd").validate({
+    ////$("#Change_password").on('validate', '#changepwd', function () { 
 
-            //        window.location.href = window.location.href;
-            //    },
-            //    error: function () {
-            //        //提交失败的提示词或者其他反馈代码
-            //        alert("修改失败");
-            //    }
-            //});
-            alert("验证通过");
-            form.submit();
-        }
-    });
+    //    rules: {
+    //        newpw: {
+    //            required: true,
+    //            rangelength:[5,18],
+    //            remote: {
+    //                type: "POST",
+    //                url: "/Login/Findpassword",
+    //                //servlet
+    //                data: {
+    //                    newpw: function () { return $("#newpw").val(); }
+    //                }
+    //            }
+    //        },
+    //        conpw: {
+    //            required: true,
+    //            equalTo:"#newpw"
+    //        }
+    //    },
+    //    messages: {
+    //        newpw: {
+    //            required: "密码不能为空",
+    //            rangelength: "密码长度必须在6到18之间",
+    //            remote:"不可与原密码相同"
+    //        },
+    //        conpw: {
+    //            required: "密码不能为空",
+    //            equalTo: "密码不一致"
+    //        },
+    //    },
+    //    submitHandler: function (form) {
+    //        //$.ajax({
+    //        //    type: "POST",
+    //        //    url: "/Login/Changepwd",
+    //        //    data: $('#changepwd').serialize(),
+    //        //    success: function (reslut) {
+    //        //        //提交成功的提示词或者其他反馈代码
+    //        //        if (reslut === "0") { alert("修改失败"); }
+    //        //        else { alert("修改成功"); }
+
+    //        //        window.location.href = window.location.href;
+    //        //    },
+    //        //    error: function () {
+    //        //        //提交失败的提示词或者其他反馈代码
+    //        //        alert("修改失败");
+    //        //    }
+    //        //});
+    //        alert("验证通过");
+    //        form.submit();
+    //    }
+    //});
 });

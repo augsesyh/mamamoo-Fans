@@ -94,6 +94,7 @@ label.error {
 button[disabled]{
     color:white;
     background-color:darkgrey;
+    border-color:darkgray;
 }
 .Foget_inputform {
     box-shadow: 0 1px 1px 0 rgba(0,0,0,.15);

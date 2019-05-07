@@ -169,13 +169,13 @@ namespace Dongdongdongman.Controllers
         public string Findpassword(string newpw)
         {
             string ac = Session["User_account"].ToString();
-            string pw=us.Findpassword(ac).User_password;
+            string pw=us.Findpassword(ac).User_password.Trim();
             if(pw==newpw)
             {
-                return "true";
+                return "false";
             }else
             {
-                return "false";
+                return "true";
             }
         }
         [HttpPost]
