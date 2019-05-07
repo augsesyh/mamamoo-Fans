@@ -1,0 +1,46 @@
+﻿body {
+}
+.addUser_back {
+    padding: 20px 100px;
+    margin-top: 20px;
+    min-height: 550px;
+    position: relative;
+    overflow: hidden;
+}
+.content_back {
+    background-image: url("../../Img/beack.jpg");
+    position: fixed;
+    top: 0;
+    opacity: .3;
+    left: 0;
+    background-size: cover;
+    -webkit-filter: blur();
+    -moz-filter: blur();
+    -o-filter: blur();
+    -ms-filter: blur();
+    filter: blur();
+    right: 0;
+    height: 100vh;
+    z-index: -1;
+}
+.AddUser_inputform {
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.15);
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    left: 50%;
+    width: 320px;
+    height: auto;
+    margin-left: -160px;
+    text-align: center;
+}
+.container {
+    padding-left:0px;
+}
+.sliderBox {
+    width: 240px;
+    height: 40px;
+    background: #e9e6e9;
+    position: relative;
+}

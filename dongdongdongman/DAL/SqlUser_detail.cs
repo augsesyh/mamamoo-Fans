@@ -28,7 +28,8 @@ namespace DAL
             db.SaveChanges();
             return ud.User_detail_id;
         }
+        
 
-       
+
     }
 }

@@ -12,5 +12,8 @@ namespace IDAL
         User FindUser(string name, string password);
         User Findaccount(string account);
         void Add_User(string account, string upwd,int a);
+        User FindUser(string Email);
+        User Findpassword(string account);
+        void Changepwd(string pwd, string account);
     }
 }

@@ -33,5 +33,33 @@ namespace DAL
             db.User.Add(u);
             db.SaveChanges();
         }
+
+        public User FindUser(string Email)
+        {
+           var da = db.User_detail.Where(o=>o.User_email==Email).FirstOrDefault();
+            if (da == null)
+            {
+                return null;
+            }
+            else
+            {
+
+                var dt = da.User.FirstOrDefault();
+                return dt;
+            }
+        }
+        public User Findpassword(string account)
+        {
+            var da = db.User.Where(o => o.User_account == account).FirstOrDefault();
+            return da;
+        }
+        public void Changepwd(string pwd,string account)
+        {
+            var da = db.User.Where(o => o.User_account == account).FirstOrDefault();
+            da.User_password = pwd;
+            db.SaveChanges();
+
+        }
     }
+    
 }

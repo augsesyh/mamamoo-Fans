@@ -23,5 +23,17 @@ namespace BLL
         {
             iuser.Add_User(account, upwd, a);
         }
+        public User FindUser(string Email)
+        {
+           return iuser.FindUser(Email);
+        }
+        public User Findpassword(string account)
+        {
+            return iuser.Findpassword(account);
+        }
+        public void Changepwd(string pwd, string account)
+        {
+            iuser.Changepwd(pwd, account);
+        }
     }
 }

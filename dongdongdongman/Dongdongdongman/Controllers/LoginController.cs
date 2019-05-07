@@ -61,6 +61,19 @@ namespace Dongdongdongman.Controllers
                 return "true";
             }
         }
+        [HttpPost]
+        public string FindEmail(string Email)
+        {
+            var fa = us.Findaccount(Email);
+            if (fa != null)
+            {
+                return "false";
+            }
+            else
+            {
+                return "true";
+            }
+        }
         [HttpGet]
         public ActionResult AddUser()
         {
@@ -82,15 +95,17 @@ namespace Dongdongdongman.Controllers
         }
         [HttpPost]
         public string SendValicode(string inputEmail)
-        {
+        {   
+            Session["User_account"] = us.FindUser(inputEmail).User_account;
             MailMessage mailMessage = new MailMessage();
             mailMessage.From = new MailAddress("2786250969@qq.com");
             //收件人邮箱地址。
             mailMessage.To.Add(new MailAddress(inputEmail));
             //邮件标题。
             mailMessage.Subject = "这是你的验证码";
-            string verificationcode = createrandom(6);
+            string verificationcode = Createrandom(6);
             //邮件内容。
+            Session["valicode"] = verificationcode;
             mailMessage.Body = "你的验证码是" + verificationcode;
             //实例化一个SmtpClient类。
             SmtpClient client = new SmtpClient();
@@ -101,13 +116,14 @@ namespace Dongdongdongman.Controllers
             //不和请求一块发送。
             client.UseDefaultCredentials = false;
             //验证发件人身份(发件人的邮箱，邮箱里的生成授权码);
-            client.Credentials = new NetworkCredential("2786250969@qq.com", "jgoh ldsh jxal ddig");
+            client.Credentials = new NetworkCredential("2786250969@qq.com","tdvhtetdyalqdgic");
             //发送
             client.Send(mailMessage);
             return "发送成功";
            
         }
-        private string createrandom(int codelengh)
+
+        private string Createrandom(int codelengh)
         {
             int rep = 0;
             string str = string.Empty;
@@ -130,7 +146,44 @@ namespace Dongdongdongman.Controllers
             }
             return str;
         }
+        [HttpPost]
+        public string Testvalicode(string valicode)
+        {
+            if(valicode==Session["valicode"].ToString())
+            {
 
-
+                return "验证成功";
+            }
+            else
+            {
+                return "验证失败";
+            }
+        }
+        public ActionResult LoginOut()
+        {
+            Session["User_name"] = null;
+            Session["User_account"] = null;
+            return RedirectToAction("Index");
+        }
+        [HttpPost]
+        public string Findpassword(string newpw)
+        {
+            string ac = Session["User_account"].ToString();
+            string pw=us.Findpassword(ac).User_password;
+            if(pw==newpw)
+            {
+                return "true";
+            }else
+            {
+                return "false";
+            }
+        }
+        [HttpPost]
+        public ActionResult Changepwd(string newpw)
+        {
+            string dad = Session["User_account"].ToString();
+            us.Changepwd(newpw, dad);
+            return RedirectToAction("Index");
+        }
     }
 }

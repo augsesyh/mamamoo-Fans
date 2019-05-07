@@ -34,6 +34,8 @@ namespace Dongdongdongman
             bundles.Add(new ScriptBundle("~/bundles/Add_User").Include(
                 "~/Scripts/shiyonghui/Add_user_Slider.js",
                 "~/Scripts/shiyonghui/Add_User.js"));
+            bundles.Add(new ScriptBundle("~/bundles/Forgetpassword").Include(
+                "~/Scripts/shiyonghui/Forget_password.js"));
         }
     }
 }
