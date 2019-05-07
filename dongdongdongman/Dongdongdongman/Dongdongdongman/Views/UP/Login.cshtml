@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     Layout = null;
 }
 
@@ -13,31 +12,35 @@
 </head>
 <body>
     <h1>阿婆主登录</h1>
-    <div class="login-form"> 
-            <div class="close"> </div>
-            <div class="head-info">
-                <label class="lbl-1"> </label>
-                <label class="lbl-2"> </label>
-                <label class="lbl-3"> </label>
-            </div>
-            <div class="clear"> </div>
-            <div class="avtar">
-            <img src="~/Img/wusiqi/login/avtar.png" />
-            </div>
-        <!--表单来咯-->
-        @Html.BeginForm("Login","UP",FormMethod.Post,new { @class=""})
-        <form>
-            <input type="text" class="text" />
-            <div class="key">
-                <input type="password" class="password" />
-            </div>
-        </form>
-        <div class="signin">
-            <input type="submit" />
-
+    <div class="login-form">
+        <div class="close"> </div>
+        <div class="head-info">
+            <label class="lbl-1"> </label>
+            <label class="lbl-2"> </label>
+            <label class="lbl-3"> </label>
         </div>
+        <div class="clear"> </div>
+        <div class="avtar">
+            <img src="~/Img/wusiqi/login/avtar.png" />
+        </div>
+        <!--表单来咯-->
+
+        <form id="UP_Login" method="post" action="/UP/CheckLogin">
+            <input id="account" type="text" class="text"  name="account" />
+            <div class="key">
+                <input id="password" type="password" class="password" name="password" />
+            </div>
+            <button type="submit" id="btn_login" class="btn_login"><span>登录</span></button>
+        </form>
+
+        @*<div class="signin">
+
+            </div>*@
 
     </div>
-
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/wushiqi/UPLogin.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
 </body>
 </html>
+

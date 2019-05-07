@@ -117,7 +117,7 @@ input[type="password"] {
     margin-bottom: 3em;
 }
 
-input[type="submit"] {
+.btn_login {
     font-size: 30px;
     color: ghostwhite;
     outline: none;

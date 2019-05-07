@@ -18,17 +18,18 @@ namespace Dongdongdongman.Controllers.wusiqi
         {
             return View();
         }
-        public ActionResult Login ()
+        [HttpGet]
+        public ActionResult Login()
         {
             return View();
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public int Login(string account,string pwd)
+        
+        public int CheckLogin(string account,string password)
         {
             
-            var da = um.FindAllUP(account, pwd);
+            var da = um.FindAllUP(account, password);
             if(da!=null)
             {
                 //UP_account=User_email
