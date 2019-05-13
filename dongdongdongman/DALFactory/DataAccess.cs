@@ -24,5 +24,20 @@ namespace DALFactory
             string className = AssemblyName + "." + db + "User_detail";
             return (IUser_detail)Assembly.Load(AssemblyName).CreateInstance(className);
         }
+        public static IComic CreateComic()
+        {
+            string className = AssemblyName + "." + db + "Comic";
+            return (IComic)Assembly.Load(AssemblyName).CreateInstance(className);
+        }
+        public static IVideo CreateVideo()
+        {
+            string className = AssemblyName + "." + db + "Video";
+            return (IVideo)Assembly.Load(AssemblyName).CreateInstance(className);
+        }
+        public static IGoods CreateGoods()
+        {
+            string className = AssemblyName + "." + db + "Goods";
+            return (IGoods)Assembly.Load(AssemblyName).CreateInstance(className);
+        }
     }
 }

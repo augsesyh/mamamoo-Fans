@@ -34,6 +34,9 @@ namespace Models
         public string Contents { get; set; }
         public string Forms { get; set; }
         public string Territory { get; set; }
+        public Nullable<int> Follow_nums { get; set; }
+        public Nullable<System.DateTime> Comic_time { get; set; }
+        public string Comic_background { get; set; }
     
         public virtual Audiences Audiences1 { get; set; }
         public virtual Colors Colors1 { get; set; }
