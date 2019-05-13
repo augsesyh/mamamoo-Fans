@@ -16,5 +16,9 @@ namespace BLL
         {
             return iupd.Findsame(name);
         }
+        public int Add_Detail(string name,string realname,string email)
+        {
+            return iupd.Add_detail(name,realname,email);
+        }
     }
 }

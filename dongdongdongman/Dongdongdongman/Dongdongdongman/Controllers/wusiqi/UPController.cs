@@ -43,30 +43,61 @@ namespace Dongdongdongman.Controllers.wusiqi
         }
 
         [HttpPost]
-        public Boolean Findsame(string name)
+        public string Findsame(string name)
         {
             var fa = updm.Findsame(name);
-            if(fa!=null)
+            if(fa==null)
             {
-                return true;
+                return "true";
             }
             else
             {
-                return false;
+                return "false";
             }
         }
 
-        public Boolean Findaccount(string account)
+        public string Findaccount(string account)
         {
             var fa = um.Findaccount(account);
-            if(fa!=null)
+            if(fa==null)
             {
-                return true;
+                return "true";
             }
             else
             {
-                return false;
+                return "false";
             }
+        }
+
+        [HttpPost]
+        public string FindEmail(string email)
+        {
+            var fa = um.Findaccount(email);
+            if(fa==null)
+            {
+                return "true";
+            }
+            else
+            {
+                return "false";
+            }
+        }
+        
+        //UP主注册
+        [HttpGet]
+        public ActionResult Register()
+        {
+            return View();
+        }
+        [HttpPost]
+        public int Register(string name,string account,string email,string password,string realname)
+        {
+            int i = updm.Add_Detail(name, realname, email);
+            int a=um.Add_User(account, password, i);
+            if(a!=1)
+            { return 0; }
+            else
+            { return 1; }
         }
     }
 }

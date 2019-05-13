@@ -20,5 +20,14 @@ namespace BLL
         {
             return iup.Findaccount(account);
         }
+        public  int Add_User(string account,string upwd,int a)
+        {
+            return  iup.Add_User(account,upwd,a);
+        }
+        public UP FindUP(string email)
+        {
+            return iup.FindUP(email);
+        }
+
     }
 }

@@ -1,0 +1,50 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="~/Content/wusiqi/upregister.css" />
+    <title>Register</title>
+</head>
+<body>
+    <h1>UP主注册</h1>
+    <div class="register-form">
+        <div class="close"> </div>
+        <div class="head-info">
+            <label class="lbl-1"> </label>
+            <label class="lbl-2"> </label>
+            <label class="lbl-3"> </label>
+        </div>
+        <div class="clear"> </div>
+        <div class="avtar">
+            <img src="~/Img/wusiqi/login/avtar.png" />
+        </div>
+        <!--表单来咯-->
+
+        <form id="UP_Register" method="post" action="/UP/Register">
+            <input id="name" type="text" class="text" autocomplete="off" spellcheck="false" name="name" placeholder="昵称" />
+            <input id="account" type="text" class="text" name="account" placeholder="账户" />
+
+            <input id="password" type="password" class="password" autocomplete="off" spellcheck="false" name="password" placeholder="密码" />
+            <input id="confirm_pwd" type="password" class="password" autocomplete="off" spellcheck="false" name="confirm_pwd" placeholder="确认密码" />
+            <input id="realname" type="text" class="text" name="realname" autocomplete="off" spellcheck="false" placeholder="真实姓名" />
+            <input id="email" type="email" class="email" autocomplete="off" spellcheck="false" name="email" placeholder="邮箱" />
+
+            <button type="submit" id="btn_register" class="btn_register">注册</button>
+        </form>
+
+
+
+    </div>
+    @*@Scripts.Render("~/bundles/jquery");
+        @Scripts.Render("~/bundles/UPRegister");*@
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+
+    <script src="~/Scripts/jquery.validate.min.js"></script><script src="~/Scripts/wushiqi/UPRegister.js"></script>
+</body>
+
+</html>
