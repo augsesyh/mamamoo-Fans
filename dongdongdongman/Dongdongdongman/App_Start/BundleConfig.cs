@@ -23,7 +23,11 @@ namespace Dongdongdongman
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js"));
-
+            bundles.Add(new ScriptBundle("~/bundles/All_Index").Include(
+                 "~/Scripts/pgwslideshow.js",
+                "~/Scripts/shiyonghui/All_Index.js"));
+            bundles.Add(new StyleBundle("~/Content/All_index").Include(
+                "~/Content/shiyonghui/Home_index.css"));
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/shiyonghui/Login_Layout.css"));
