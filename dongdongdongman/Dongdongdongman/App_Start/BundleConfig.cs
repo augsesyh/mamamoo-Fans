@@ -41,7 +41,8 @@ namespace Dongdongdongman
             bundles.Add(new ScriptBundle("~/bundles/Forgetpassword").Include(
                 "~/Scripts/shiyonghui/Forget_password.js"));
             bundles.Add(new StyleBundle("~/Content/User").Include(
-                "~/Content/shiyonghui/User_index"));
+                "~/Content/shiyonghui/User_index.css",
+                "~/Content/shiyonghui/font-awesome.min.css"));
         }
     }
 }
