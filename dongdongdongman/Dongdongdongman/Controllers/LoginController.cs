@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using BLL;
 using Models;
+using Dongdongdongman.Models;
 using System.Net.Mail;
 using System.Net;
 
@@ -19,7 +20,9 @@ namespace Dongdongdongman.Controllers
         // GET: Login
         public ActionResult Index()
         {
-            return View();
+            HomeViewModel Home = new HomeViewModel();
+
+            return View(Home);
         }
        
        [HttpPost]
