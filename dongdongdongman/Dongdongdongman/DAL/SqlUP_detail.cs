@@ -16,5 +16,20 @@ namespace DAL
             var da = db.User_detail.Where(o => o.User_name == name).FirstOrDefault();
             return da;
         }
+
+        int IUP_detail.Add_detail(string name, string realname, string email)
+        {
+            User_detail ue = new User_detail
+            {
+                User_name = name,
+                User_realname = realname,
+                User_email = email
+            };
+            db.User_detail.Add(ue);
+            db.SaveChanges();
+            return ue.User_detail_id;
+        }
+
+        
     }
 }

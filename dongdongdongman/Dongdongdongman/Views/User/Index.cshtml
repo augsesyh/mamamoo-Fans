@@ -1,7 +1,38 @@
-﻿
-@{
-    ViewBag.Title = "Index";
-}
+﻿@model Models.User_detail
+<div class="head">
+    <div class="wrapper">
+        <div class="h-inner" style="background-image:url(../../Img/背景.jpg)">
+            <div class="h-gradident"></div>
+        
+        <div class="h-user">
+            <div class="h-info clearfix">
+                <div class="h-avatar">
+                    <img src="@Model.User_head" id="h-avatar">
+                    <a href="#" target="_blank" class="avatar_cover">更换头像</a>
+                </div>
+                <div class="h-basic">
+                    <div>
+                        <span id="h-name">@Model.User_name</span>
+                    </div>
+                    <div class="h-basic-spacing">
+                        <h4 title="@Model.User_intro" class="h-sign" style="display:none;"></h4>
+                        <input class="" id="h-sign" type="text" placeholder="这个作者很懒，什么也没留下" maxlength="60">
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+</div>
+<div class="n" id="navigator">
+    <div class="wrapper">
+        <div class="n-inner clearfix">
+            <div class="n-tab-link">
+              <a href="@Url.Action("detail","User")" class="n-btn n-index n-fans n-404 router-link-exact-active router-link-active active">
+                  <span class="n-text">资料</span>
+              </a>
+            </div>
 
-<h2>Index</h2>
-
+        </div>
+    </div>
+</div>

@@ -12,5 +12,7 @@ namespace IDAL
         //UP主登录
         UP FindAllUP(string account,string password);
         UP Findaccount(string account);
+        int Add_User(string account,string upwd,int a);
+        UP FindUP(string email);
     }
 }

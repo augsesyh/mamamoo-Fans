@@ -170,12 +170,12 @@
                 <div class="list">
                     @foreach (var it in Model.ig)
                     {
-                        <a title="@it.Goods_name" href="#" class="item good">
+                        <a title="@it.Goods_name" href="#" class="item good" >
                             <div class="cover">
                                 <img src="@it.Goods_photo.Trim()">
                             </div>
                             <div class="info-box">
-                                <h2>@it.Goods_name.Trim().ToString()</h2>
+                                <h2 style="padding-top:0px;">@it.Goods_name.Trim().ToString()</h2>
                                 <b class="price">@it.Goods_price</b>
                             </div>
                         </a>
