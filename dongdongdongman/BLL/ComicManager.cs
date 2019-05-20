@@ -24,5 +24,13 @@ namespace BLL
         {
             return Ic.Up_new();
         }
+        public Comic FindComic(int id)
+        {
+            return Ic.FindComic(id);
+        }
+        public IQueryable<Comic> FindTop(int nums)
+        {
+            return Ic.FindTop(nums);
+        }
     }
 }

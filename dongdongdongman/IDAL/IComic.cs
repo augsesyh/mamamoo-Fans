@@ -11,5 +11,7 @@ namespace IDAL
         IQueryable<Comic> NewComics();
         IQueryable<Comic> TopEight();
         IQueryable<Comic_chapter> Up_new();
+        Comic FindComic(int id);
+        IQueryable<Comic> FindTop(int nums);
     }
 }

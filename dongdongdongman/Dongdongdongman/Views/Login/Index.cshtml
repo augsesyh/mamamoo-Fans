@@ -97,7 +97,7 @@
                         <li>
                             <!--  -->
                             <!--  -->
-                            <a href="#" class="comic_pic" target="_blank">
+                            <a href="@Url.Action("Detail","Comic",new { cid=it.Comic.Comic_id })" class="comic_pic" target="_blank">
                                 <img xsrc="@it.Comic.Comic_cover" alt="" src="@it.Comic.Comic_cover" title="@it.Comic.Comic_name.Trim()" />
                             </a>
                             <a href="#" class="comic_tit" target="_blank" title="@it.Comic.Comic_name.Trim()"><i class="ico_rec"></i>@it.Comic.Comic_name</a>

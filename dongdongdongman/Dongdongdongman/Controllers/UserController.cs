@@ -26,5 +26,11 @@ namespace Dongdongdongman.Controllers
             var da = ud.Findsame(j);
             return View(da);
         }
+        public ActionResult Detail(int uid)
+        {
+            string j = Session["User_name"].ToString();
+            var da = ud.Findsame(j);
+            return View(da);
+        }
     }
 }

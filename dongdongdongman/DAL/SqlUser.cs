@@ -60,6 +60,13 @@ namespace DAL
             db.SaveChanges();
 
         }
+
+        public User Findname(string name)
+        {
+           
+            var da = db.User_detail.Where(o=>o.User_name==name).FirstOrDefault().User.FirstOrDefault();
+            return da;
+        }
     }
     
 }

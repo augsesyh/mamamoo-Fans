@@ -1,0 +1,56 @@
+﻿@using Webdiyer.WebControls.Mvc;
+@model Dongdongdongman.Models.Comic_detail
+<div class="sr-comments__items" id="comment_list">
+    @foreach (var it in Model.co)
+    {
+        <div class="js-citem sr-citem f-cb">
+            <div class="sr-citem-c1 f-fl">
+                <a href="@Url.Action("Detail","User",new { uid=it.User_id })" target="_blank" class="sr-citem__avatar f-pr">
+                    <img src="@it.User.User_detail.User_head" srcset="#" width="48" height="48">
+                </a>
+            </div>
+            <div class="sr-citem-c2">
+                <div class="sr-citem__hd">
+                    <a href="@Url.Action("Detail","User",new { uid=it.User_id })" class="sr-citem__user j-emoji" target="_blank"></a>
+                </div>
+                <div class="sr-citem__text j-emoji">
+                    @it.Comment_intro
+
+                </div>
+                <div class="sr-citem-c2-r3 f-cb">
+                    <span class="sr-citem__time">@it.Comment_time </span>
+                    <div class="f-fr">
+                        <a href="javascript:void(0)" class="sr-citem__reply f-fl j-reply-button"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    <div class="text-center">
+        @Ajax.Pager(Model.co, new PagerOptions { PageIndexParameterName = "coid", ContainerTagName = "ul", CssClass = "pagination", CurrentPagerItemTemplate = "<li class=\"active\"><a href=\"#\">{0}</a></li>", DisabledPagerItemTemplate = "<li class=\"disabled\"><a>{0}</a></li>", PagerItemTemplate = "<li>{0}</li>" }).AjaxOptions(a => a.SetUpdateTargetId("comment_list"))
+    </div>
+    <div class="sr-cinput f-cb">
+        <form action="@Url.Action("Add_Comment")">
+            <div class="sr-cinput-c1 f-fl">
+                <div class="sr-cinput__avatar f-pr">
+                    <img src="@Model.ur.User_detail.User_head">
+                </div>
+            </div>
+            <div class="sr-cinput-c2">
+                <input type="hidden" name="uid" id="uid" value="@Model.ur.User_id">
+                <input type="hidden" name="cid" id="cid" value="@Model.a.Comic_id">
+                <div class="sr-cinput__input f-pr">
+                    <textarea name="Comment_con" class="sr-textarea" placeholder="嘟闭嘴！本王要发话了( ͡° ͜ʖ ͡°)"></textarea>
+                    <div class="sr-cinput__triangle">
+
+                    </div>
+                </div>
+                <div class="sr-cinput-c2-r2 f-cb f-pr">
+                    <div class="f-cb f-fr">
+                        <button type="submit" class="u-btn-submit z-danger f-fl  js-btn-comment">发表评论</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

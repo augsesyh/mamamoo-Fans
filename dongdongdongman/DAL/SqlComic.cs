@@ -27,7 +27,16 @@ namespace DAL
             var da = db.Comic_chapter.OrderBy(o => o.Comic_update_time).Take(8);
             return da;
         }
+        public Comic FindComic(int id)
+        {
+            var da = db.Comic.Where(o => o.Comic_id == id).FirstOrDefault();
+            return da;
+        }
 
-        
+        public IQueryable<Comic> FindTop(int nums)
+        {
+            var da = db.Comic.OrderBy(o=>o.Follow_nums).Take(nums);
+            return da;
+        }
     }
 }
