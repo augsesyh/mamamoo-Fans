@@ -1,0 +1,334 @@
+﻿body {
+}
+a {
+    color: currentColor;
+    text-decoration: none;
+    cursor: default;
+}
+.ui-topbar-box {
+    line-height: 46px;
+    height: 46px;
+    background: #fff;
+}
+.c {
+    zoom: 1;
+}
+
+.ui-layout {
+    max-width: 1180px;
+    margin: 0 auto;
+}
+.ui-topbar-box .ctrl-box {
+    float: right;
+}
+.ui-topbar-box .ctrl-box > .item {
+        float: left;
+        position: relative;
+}
+.ui-icon[name=cart] {
+    background-image:url("../../Img/wusiqi/ShangCheng/icon/购物车.png");
+}
+.ui-icon {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
+    width: 14px;
+    height: 14px;
+    background: no-repeat 50% 50%;
+    background-size: 14px 14px;
+    margin-right: 1px;
+}
+.ui-topbar-box .ctrl-box > .item > a {
+    display: block;
+    padding: 0 10px;
+}
+.ui-topbar-box .ctrl-box > .item.user-box hr {
+    float: left;
+    height: 14px;
+    border: 0;
+    border-right: 1px solid #bbb;
+    margin: 16px 8px;
+}
+.ui-topbar-box .ctrl-box > .item.user-box a {
+    float: left;
+    padding: 0;
+}
+a[href] {
+    cursor: pointer;
+}
+.ui-icon[name=qq] {
+    background-image:url("../../Img/wusiqi/ShangCheng/icon/qq.png");
+}
+.ui-topbar-box .ctrl-box > .item.user-box {
+    padding: 0 10px;
+    min-width: 40px;
+}
+.ui-header-banner-box {
+    background: #fff url("../../Img/wusiqi/ShangCheng/banner-bg.jpg") no-repeat 50% 50%;
+    background-size: auto 180px;
+}
+.ui-header-banner-box .ui-layout {
+        height: 180px;
+        position: relative;
+        z-index: 0;
+}
+.ui-header-banner-box form {
+        position: absolute;
+        right: 0;
+        bottom: 52px;
+        padding: 2px;
+        background: #ff7b39;
+        border-radius: 3px;
+}
+.ui-header-banner-box form input {
+        -webkit-appearance: none;
+        border: 0;
+        background: #fff;
+        height: 42px;
+        width: 394px;
+        box-sizing: border-box;
+        font-size: 16px;
+        line-height: 34px;
+        margin: 0;
+        padding: 4px 14px;
+        border-radius: 2px;
+}
+    .ui-header-banner-box form button:first-of-type {
+        color: transparent;
+        background: url("../../Img/wusiqi/ShangCheng/icon/button.png") no-repeat 50% 50%;
+        background-size: 24px 24px;
+    }
+.ui-header-banner-box form button {
+        vertical-align: top;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        width: 42px;
+        height: 42px;
+        font-size: 14px;
+        color: #fff;
+        background: none;
+        cursor: pointer;
+        outline: none;
+}
+.ui-cat-nav-box .list > .item {
+    width: 13%;
+    height: 90px;
+    float: left;
+    margin: 0 7px;
+    position: relative;
+    z-index: 1;
+}
+
+.ui-special-banner-box {
+    height: 340px;
+    padding-top: 20px;
+    margin-right: -20px;
+}
+.ui-special-banner-type-a-box > .list {
+    transition: transform .3s ease;
+    font-size: 0;
+    display: inline-block;
+    white-space: nowrap;
+}
+.ui-cat-nav-box .list > .item:hover > .pop-box {
+    display: block;
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+}
+.ui-cat-nav-box .list > .item > .pop-box {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 140px;
+    background: #fff;
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 3px 4px -1px rgba(0,0,0,.1);
+    padding: 6px 0;
+    font-size: 14px;
+    line-height: 40px;
+    opacity: 0;
+    pointer-events: none;
+    transform: scaleY(.8);
+    transform-origin: 50% 0;
+    transition: .3s ease;
+}
+.ui-special-banner-type-a-box > .list > .item > img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+.ui-cat-nav-box .list > .item > a {
+        display: block;
+        margin: 14px 0 0;
+}
+.ui-cat-nav-box .list > .item > a b {
+        display: block;
+        text-align: center;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 28px;
+}
+.ui-cat-nav-box .list > .item > .pop-box > a {
+    display: block;
+    padding: 0 16px;
+}
+.ui-cat-nav-box .list > .item[data-name=新品预售] > a > i {
+        background-image: url("../../Img/wusiqi/ShangCheng/icon/新品预售.png");
+}
+.ui-cat-nav-box .list > .item[data-name=现货] > a > i {
+        background-image: url("../../Img/wusiqi/ShangCheng/icon/现货.png");
+}
+.ui-cat-nav-box .list > .item[data-name=手办] > a > i {
+        background-image: url("../../Img/wusiqi/ShangCheng/icon/手办.png");
+}
+.ui-cat-nav-box .list > .item[data-name=模型] > a > i {
+        background-image: url("../../Img/wusiqi/ShangCheng/icon/模型.png");
+}
+.ui-cat-nav-box .list > .item[data-name=软周边] > a > i {
+        background-image: url("../../Img/wusiqi/ShangCheng/icon/软周边.png");
+}
+.ui-cat-nav-box .list > .item[data-name=文具办公] > a > i {
+        background-image: url("../../Img/wusiqi/ShangCheng/icon/文具办公.png");
+}
+    .ui-cat-nav-box .list > .item[data-name=日用家居] > a > i {
+        background-image: url("../../Img/wusiqi/ShangCheng/icon/日用家居.png");
+    }
+.ui-cat-nav-box .list > .item > a i {
+        display: block;
+        width: 36px;
+        height: 36px;
+        background: no-repeat 50% 50%;
+        background-size: 24px 24px;
+        margin: 0 auto;
+}
+.ui-special-banner-box > .item {
+    float: left;
+    width: 290px;
+    height: 160px;
+    background: #222;
+    margin: 0 20px 20px 0;
+}
+.ui-special-banner-type-a-box > .list > .item {
+    float: left;
+    width: 610px;
+    height: 340px;
+}
+.ui-special-banner-type-a-box > .list {
+    height: 340px;
+}
+.ui-special-banner-type-a-box > .list > .item > img {
+        width: 100%;
+        height: 100%;
+        -o-object-fit: cover;
+        object-fit: cover;
+}
+.ui-special-banner-type-a-box > .list > .item > img {
+        width: 100%;
+        height: 100%;
+        -o-object-fit: cover;
+        object-fit: cover;
+}
+
+
+.ui-special-banner-type-a-box > .nxet-btn {
+    right: 0;
+    background-image: url("../../Img/wusiqi/ShangCheng/icon/next-btn.png");
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 40px;
+    background: 50% 50% no-repeat;
+    background-size: 28px 28px;
+    opacity: .2;
+    transition: opacity .3s ease;
+    cursor: pointer;
+}
+.ui-special-banner-type-a-box > .prev-btn {
+    right: 0;
+    background-image: url("../../Img/wusiqi/ShangCheng/icon/prev-btn.png");
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 40px;
+    background: 50% 50% no-repeat;
+    background-size: 28px 28px;
+    opacity: .2;
+    transition: opacity .3s ease;
+    cursor: pointer;
+}
+.ui-special-banner-box {
+    height: 340px;
+    padding-top: 20px;
+    margin-right: -20px;
+}
+.ui-special-banner-box > .item:first-child {
+        width: 610px;
+        height: 340px;
+}
+.ui-special-banner-box > .item:nth-child(2) {
+        width: 240px;
+        height: 340px;    
+}
+.ui-special-banner-box > .item:nth-child(3):last-child {
+        height: 340px;
+}
+
+.ui-special-banner-type-a-box {
+    overflow: hidden;
+}
+.ui-footer-box {
+    background: #24262c;
+}
+.ui-footer-box > .ui-layout > .list {
+        padding: 10px 32px;
+        margin: 0 -30px;
+        text-align: justify;
+}
+.ui-footer-box > .ui-layout > .list {
+        padding: 10px 32px;
+        margin: 0 -30px;
+        text-align: justify;
+}
+.ui-copyright-box {
+    text-align: center;
+    line-height: 20px;
+    color: hsla(0,0%,100%,.3);
+    background: #16181d;
+    padding: 10px 20px;
+}
+.ui-footer-box > .ui-layout > .list > .item {
+    display: inline-block;
+    vertical-align: top;
+    padding: 30px 0 10px;
+}
+.ui-footer-box > .ui-layout > .list > .item h4 {
+        color: #fff;
+        font-size: 16px;
+        line-height: 48px;
+}
+.ui-footer-box > .ui-layout > .list > .item a {
+        display: block;
+        color: hsla(0,0%,100%,.5);
+        line-height: 28px;
+}
+.ui-special-box {
+    padding: 20px 0;
+}
+.ui-special-head-box {
+    height: 60px;
+    line-height: 60px;
+    overflow: hidden;
+}
+.ui-special-head-box h2 {
+        float: left;
+        font-size: 24px;
+        margin-right: 14px;
+}
+.ui-special-box .ui-special-contents-box[type=E][type=E] {
+    overflow: hidden;
+    position: relative;
+}

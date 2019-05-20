@@ -1,0 +1,217 @@
+﻿
+@model Models.Goods
+@{
+    ViewBag.Title = "Index";
+}
+@{ 
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="~/Content/wusiqi/Mall-Index.css" />
+    <title>Login</title>
+</head>
+<body>
+    
+    <div class="v-home">
+        <div class="ui-topbar-box">
+            <div class="ui-layout c">
+                <div class="ctrl-box">
+                    <div class="item">
+                        <a href="/">
+                            <i name="cart" class="ui-icon"></i>
+                            购物车
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="/" class="">
+                            我的订单
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a target="_blank" href="/">
+                            <i name="qq" class="ui-icon"></i>
+                            联系客服
+                        </a>
+                    </div>
+                    <div class="item user-box">
+                        <div status="">
+                            <a href="/">登录</a>
+                            <hr />
+                            <a href="/">注册</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ui-header-banner-box">
+            <div class="ui-layout c">
+                <form action="/product/search.html">
+                    <input type="search" name="keyword" placeholder="搜索关键字"> <button type="submit">搜索</button>
+                </form>
+            </div>
+        </div>
+        <div class="ui-cat-nav-box">
+            <div class="ui-layout c">
+                <div class="list c">
+                    <div class="item" data-name="新品预售">
+                        <a href="/" class=""><i></i> <b>新品预售</b></a>
+                    </div>
+                    <div class="item" data-name="现货">
+                        <a href="/" class=""><i></i> <b>现货</b></a>
+                    </div>
+                    <div class="item" data-name="手办">
+                        <a href="/" class=""><i></i> <b>手办</b></a>
+                        <div class="pop-box">
+                            <a href="/">粘土人</a>
+                            <a href="/">可动小比例</a>
+                            <a href="/">等比例手办</a>
+                            <a href="/">盒蛋/扭蛋</a>
+                        </div>
+                    </div>
+                    <div class="item" data-name="模型">
+                        <a href="/" class=""><i></i> <b>模型</b></a>
+                        <div class="pop-box">
+                            <a href="/">普通模型</a>
+                            <a href="/">拼装模型</a>
+                            <a href="/">软胶模型</a>
+                            <a href="/">汽车模型</a>
+                        </div>
+                    </div>
+                    <div class="item" data-name="软周边">
+                        <a href="/" class=""><i></i> <b>软周边</b></a>
+                        <div class="pop-box">
+                            <a href="/">徽章</a>
+                            <a href="/">挂件</a>
+                            <a href="/">玩偶</a>
+                            <a href="/">钥匙圈</a>
+                            <a href="/">鼠标垫/桌垫</a>
+                            <a href="/">海报/挂画</a>
+                            <a href="/">手机配件</a>
+                            <a href="/">其它周边</a>
+                        </div>
+                    </div>
+                    <div class="item" data-name="文具办公">
+                        <a href="/" class=""><i></i> <b>文具办公</b></a>
+                        <div class="pop-box">
+                            <a href="/">书签</a>
+                            <a href="/">胶带</a>
+                            <a href="/">贴纸</a>
+                            <a href="/">笔记本</a>
+                            <a href="/">文件夹</a>
+                            <a href="/">明信片</a>
+                            <a href="/">书写工具</a>
+                        </div>
+                    </div>
+                    <div class="item" data-name="日用家居">
+                        <a href="/" class=""><i></i> <b>日用家居</b></a>
+                        <div class="pop-box">
+                            <a href="/">围巾/毛巾</a>
+                            <a href="/">镜子</a>
+                            <a href="/">抱枕靠垫</a>
+                            <a href="/">床单毛毯</a>
+                            <a href="/">餐饮器具</a>
+                            <a href="/">整理收纳</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ui-layout c">
+            <div class="ui-special-banner-box">
+                <div class="item ui-special-banner-type-a-box">
+                    <div class="list" style="width:6710px;transform:translate3d(-3600)">
+
+                        <!--轮播图循环-->
+                        <a class="item" title="粘土人 怪盗基德" href="">
+                            <img src="~/Img/wusiqi/ShangCheng/banner/粘土人 怪盗基德.jpg">
+                        </a>
+                        <a class="item" title="粘土人 Kizuna AI A.I.Channel 2019Ver." href="">
+                            <img src="~/Img/wusiqi/ShangCheng/banner/粘土人 Kizuna AI A.I.Channel 2019Ver..jpg">
+                        </a>
+                        <a class="item" title="木之本樱 Hello Brand New World" href="">
+                            <img src="~/Img/wusiqi/ShangCheng/banner/木之本樱 Hello Brand New World.jpg">
+                        </a>
+
+                        <a class="item" title="粘土人 轰焦冻" href="">
+                            <img src="~/Img/wusiqi/ShangCheng/banner/粘土人 轰焦冻.jpg">
+                        </a>
+
+                        <a class="item" title="粘土人 爆豪胜己" href="">
+                            <img src="~/Img/wusiqi/ShangCheng/banner/粘土人 爆豪胜己.jpg">
+                        </a>
+
+                        <a class="item" title="粘土人 绿谷出久" href="">
+                            <img src="~/Img/wusiqi/ShangCheng/banner/粘土人 绿谷出久.jpg">
+                        </a>
+
+                        <a class="item" title="粘土人 赵灵儿" href="">
+                            <img src="~/Img/wusiqi/ShangCheng/banner/粘土人 赵灵儿.jpg">
+                        </a>
+
+                        <a class="item" title="初音未来" href="">
+                            <img src="~/Img/wusiqi/ShangCheng/banner/初音未来.jpg">
+                        </a>
+
+                    </div>
+                    @*<span class="next-btn"></span>
+                    <span class="prev-btn"></span>*@
+                </div>
+                <a title="粘土人 Kizuna AI A.I.Channel 2019Ver" href="" class="item"><img src="~/Img/wusiqi/ShangCheng/banner/粘土人 Kizuna AI A.I.Channel 2019Ver.jpg"></a>
+                <a title="粘土人 白起（附特典）" href="" class="item"><img src="~/Img/wusiqi/ShangCheng/banner/粘土人 白起（附特典）.jpg"></a>
+            </div>
+        </div>
+        <div class="ui-special-background-box">
+            <div class="ui-layout c">
+                <div class="ui-special-box">
+                    <div class="ui-special-head-box">
+                        <h2>1F 人气商品</h2>
+                    </div>
+                    <div type="E" class="ui-special-contents-box">
+                        <div class="list" style="width:2400px;transform:translate3d(0px,0px,0px);">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ui-footer-box">
+            <div class="ui-layout c">
+                <div class="list">
+                    <div class="item">
+                        <h4>新手帮助</h4>
+                        <a href="">现货购买流程</a>
+                        <a href="">预售商品购买流程</a>
+                        <a href="">补款流程</a>
+                        <a href="">常见问题</a>
+                    </div>
+                    <div class="item">
+                        <h4>积分优惠券</h4>
+                        <a href="">优惠券使用教程与规则</a>
+                        <a href="http://www.anitoys.com/article/33.html">积分规则</a>
+                        <a href="http://www.anitoys.com/article/125.html">关于预存款充值</a>
+                    </div>
+                    <div class="item">
+                        <h4>关于我们</h4>
+                        <a href="">公司简介</a>
+                        <a href="">联系我们</a>
+                        <a href="">网站更新详情</a>
+                        <a href="">法律声明</a>
+                        <a href="">关于172酱与他的小伙伴</a>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-copyright-box">
+                <div class="ui-copyright-box">
+                    © 江西师范大学 16级商软X3522(1) 咚咚咚项目小组
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+@Scripts.Render("~/Scripts/wusiqi/Mall.js");
+</html>
+

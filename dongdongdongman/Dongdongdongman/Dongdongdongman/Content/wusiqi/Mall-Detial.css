@@ -1,0 +1,489 @@
+﻿.c {
+    zoom: 1;
+}
+.ui-layout {
+    max-width: 1180px;
+    margin: 0 auto;
+}
+.ui-topbar-box {
+    line-height: 46px;
+    height: 46px;
+    background: #fff;
+}
+.ui-topbar-box .ctrl-box {
+        float: right;
+}
+.ui-icon[name=cart] {
+    background-image: url("../../Img/wusiqi/ShangCheng/icon/购物车.png");
+}
+.ui-icon[name=qq] {
+    background-image: url("../../Img/wusiqi/ShangCheng/icon/qq.png");
+}
+.ui-shop-header-banner-box {
+    background: #fff url("../../Img/wusiqi/ShangCheng/banner-bg.jpg");
+    background-size: auto 180px;
+}
+    .ui-shop-header-banner-box form button:first-of-type {
+        color: transparent;
+        background: url("../../Img/wusiqi/ShangCheng/icon/button.png");
+        background-size: 24px 24px;
+    }
+.ui-topbar-box .ctrl-box > .item {
+        float: left;
+        position: relative;
+}
+    .ui-topbar-box .ctrl-box > .item > a {
+        display: block;
+        padding: 0 10px;
+    }
+a {
+    color: currentColor;
+    text-decoration: none;
+    cursor: default;
+}
+.ui-icon {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
+    width: 14px;
+    height: 14px;
+    background: no-repeat 50% 50%;
+    background-size: 14px 14px;
+    margin-right: 1px;
+}
+.ui-topbar-box .ctrl-box > .item > .pop-box {
+    position: absolute;
+    top: 42px;
+    left: 0;
+    z-index: 2;
+    display: none;
+    background: #f8f8f8;
+    min-width: 100px;
+}
+    .ui-topbar-box .ctrl-box > .item > .pop-box.link-list > a {
+        display: block;
+        line-height: 32px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        padding: 0 12px;
+    }
+.ui-icon[name=qq] {
+    background-image: url();
+}
+.ui-topbar-box .ctrl-box > .item {
+    float: left;
+    position: relative;
+}
+    .ui-topbar-box .ctrl-box > .item.user-box a {
+        float: left;
+        padding: 0;
+    }
+    .ui-topbar-box .ctrl-box > .item.user-box hr {
+        float: left;
+        height: 14px;
+        border: 0;
+        border-right: 1px solid #bbb;
+        margin: 16px 8px;
+    }
+.ui-shop-header-banner-box {
+    background: #fff url("../../Img/wusiqi/ShangCheng/详情页.jpg") no-repeat 50% 50%;
+    background-size: auto 180px;
+}
+    .ui-shop-header-banner-box .ui-layout {
+        height: 180px;
+        position: relative;
+        z-index: 0;
+    }
+    .ui-shop-header-banner-box.shop form {
+        width: 618px;
+        right: 300px;
+    }
+    .ui-shop-header-banner-box form {
+        position: absolute;
+        right: 0;
+        bottom: 52px;
+        padding: 2px;
+        background: #ff7b39;
+        border-radius: 3px;
+    }
+    
+    .ui-shop-header-banner-box.shop form input {
+        width: 568px;
+    }
+    .ui-shop-header-banner-box form input {
+        -webkit-appearance: none;
+        border: 0;
+        background: #fff;
+        height: 42px;
+        width: 394px;
+        box-sizing: border-box;
+        font-size: 16px;
+        line-height: 34px;
+        margin: 0;
+        padding: 4px 14px;
+        border-radius: 2px;
+    }
+    .ui-shop-header-banner-box form button:first-of-type {
+        color: transparent;
+        background: url() no-repeat 50% 50%;
+        background-size: 24px 24px;
+    }
+    .ui-shop-header-banner-box form button {
+        vertical-align: top;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        width: 42px;
+        height: 42px;
+        font-size: 14px;
+        color: #fff;
+        background: none;
+        cursor: pointer;
+        outline: none;
+    }
+    .ui-shop-header-banner-box.shop form .search-all {
+        position: absolute;
+        left: 100%;
+        width: 80px;
+        font-size: 18px;
+        margin-left: 20px;
+        background: #ff7b39;
+        border-radius: 1px;
+        box-shadow: 0 0 0 2px #ff7b39;
+    }
+.view-good-info-box {
+    padding: 0 0 0 110px;
+    position: relative;
+}
+    .view-good-info-box .ui-imgs-box {
+        float: left;
+    }
+.ui-imgs-box .big-cover-box {
+    background: #fff;
+    width: 640px;
+    min-height: 648px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 110px;
+    overflow: hidden;
+    cursor: zoom-in;
+}
+    .ui-imgs-box .big-cover-box img {
+        width: 100%;
+        height: 100%;
+        -o-object-fit: contain;
+        object-fit: contain;
+    }
+img {
+    border: 0 none;
+}
+.view-good-info-box .info-box {
+    float: right;
+    background: #fff;
+    min-height: 648px;
+    width: 370px;
+    padding: 0 30px 100px;
+    font-size: 12px;
+    position: relative;
+}
+.tags-box {
+    padding-top: 15px;
+}
+    .tags-box span, html:after {
+        border-radius: 2px;
+        color: #fff;
+    }
+    .tags-box span {
+        display: inline-block;
+        vertical-align: top;
+        font-size: 12px;
+        line-height: 20px;
+        padding: 0 11px;
+        background: #4accad;
+        margin-right: 10px;
+    }
+.view-good-info-box .info-box .info-list-box {
+    padding: 20px 0 50px;
+}
+ul {
+    list-style-type: none;
+}
+.view-good-info-box .info-box .info-list-box .info-item-box[data-key=status] {
+    padding: 4px 0 4px 63px;
+}
+    .view-good-info-box .info-box .info-list-box .info-item-box[data-key=status] span {
+        display: block;
+        padding: 4px 0 0 2px;
+    }
+.view-good-info-box .info-box .info-list-box .info-item-box[data-key=price] {
+    padding: 0 0 0 63px;
+}
+.view-good-info-box .info-box .info-list-box .info-item-box {
+    padding: 2px 0 2px 63px;
+    position: relative;
+}
+    .view-good-info-box .info-box .info-list-box .info-item-box[data-key=price] b {
+        font-size: 16px;
+        line-height: 48px;
+        font-weight: 700;
+        color: #999;
+    }
+.view-good-info-box .info-box .info-list-box .info-item-box[data-key=first-price], .view-good-info-box .info-box .info-list-box .info-item-box[data-key=price] {
+        padding: 0 0 0 63px;
+}
+    .view-good-info-box .info-box .info-list-box .info-item-box[data-key=first-price] big{
+        font-size: 30px;
+        line-height: 30px;
+        font-weight: 700;
+        color: #ff7b39;
+    }
+.view-good-info-box .info-box .info-list-box .hr {
+    margin: 10px 0 5px;
+    border-bottom: 1px dashed #e1e1e1;
+}
+
+.view-good-info-box .info-box .info-list-box .info-item-box[data-key=spec] {
+    padding: 12px 0 2px 63px;
+}
+    .view-good-info-box .info-box .info-list-box .info-item-box[data-key=spec] a.active {
+        box-shadow: inset 0 0 0 2px #ff7b39;
+        color: #ff7b39;
+    }
+.ui-input-number {
+    display: inline-block;
+    position: relative;
+    line-height: 1;
+    background: #fff;
+    width: 100px;
+    pointer-events: auto;
+}
+    .ui-input-number input {
+        box-shadow: inset 0 0 0 1px #ccd0d7;
+        border: 0;
+        border-radius: 2px;
+        margin: 0;
+        padding: 0;
+        font-size: 14px;
+        line-height: 32px;
+        background: none;
+        text-align: center;
+        width: 100%;
+        box-sizing: border-box;
+        -webkit-appearance: none;
+    }
+    .ui-input-number .reduce {
+        left: 0;
+    }
+    
+    .ui-input-number .add {
+        right: 0;
+    }
+    .ui-input-number .add, .ui-input-number .reduce {
+        position: absolute;
+        top: 0;
+        width: 26px;
+        height: 32px;
+        color: #222;
+        cursor: pointer;
+    }
+
+.view-good-info-box .info-box .ctrl-box {
+    margin-right: -30px;
+}
+    .view-good-info-box .info-box .ctrl-box .btn {
+        width: 170px;
+        margin-right: 10px;
+    }
+.btn.allow {
+    background: #ff7b39;
+    color: #fff;
+}
+.btn.big {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 46px;
+    padding: 0 25px;
+}
+.btn {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 14px;
+    line-height: 32px;
+    padding: 0 10px;
+    border-radius: 2px;
+    border: 0;
+    margin: 0;
+    cursor: pointer;
+    box-sizing: border-box;
+    text-align: center;
+    background: #fff;
+    color: #333;
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,.1);
+}
+    .btn.yellow {
+        background: #ffb249;
+        color: #fff;
+    }
+.view-good-content-box {
+    margin-top: 30px;
+}
+    .view-good-content-box .good-side-box {
+        float: left;
+        width: 210px;
+    }
+.good-side-box > .item {
+    background: #fff;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+    .good-side-box > .item > h4 {
+        font-size: 16px;
+        line-height: 20px;
+        padding-bottom: 10px;
+    }
+.good-side-item-shop-search-box form {
+    position: relative;
+}
+    .good-side-item-shop-search-box form input {
+        -webkit-appearance: none;
+        border: 0;
+        margin: 0;
+        padding: 0;
+        color: #99a3ad;
+        background: #f0f2f3;
+        font-size: 14px;
+        line-height: 36px;
+        padding: 0 14px;
+        border-radius: 4px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .good-side-item-shop-search-box form button {
+        position: absolute;
+        border: 0;
+        margin: 0;
+        top: 0;
+        right: 0;
+        height: 36px;
+        width: 36px;
+        background: url() no-repeat 50%;
+        cursor: pointer;
+    }
+.good-side-item-shop-cat-box {
+    padding-bottom: 0 !important;
+}
+
+.good-side-item-shop-goods-box {
+    background: none !important;
+    padding: 0 !important;
+}
+    .good-side-item-shop-goods-box > .item {
+        display: block;
+        background: #fff;
+        margin-bottom: 10px;
+        padding: 15px;
+    }
+.cover {
+    position: relative;
+    border-radius: 2px;
+    overflow: hidden;
+}
+    .cover img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        -o-object-fit: cover;
+        object-fit: cover;
+    }
+.good-side-item-shop-goods-box > .item h3 {
+    font-size: 14px;
+    line-height: 20px;
+    padding: 6px 0 0;
+}
+.good-side-item-shop-goods-box > .item p {
+    font-size: 12px;
+    padding: 3px 0;
+    color: #aaa;
+}
+.good-side-item-shop-goods-box > .item .price {
+    color: #ff7b39;
+    font-size: 14px;
+    display: block;
+    line-height: 20px;
+}
+.price {
+    color: #f70d2d;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.view-good-content-box .good-content-box {
+    background: #fff;
+    margin-left: 220px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+    
+    .view-good-content-box .good-content-box > .body {
+        padding: 0 30px 20px;
+    }
+.view-good-content-box .good-content-box > .body .parameter-box {
+     overflow: hidden;
+     font-size: 14px;
+     line-height: 20px;
+}
+    .view-good-content-box .good-content-box > .body .parameter-box > .item {
+        float: left;
+        min-width: 240px;
+        padding: 10px 30px 10px 0;
+    }
+.view-good-content-box .good-content-box > .body .parameter-box > .item b {
+            opacity: .5;
+            font-weight: 400;
+
+}
+.view-good-content-box .good-content-box > .body .parameter-box {
+            overflow: hidden;
+            font-size: 14px;
+}
+.view-good-content-box .good-content-box {
+    background: #fff;
+    margin-left: 220px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+    .view-good-content-box .good-content-box > .head h3 {
+        color: #222;
+        font-size: 16px;
+        line-height: 60px;
+        padding: 0 60px;
+        background: url("../../Img/wusiqi/ShangCheng/icon/参数.png") no-repeat 28px 22px;
+    }
+    .view-good-content-box .good-content-box > .body {
+        padding: 0 30px 20px;
+    }
+ .view-good-content-box .good-content-box > .body .content-box {
+            line-height: 24px;
+            min-height: 300px;
+}
+.content-box {
+    font-size: 14px;
+    line-height: 2;
+    padding: 10px 0 100px;
+}
+    .content-box p {
+        padding: .5em 0;
+    }
+
+.ql-font-宋体 {
+    font-family: \\5B8B\4F53,serif;
+}
+.view-good-content-box .good-content-box > .body .content-box img {
+    max-width: 100%;
+    width: auto !important;
+    height: auto !important;
+}
