@@ -1,0 +1,163 @@
+﻿
+@{
+    ViewBag.Title = "View";
+}
+@{ 
+    Layout = null;
+}
+
+
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="~/Content/wusiqi/Mall-Detial.css" />
+    <title>详情</title>
+    </head>
+    <body>
+        <div class="anitoys">
+            <div class="v-good-item">
+                <div class="ui-topbar-box">
+                    <div class="ui-layout c">
+                        <div class="ctrl-box">
+                            <div class="item">
+                                <a href="/">
+                                    <i name="cart" class="ui-icon"></i>
+                                    购物车
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="/" class="">
+                                    我的订单
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a target="_blank" href="/">
+                                    <i name="qq" class="ui-icon"></i>
+                                    联系客服
+                                </a>
+                                
+                            </div>
+                            <div class="item user-box">
+                                <div status="">
+                                    <a href="/">登录</a>
+                                    <hr />
+                                    <a href="/">注册</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui-shop-header-banner-box">
+                    <div class="ui-layout c">
+                        <form action="/product/search.html">
+                            <input type="search" name="keyword" placeholder="搜索关键字">
+                            <button class="search-shop">搜索</button>
+                            <button class="search-all">搜全站</button>
+                        </form>
+                    </div>
+                </div>
+                @*<div class="ui-crumb-box">
+                    <div class="ui-layout c">
+                        <div class="list">
+
+                        </div>
+                    </div>
+                </div>*@
+                <div class="ui-layout c">
+                    <div class="view-good-info-box">
+                        <div class="ui-imgs-box-imgs-box" data-max="1">
+                            <div class="big-cover-box">
+                                <img style="transform-origin:562px 625px 0px;" />
+                            </div>
+                        </div>
+                        <div class="info-box">
+                            <h1>木之本樱 Hello Brand New World</h1>
+                            <p>今后也要和你在一起。</p>
+                            <div class="tags-box">
+                                <span data-name="预售">预售</span>
+                            </div>
+                            <ul class="info-list-box">
+                                <li data-keyboard="status" class="info-item-box">
+                                    <span>预售中</span>
+                                </li>
+                                <li data-keyboard="price" class="info-item-box">
+                                    <b data-price-key="price">"1308"</b>
+                                </li>
+                                <li data-key="first-price" class="info-item-box">
+                                    <big data-price-key="priceFirstPhase">"200"</big>
+                                </li>
+                                <li class="hr"></li>
+                                <li data-key="spec" class="info-item-box">
+                                    <a href="" data-name="预售"></a>
+                                </li>
+                                <li data-key="number" class="info-item-box">
+                                    <div class="ui-input-number-running" style="width:100px;">
+                                        <input min="1" max="=200" data-max="200" />
+                                        <a class="reduce"></a>
+                                        <a class="add"></a>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="ctrl-bix">
+                                <button class="btn big allow">加入购物车</button>
+                                <button class="btn big yellow">立即购买</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="view-good-content-box">
+                        <div class="good-side-box ">
+                            <div class="item good-side-item-shop-search-box">
+                                <h4>店内搜索</h4>
+                                <form>
+                                    <input type="search" placeholder="关键字" />
+                                    <button></button>
+                                </form>
+                            </div>
+                            <div class="item good-side-item-shop-cat-box">
+                                <h4>相关分类</h4>
+                            </div>
+                            <div class="item good-side-item-shop-goods-box">
+                                <a href="/" target="_blank" class="item">
+                                    <div class="cover">
+                                        <img />
+                                    </div>
+                                    <h3>木之本樱 Hello Brand New World</h3>
+                                    <p>今后也要在一起。</p>
+                                    <b class="price">"1308"</b>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="good-content-box">
+                            <div class="head">
+                                <h3>规格参数</h3>
+                            </div>
+                            <div class="body">
+                                <div class="parameter-box"></div>
+                            </div>
+                        </div>
+                        <div class="good-content-box">
+                            <div class="head">
+                                <h3>商品详情</h3>
+                            </div>
+                            <div class="body">
+                                <div class="content-box">
+                                    <h3>
+                                        <span style="color: rgb(255, 156, 0);">商品详情：</span>
+                                    </h3>
+                                    <p>
+                                        <img src="~/Img/wusiqi/ShangCheng/物流与售后.jpg" />
+                                    </p>
+                                    <p><br /></p>
+                                    <h2><strong class=".ql-font-宋体" style="color: rgb(255, 153, 0);">物流与售后：</strong></h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
