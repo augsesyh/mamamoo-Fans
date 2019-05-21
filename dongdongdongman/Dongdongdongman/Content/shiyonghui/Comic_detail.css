@@ -612,3 +612,7 @@ button, input, optgroup, select, textarea {
     background-image: url(../../Img/icon_2.png);
     background-size: 274px 249px;
 }
+label.error {
+    padding-left: 0px;
+    color: red;
+}

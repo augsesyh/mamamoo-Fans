@@ -4,6 +4,7 @@
 li{
     padding:0px;
 }
+
 #banner_box #loop_container {
     position: relative;
     width: 100%;
@@ -174,7 +175,7 @@ position: absolute;
     background: url(../../Img/hot_bg.png) no-repeat center center;
     width: 266px;
     padding: 0;
-    height: 400px;
+    height: 350px;
     background-size: cover;
     border-radius: 5px;
     position: absolute;
@@ -187,7 +188,7 @@ position: absolute;
     background: url(../../Img/hot_bg.png) no-repeat center center;
     width: 267px;
 
-    height: 400px;
+    height: 350px;
     padding: 18px 22px 10px 17px;
     border-radius: 5px;
     position: absolute;

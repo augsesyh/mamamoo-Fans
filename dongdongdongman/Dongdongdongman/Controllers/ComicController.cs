@@ -23,8 +23,10 @@ namespace Dongdongdongman.Controllers
                 return PartialView("Comment",h);
             return View(h);
         }
-        public ActionResult Add_Comment(string uid,string cid,string Comment_con)
+        [HttpPost]
+        public ActionResult Add_Comment(string uid,string cid,string Comment_con,string coid)
         {
+          
             Comment c = new Comment();
             c.User_id = Convert.ToInt32(uid);
             c.Reback_id = null;
@@ -33,7 +35,8 @@ namespace Dongdongdongman.Controllers
             c.Comic_id = Convert.ToInt32(cid);
             db.Comment.Add(c);
             db.SaveChanges();
-            return RedirectToAction("Detail", new { cid=c.Comic_id });
+            
+            return RedirectToAction("Detail", new { cid = c.Comic_id, coid = 1 });
         }
         public ActionResult ALl_More()
         {

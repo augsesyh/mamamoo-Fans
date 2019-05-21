@@ -97,7 +97,8 @@
                                     </a>
                                 </div>
                             }
-                           
+                           @for (var i = 0; i < 22; i++)
+                           {
                             <div class="m-chapter-item m-chapter-item--full m-chapter-item-needPay f-fl  ">
                                 <a class="f-toe">
                                     <span class="chapter-item-content f-toe">
@@ -107,7 +108,7 @@
                                     <span class="sr-icon z-middle sprite-icon_2-locked"></span>
                                 </a>
                             </div>
-                            
+                           }
                             <div class="f-cb">
                             </div>
 
@@ -136,19 +137,9 @@
 
 
                     </div>
-                    <div class="sr-comments" id="comment-block">
-                        <div class="sr-comments__hd f-cb j-comment-metadata">
-                            <h2 class="f-fl">评论</h2>
-                            <div class="sr-comments__count f-fl">
-                                共有
-                                <span class="j-count">
-                                    @Model.co.Count()
-                                </span>
-                                评论
-                            </div>
-                        </div>
+                   
                         @Html.Partial("Comment", Model)
-                    </div>
+                 
                 </div>
             </div>
         </div>
@@ -160,3 +151,4 @@
     @Styles.Render("~/Content/shiyonghui/Comic_detail.css")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/Scripts/shiyonghui/Comic_detail.js")
+    @Scripts.Render("~/Scripts/jquery.unobtrusive-ajax.min.js")

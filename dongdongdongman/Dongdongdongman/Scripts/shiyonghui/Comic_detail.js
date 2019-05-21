@@ -2,15 +2,16 @@
     var liList = document.querySelectorAll(".m-chapter-item");
     var e_num = false;
     for (var i = 0; i < liList.length; i++) {
-        if (i < 1) {
+        if (liList.length < 20) {
+            $("#zhangkai").style.display = "none";
+        }
+        if (i < 20) {
             liList[i].style.display="";
         }
         else {
             liList[i].style.display = "none";
         }
         e_num = true;
-
-
     }
     var x_num = true;
    
@@ -36,9 +37,7 @@
     });
    
     $("#zhangkai").click(function () {
-        if (liList.length < 20) {
-            this.style.display = "none";
-        }
+    
         if (e_num === false) {
             for (var i = 0; i < liList.length; i++) {
                 if (i < 20) {
@@ -59,5 +58,12 @@
         }
     });
 
-
+    $("#form0").validate({
+        rules: {
+            Comment_con:"required"
+        },
+        messages: {
+            Comment_con:"评论内容不为空"
+        }
+    });
 });

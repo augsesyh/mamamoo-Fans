@@ -63,19 +63,10 @@
             $(this).siblings('.comic_slide_next').show();
         });
     }
-    function resetUlSize() {
-        $.each($ulDataAll, function (index, val) {
-            $(this).attr("data-page", 1);
-            $(this).css("left", 0);
-            $(this).siblings('.comic_slide_prev').hide();
-            $(this).siblings('.comic_slide_next').show();
-        });
-    }
-
     // 设置漫画列表ul的宽度
     function setUlWidth(margin) {
         var allLength = Number();
-        if (margin == 12) {
+        if (margin === 12) {
             allLength = 6;
         } else {
             allLength = 8;
@@ -91,7 +82,7 @@
                 }
                 var comicWidth = $(this).find('li').width() + margin;
                 $(this).css("width", liLength * comicWidth + "px");
-                if (margin == 12) {
+                if (margin === 12) {
                     $(this).attr("data-all", Math.ceil(liLength / parseInt(6.5))); // 小分辨率分页
                 } else {
                     $(this).attr("data-all", Math.ceil(liLength / 8)); // 大分辨率分页
@@ -99,7 +90,7 @@
             });
         });
         var $mgBox = $(".comic_list_mangai .comic_list_slide_box .cutUl");
-        if (margin == 18) {
+        if (margin === 18) {
             $mgBox.each(function (index, val) {
                 var liLength = $(this).find("li").length;
                 $(this).find("ul").attr("data-all", Math.ceil(liLength / 7.5)); // 大分辨率漫改分页
@@ -126,11 +117,11 @@
 
     // 漫画滑动下一页
     function nextBtn(ev) {
-        var ev = ev || event;
+         ev = ev || event;
         var marginRight = ev.data.mr;
         var stepNum = Number();
         var stepNumHalf = Number();
-        if (marginRight == 12) {
+        if (marginRight === 12) {
             stepNum = 6;
             stepNumHalf = 6.5;
         } else {
@@ -146,7 +137,7 @@
         if (pageNum >= 1) {
             $(this).siblings('.comic_slide_prev').show();
         }
-        if (pageNum == all) {
+        if (pageNum === all) {
             return;
         }
         var nextarr = [];
@@ -161,7 +152,7 @@
         }, 500, function () {
             pageNum++;
             $that.siblings('ul').attr("data-page", pageNum);
-            if (pageNum == all) {
+            if (pageNum === all) {
                 $that.hide();
             }
         });
@@ -169,11 +160,11 @@
 
     // 漫画滑动上一页
     function prevBtn(ev) {
-        var ev = ev || event;
+         ev = ev || event;
         var marginRight = ev.data.mr;
         var stepNum = Number();
         var stepNumHalf = Number();
-        if (marginRight == 12) {
+        if (marginRight === 12) {
             stepNum = 6;
             stepNumHalf = 6.5;
         } else {
@@ -185,12 +176,12 @@
         var comicWidth = $(this).siblings('ul').find('li').width() + marginRight;
         var ulWidth = $(this).siblings('ul').width(); //获取ul宽度
         var pageNum = $(this).siblings('ul').attr("data-page");
-        if (pageNum == 1) {
+        if (pageNum === 1) {
             return;
         };
         var prevarr = [];
         for (var i = 0; i < all; i++) {
-            if (i % 2 == 0) {
+            if (i % 2 === 0) {
                 prevarr.push(ulWidth - stepNum * comicWidth - stepNumHalf * i * comicWidth + comicWidth / 2);
             } else {
                 prevarr.push(ulWidth - stepNum * comicWidth - stepNumHalf * i * comicWidth);
@@ -206,7 +197,7 @@
         }, 500, function () {
             pageNum--;
             $that.siblings('ul').attr("data-page", pageNum);
-            if (pageNum == 1) {
+            if (pageNum === 1) {
                 $that.hide();
             }
         });
@@ -311,7 +302,7 @@ function loopGo() {
     slideBox.eq(loopIndex).stop().animate({ "opacity": 0 }, 300).removeClass('cur');
     blurBg.eq(loopIndex).stop().animate({ "opacity": 0 }, 300).removeClass('cur');
     loopIndex++;
-    if (loopIndex == slideLength) {
+    if (loopIndex === slideLength) {
         loopIndex = 0;
     }
     nextShow(loopIndex);
@@ -325,14 +316,14 @@ function curSite() {
     var arr = [];
     var n = 1;
     for (var i = 1; i < allLi + 1; i++) {
-        if (i % 5 == 0) {
+        if (i % 5 === 0) {
             arr.push(n);
             n++;
         }
     };
     if (hasCur <= 4) {
         var ulLeft = littleUl.position().left;
-        if (ulLeft == 0) {
+        if (ulLeft === 0) {
             return;
         }
         littleUl.animate({
@@ -412,7 +403,7 @@ pageNext.bind("click", function () {
                 clickBtn = true;
                 littleUl.attr("data-pagenum", 1);
             })
-        } else if (pageNum == allPage) {
+        } else if (pageNum === allPage) {
             var ulLeft = littleUl.position().left;
             var remain = parseInt(pageLength - (pageNum - 1) * 5); // 剩下多少个
             littleUl.animate({
@@ -421,9 +412,9 @@ pageNext.bind("click", function () {
                 clickBtn = true;
             })
         } else {
-            var ulLeft = littleUl.position().left;
+            var ulLeft1 = littleUl.position().left;
             littleUl.animate({
-                left: ulLeft - 5 * littlePicWidth + "px"
+                left: ulLeft1 - 5 * littlePicWidth + "px"
             }, 300, function () {
                 clickBtn = true;
             })
@@ -441,14 +432,14 @@ pagePrev.bind("click", function () {
         pageNum--;
         littleUl.attr("data-pagenum", pageNum);
         clickBtn = false;
-        if (pageNum == 0) {
+        if (pageNum === 0) {
             littleUl.animate({
                 left: -(littleUl.width() - 5 * littlePicWidth) + "px"
             }, 300, function () {
                 clickBtn = true;
                 littleUl.attr("data-pagenum", allPage);
             });
-        } else if (pageNum == 1) {
+        } else if (pageNum === 1) {
             littleUl.animate({
                 left: 0 + "px"
             }, 300, function () {
@@ -466,15 +457,5 @@ pagePrev.bind("click", function () {
     }
 });
 
-    document.body.addEventListener('click', function (e) {
-        var target = e.target;
-        var action = target.getAttribute('action');
-
-        if (document.body.actions[action]) {
-            document.body.actions[action].call(target, e);
-        }
-
-    }, false);
-
-
+  
 });
