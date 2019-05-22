@@ -616,3 +616,14 @@ label.error {
     padding-left: 0px;
     color: red;
 }
+
+.sr-citem__favor, .sr-citem__reply, .sr-citem__delete {
+    color: #999;
+    font-size: 13px;
+    line-height: 17px;
+    vertical-align: middle;
+}
+
+.sr-citem__reply {
+    margin-left: 33px;
+}

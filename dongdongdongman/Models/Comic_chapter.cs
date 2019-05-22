@@ -26,6 +26,7 @@ namespace Models
         public string Comic_chapter_title { get; set; }
         public Nullable<System.DateTime> Comic_update_time { get; set; }
         public Nullable<int> Comic_chapter_num { get; set; }
+        public Nullable<int> Comic_fufei { get; set; }
     
         public virtual Comic Comic { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

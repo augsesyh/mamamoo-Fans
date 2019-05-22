@@ -3,7 +3,7 @@
     var e_num = false;
     for (var i = 0; i < liList.length; i++) {
         if (liList.length < 20) {
-            $("#zhangkai").style.display = "none";
+            $("#zhangkai").hide();
         }
         if (i < 20) {
             liList[i].style.display="";
@@ -65,5 +65,9 @@
         messages: {
             Comment_con:"评论内容不为空"
         }
+    });
+    $("#reply").click(function () {
+        $("#reply-con").remove();
+        $()
     });
 });

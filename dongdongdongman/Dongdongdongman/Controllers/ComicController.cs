@@ -43,5 +43,9 @@ namespace Dongdongdongman.Controllers
             var da = db.Comic;
             return View(da);
         }
+        public ActionResult Pay()
+        {
+            return View();
+        }
     }
 }

@@ -53,3 +53,86 @@ label.error {
 .upwd{
     width:75%;
 }
+
+.f-fr
+
+{
+    float: right;
+}
+.navbar-nav.type-flat {
+    padding-top: 24px;
+}
+
+ul {
+    *float: right;
+}
+
+.horizontal-list {
+    margin: 0;
+    padding: 0;
+}
+
+.f-cb, .f-cbli li {
+    zoom: 1;
+}
+
+ul {
+    list-style: none;
+}
+.f-cb:after, .f-cbli li:after {
+    display: block;
+    clear: both;
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
+    content: ".";
+}
+.topbar .user-wrap {
+    width: 32px;
+    height: 16px;
+}
+
+.navbar-nav > li {
+    margin: 0 10px;
+}
+
+.horizontal-list li {
+    float: left;
+    list-style: none;
+}
+
+.f-pr {
+    position: relative;
+}
+.topbar .dropdown-parent > a {
+    position: relative;
+}
+
+.user-link {
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    line-height: 0;
+    z-index: 6;
+    top: -8px;
+    position: relative;
+}
+
+a {
+    text-decoration: none;
+    color:white;
+}
+
+a {
+    background-color: transparent;
+}
+.avator {
+    position: absolute;
+    max-width: 60px !important;
+    border: 1px solid #e1e1e1;
+    display:block;
+}
+
+.avator {
+    border-radius: 50%;
+}
