@@ -199,8 +199,12 @@ a:hover {
 
 .n .n-text {
     font-size: 13px;
+    color:black;
 }
 .h #h-sign:hover {
     background: hsla(0,0%,100%,.2);
     box-shadow: 0 0 0 1px hsla(0,0%,100%,.5);
+}
+a{
+    color:black;
 }

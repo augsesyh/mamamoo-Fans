@@ -1,0 +1,163 @@
+﻿@using Webdiyer.WebControls.Mvc;
+@model Dongdongdongman.Models.Comic_detail
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*<div>
+        <section class="banner_detail">
+            <div class="banner_border_bg">
+                <img class="banner_detail_bg" style="width: 100%;height: auto"/>
+            </div>
+            <div class="banner_detail_form">
+                <div class="cover">
+                    <img src="">
+                </div >
+                <div class="info">
+                    <p class="title"></p>
+                    <p class="subtitle">作者:<a href="#"></a></p>
+                    <p class="tip"><span class="block">类别:</span><span><a href="#"></a></span> </p>
+                    <p class="content" style=""></p>
+                </div>
+            </div>
+        </section>
+    </div>*@
+
+<div class="sr-view">
+    <div class="sr-bg">
+        <div class="sr-bg__cover" style="filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=63)">
+
+        </div>
+        <img src="@Model.a.Comic_cover" />
+    </div>
+    <div class="sr-main">
+        <div class="sr-info">
+            <img class="sr-bcover" src="@Model.a.Comic_cover">
+            <div class="sr-detail f-pr">
+                <div class="header sr-detail__header">
+                    <h1 class="f-toe sr-detail__heading">@Model.a.Comic_name</h1>
+                </div>
+                <p class="sr-detail__abstract f-pr">
+                    <span class="sprite-icon_2-quote"></span>
+                </p>
+                <p class="subtitle">
+                    作者:<a href="#">@Model.a.Comic_writer</a>
+                </p>
+                <p class="content" style="position: relative;overflow : hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-box-orient: vertical;">
+                    @if (Model.a.Comic_intro == null)
+                    {
+                    <p>作者很懒什么都没留下;</p>
+                }
+                else
+                {
+                    <p>@Model.a.Comic_intro</p>
+                }
+
+                    <div class="sr-detail__bottom f-cb js-detail-bottom">
+                        <div class="f-fl sr-detail__bleft f-cb">
+                            <a href="#" class="sr-btn u-btn-read z-danger f-fl j-read"><span class="sr-icon sprite-icon_2-book"></span> 开始阅读 </a>
+                        </div>
+                        <div class="sr-btn u-btn-collect f-fl j-fav-button">
+                            <div class="sprite-icon_2-collect sr-icon"></div>
+                            <span>订阅</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="f-cb sr-r2">
+                <div class="f-fl sr-r2-c1">
+                    <div class="sr-catalog j-catalog">
+                        <div class="sr-catalog__hd f-cb f-pr">
+                            <h2 class="f-fl">目录</h2>
+                            <div class="sr-notice f-fl f-cb">
+                                <div class="sr-notice__sign f-fl">
+                                    N
+                                </div>
+                                <div class="sr-notice__text f-toe">
+                                    1月28号最近更新    公告：作者酱并没有发公告(ಡωಡ)
+                                </div>
+                            </div>
+                            <div data-reverse="true" class="sr-catalog__order f-fr j-toggle-order" id="sunxu" style="background-color:#f6f6f6;">
+                                <span class="sprite-icon_2-order-up sr-icon z-middle"></span>
+                                正序
+                            </div>
+                        </div>
+                        <div class="sr-catalog__bd f-cb js-catalog-body">
+                            @foreach (var it in Model.ca)
+                            {
+                                <div class="m-chapter-item f-fl " data-id="@it.Comic_chapter_num">
+                                    <a class="f-toe">
+                                        <span class="chapter-item-content f-toe">
+                                            <span class="sr-torder">第 @it.Comic_chapter_num 话</span>
+                                            <span class="sr-ttext">@it.Comic_chapter_title</span>
+                                        </span>
+                                    </a>
+                                </div>
+                            }
+                           @for (var i = 0; i < 22; i++)
+                           {
+                            <div class="m-chapter-item m-chapter-item--full m-chapter-item-needPay f-fl  ">
+                                <a class="f-toe">
+                                    <span class="chapter-item-content f-toe">
+                                        <span class="sr-torder">第一话</span>
+                                        <span class="sr-ttext">预告</span>
+                                    </span>
+                                    <span class="sr-icon z-middle sprite-icon_2-locked"></span>
+                                </a>
+                            </div>
+                           }
+                            <div class="f-cb">
+                            </div>
+
+                        </div>
+                       
+                        <div class="j-load-more-button m-load-more-sm" id="zhangkai">
+                            点击展开更多目录
+                            <span class="sprite-icon_2-down2 sr-icon z-middle"></span>
+                        </div>
+                    </div>
+                    <div class="sr-recommend">
+                        <div class="f1-cb" style="height:30px;">
+                            <h2 class="f-fl">小伙伴还在看</h2>
+                        </div>
+
+                        <div class="sr-recommend__bd f-cb">
+                            @foreach (var it in Model.ac)
+                            {
+                                <a href="@Url.Action("Detail",new { cid=it.Comic_id })" class="sr-ritem" itemprop="relatedLink" target="_blank">
+                                    <img src="@it.Comic_cover">
+                                    <h5 class="f-toe">@it.Comic_name</h5>
+                                    <p class="f-toe">@it.Comic_intro</p>
+
+                                </a>}
+                        </div>
+
+
+                    </div>
+                    <div class="sr-comments" id="comment-block">
+                        <div class="sr-comments__hd f-cb j-comment-metadata">
+                            <h2 class="f-fl">评论</h2>
+                            <div class="sr-comments__count f-fl">
+                                共有
+                                <span class="j-count">
+                                    @Model.co.Count()
+                                </span>
+                                评论
+                            </div>
+                        </div>
+                        @Html.Partial("Comment", Model)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @section scripts
+{
+        @{Html.RegisterMvcPagerScriptResource();}
+    }
+    @Styles.Render("~/Content/shiyonghui/Comic_detail.css")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/Scripts/shiyonghui/Comic_detail.js")

@@ -35,5 +35,9 @@ namespace BLL
         {
             iuser.Changepwd(pwd, account);
         }
+        public User Findname(string name)
+        {
+            return iuser.Findname(name);
+        }
     }
 }
