@@ -1,46 +1,56 @@
 ﻿@using Webdiyer.WebControls.Mvc;
 @model Dongdongdongman.Models.Comic_detail
-@{    
+@{
     var i = Model.co.Count() / 9;
 }
-<div class="sr-comments__items" id="comment_list">
-    @Html.Partial("Comment1", Model)
-    <div id="loding" hidden="hidden">
-        <img class="smallLoadingImg" src="@Url.Content("~/Img/loding.gif")" />
+<div class="sr-comments" id="comment-block">
+    <div class="sr-comments__hd f-cb j-comment-metadata">
+        <h2 class="f-fl">评论</h2>
+        <div class="sr-comments__count f-fl">
+            共有
+            <span class="j-count">
+                @Model.a.Comment.Count()
+            </span>
+            评论
+        </div>
     </div>
-    <div class="sr-cinput f-cb">
-        @*<form action="@Url.Action("Add_Comment")">*@
-        @using (Ajax.BeginForm("Add_Comment",
-        new AjaxOptions()
-        {
-            HttpMethod = "post",
-            InsertionMode = InsertionMode.InsertAfter,
-            UpdateTargetId = "comment",
-            LoadingElementId = "loding",
-            LoadingElementDuration = 2000
-        }))
-        {
-            <div class="sr-cinput-c1 f-fl">
-                <div class="sr-cinput__avatar f-pr">
-                    <img src="@Model.ur.User_detail.User_head">
-                </div>
-            </div>
-            <div class="sr-cinput-c2">
-                <input type="hidden" name="uid" id="uid" value="@Model.ur.User_id">
-                <input type="hidden" name="cid" id="cid" value="@Model.a.Comic_id">
-                <input type="hidden" name="coid" id="coid" value="@i">
-                <div class="sr-cinput__input f-pr">
-                    <textarea name="Comment_con" class="sr-textarea" placeholder="嘟闭嘴！本王要发话了( ͡° ͜ʖ ͡°)"></textarea>
-                    <div class="sr-cinput__triangle">
+    <div class="sr-comments__items" id="comment_list">
+        <div id="comment">
+            @Html.Partial("Comment1", Model)
+        </div>
 
+        <div class="sr-cinput f-cb">
+            @*<form action="@Url.Action("Add_Comment")">*@
+            @using (Ajax.BeginForm("Add_Comment",
+                            new AjaxOptions()
+                            {
+                                HttpMethod = "post",
+                                InsertionMode = InsertionMode.ReplaceWith,
+                                UpdateTargetId = "comment-block"
+                            }))
+            {
+                <div class="sr-cinput-c1 f-fl">
+                    <div class="sr-cinput__avatar f-pr">
+                        <img src="@Model.ur.User_detail.User_head">
                     </div>
                 </div>
-                <div class="sr-cinput-c2-r2 f-cb f-pr">
-                    <div class="f-cb f-fr">
-                        <button type="submit" class="u-btn-submit z-danger f-fl  js-btn-comment">发表评论</button>
+                <div class="sr-cinput-c2">
+                    <input type="hidden" name="uid" id="uid" value="@Model.ur.User_id">
+                    <input type="hidden" name="cid" id="cid" value="@Model.a.Comic_id">
+                    <input type="hidden" name="coid" id="coid" value="@i">
+                    <div class="sr-cinput__input f-pr">
+                        <textarea name="Comment_con" id="Comment_con" class="sr-textarea" placeholder="嘟闭嘴！本王要发话了( ͡° ͜ʖ ͡°)"></textarea>
+                        <div class="sr-cinput__triangle">
+
+                        </div>
+                    </div>
+                    <div class="sr-cinput-c2-r2 f-cb f-pr">
+                        <div class="f-cb f-fr">
+                            <button type="submit" class="u-btn-submit z-danger f-fl  js-btn-comment">发表评论</button>
+                        </div>
                     </div>
                 </div>
-            </div>
-        }
+            }
+        </div>
     </div>
 </div>

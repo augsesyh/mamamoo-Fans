@@ -39,5 +39,10 @@ namespace DALFactory
             string className = AssemblyName + "." + db + "Goods";
             return (IGoods)Assembly.Load(AssemblyName).CreateInstance(className);
         }
+        public static ISubscribe CreateSubscribe()
+        {
+            string className = AssemblyName + "." + db + "Subscribe";
+            return (ISubscribe)Assembly.Load(AssemblyName).CreateInstance(className);
+        }
     }
 }

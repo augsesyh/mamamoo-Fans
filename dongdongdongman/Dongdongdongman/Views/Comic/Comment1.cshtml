@@ -1,9 +1,9 @@
 ﻿@using Webdiyer.WebControls.Mvc;
 @model Dongdongdongman.Models.Comic_detail
-<div id="comment">
+
     @foreach (var it in Model.co)
     {
-        <div class="js-citem sr-citem f-cb">
+        <div class="js-citem sr-citem f-cb" id="comment1">
             <div class="sr-citem-c1 f-fl">
                 <a href="@Url.Action("Detail","User",new { uid=it.User_id })" target="_blank" class="sr-citem__avatar f-pr">
                     <img src="@it.User.User_detail.User_head" srcset="#" width="48" height="48">
@@ -20,14 +20,40 @@
                 <div class="sr-citem-c2-r3 f-cb">
                     <span class="sr-citem__time">@it.Comment_time </span>
                     <div class="f-fr">
-                        <a href="javascript:void(0)" class="sr-citem__reply f-fl j-reply-button"></a>
+                        <a href="javascript:void(0)" class="sr-citem__reply f-fl j-reply-button">举报</a>
+                        <a href="javascript:void(0)" class="sr-citem__reply f-fl j-reply-button" id="reply">回复</a>
                     </div>
                 </div>
-            </div>
+                @using (Ajax.BeginForm("Add_Comment1","Comic",
+                           new AjaxOptions()
+                           {
+                               HttpMethod = "post",
+                               InsertionMode = InsertionMode.ReplaceWith,
+                               UpdateTargetId = "comment-block"
+                           },new { id="form1" }))
+                {
+                    <div class="js-input-wrapper sr-citem__input" style="display:none;" id="reply-con">
+                     
+                            <div class="sr-cinput__input f-pr">
+                                <textarea class="sr-textarea z-small" name="content" id="content" placeholder="回复 @it.User.User_detail.User_name "></textarea>
+                                <div class="sr-creply__triangle">
+
+                                </div>
+                            </div>
+                            <div class="sr-cinput-c2-r2 f-cb">
+                                <div class="f-cb f-fr">
+                                    <button class="u-btn-reply z-danger f-fl  js-btn-comment" type="submit">发送</button>
+                                </div>
+                            </div>
+                        
+                    </div>
+                }
+                </div>
         </div>
+        
     }
 
     <div class="text-center">
         @Ajax.Pager(Model.co, new PagerOptions { PageIndexParameterName = "coid", ContainerTagName = "ul", CssClass = "pagination", CurrentPagerItemTemplate = "<li class=\"active\"><a href=\"#\">{0}</a></li>", DisabledPagerItemTemplate = "<li class=\"disabled\"><a>{0}</a></li>", PagerItemTemplate = "<li>{0}</li>" }).AjaxOptions(a => a.SetUpdateTargetId("comment"))
     </div>
-</div>
+

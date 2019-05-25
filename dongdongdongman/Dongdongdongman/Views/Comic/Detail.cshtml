@@ -3,6 +3,7 @@
 @{
     ViewBag.Title = "Detail";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    var te = 0;
 }
 
 @*<div>
@@ -88,27 +89,40 @@
                         <div class="sr-catalog__bd f-cb js-catalog-body">
                             @foreach (var it in Model.ca)
                             {
-                                <div class="m-chapter-item f-fl " data-id="@it.Comic_chapter_num">
-                                    <a class="f-toe">
+                                foreach(var i in Model.su)
+                                {
+                                    if(i.Comic_detail_id==it.Comic_chapter_id)
+                                    {
+                                        te = 1;
+                                    }
+                                }
+                                if (te == 1||it.Comic_fufei==0)
+                                {
+                                <div class="m-chapter-item f-fl " data-id="@it.Comic_chapter_id">
+                                    <a class="f-toe" href="@Url.Action("Detail","Comic_chapter",new { ccid=it.Comic_chapter_id })">
                                         <span class="chapter-item-content f-toe">
                                             <span class="sr-torder">第 @it.Comic_chapter_num 话</span>
                                             <span class="sr-ttext">@it.Comic_chapter_title</span>
                                         </span>
                                     </a>
                                 </div>
-                            }
-                           @for (var i = 0; i < 22; i++)
-                           {
+                                }
+
+                                else
+                                {
                             <div class="m-chapter-item m-chapter-item--full m-chapter-item-needPay f-fl  ">
-                                <a class="f-toe">
+                                <a class="f-toe" href="@Url.Action("Pay","Comic",new { ccid = it.Comic_chapter_id })">
                                     <span class="chapter-item-content f-toe">
-                                        <span class="sr-torder">第一话</span>
-                                        <span class="sr-ttext">预告</span>
+                                        <span class="sr-torder">@it.Comic_chapter_num</span>
+                                        <span class="sr-ttext">@it.Comic_chapter_title</span>
                                     </span>
                                     <span class="sr-icon z-middle sprite-icon_2-locked"></span>
                                 </a>
                             </div>
-                           }
+                                }
+                                te = 0;
+                            }
+
                             <div class="f-cb">
                             </div>
 
@@ -137,19 +151,9 @@
 
 
                     </div>
-                    <div class="sr-comments" id="comment-block">
-                        <div class="sr-comments__hd f-cb j-comment-metadata">
-                            <h2 class="f-fl">评论</h2>
-                            <div class="sr-comments__count f-fl">
-                                共有
-                                <span class="j-count">
-                                    @Model.co.Count()
-                                </span>
-                                评论
-                            </div>
-                        </div>
+                   
                         @Html.Partial("Comment", Model)
-                    </div>
+                 
                 </div>
             </div>
         </div>
@@ -161,3 +165,4 @@
     @Styles.Render("~/Content/shiyonghui/Comic_detail.css")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/Scripts/shiyonghui/Comic_detail.js")
+    @Scripts.Render("~/Scripts/jquery.unobtrusive-ajax.min.js")

@@ -33,6 +33,8 @@ namespace Dongdongdongman.Controllers
             if(da!=null)
             { 
                 Session["User_name"] = da.User_detail.User_name;
+                Session["User_head"] = da.User_detail.User_head;
+
                 return 1;
             }
             else
