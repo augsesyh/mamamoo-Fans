@@ -37,7 +37,7 @@ namespace Models
         public Nullable<int> Follow_nums { get; set; }
         public Nullable<System.DateTime> Comic_time { get; set; }
         public string Comic_background { get; set; }
-        public string Comic_state { get; set; }
+        public string Usage { get; set; }
     
         public virtual Audiences Audiences1 { get; set; }
         public virtual Colors Colors1 { get; set; }
@@ -47,6 +47,7 @@ namespace Models
         public virtual Forms Forms1 { get; set; }
         public virtual Territory Territory1 { get; set; }
         public virtual UP UP { get; set; }
+        public virtual Usage Usage1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Comment> Comment { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

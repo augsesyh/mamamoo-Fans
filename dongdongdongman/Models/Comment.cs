@@ -17,20 +17,20 @@ namespace Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Comment()
         {
+            this.ReBack = new HashSet<ReBack>();
             this.Report = new HashSet<Report>();
         }
     
         public int Comment_id { get; set; }
-        public Nullable<int> Reback_id { get; set; }
         public int Comic_id { get; set; }
         public int User_id { get; set; }
         public string Comment_intro { get; set; }
         public System.DateTime Comment_time { get; set; }
     
         public virtual Comic Comic { get; set; }
-        public virtual Comment Comment1 { get; set; }
-        public virtual Comment Comment2 { get; set; }
         public virtual User User { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ReBack> ReBack { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Report> Report { get; set; }
     }

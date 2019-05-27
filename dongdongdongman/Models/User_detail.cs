@@ -26,7 +26,6 @@ namespace Models
         public string User_head { get; set; }
         public string User_realname { get; set; }
         public string User_email { get; set; }
-        public string User_intro { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UP> UP { get; set; }

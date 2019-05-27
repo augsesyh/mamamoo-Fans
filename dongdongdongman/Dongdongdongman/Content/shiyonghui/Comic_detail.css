@@ -627,3 +627,51 @@ label.error {
 .sr-citem__reply {
     margin-left: 33px;
 }
+.sr-citem__input {
+    display: none;
+    margin-top: 10px;
+}
+.sr-rpitem-c1 {
+    width: 30px;
+}
+.sr-rpitem__avatar img {
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+}
+.sr-citem__rlist {
+    margin-top: 14px;
+    padding: 32px 32px 22px 32px;
+    background: #F5F7F9;
+    border-radius: 4px;
+}
+.sr-rpitem-c2 {
+    margin-left: 42px;
+}
+.sr-citem__user {
+    font-size: 15px;
+}
+.sr-reply__user, .sr-reply__user a {
+    font-size: 15px;
+    color: #999;
+}
+
+.sr-rpitem__text {
+    margin-top: 9px;
+    font-size: 13px;
+}
+.sr-rpitem-c2-r3 {
+    margin-top: 9px;
+}
+.sr-citem {
+    margin-top: 44px;
+}
+.u-btn-reply {
+    margin-left: 12px;
+    padding: 0;
+    width: 64px;
+    height: 32px;
+    border-radius: 16px;
+    line-height: 32px;
+    text-align: center;
+}
