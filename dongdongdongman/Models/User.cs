@@ -23,6 +23,7 @@ namespace Models
             this.Follow = new HashSet<Follow>();
             this.Goods_Assess = new HashSet<Goods_Assess>();
             this.Orders = new HashSet<Orders>();
+            this.ReBack = new HashSet<ReBack>();
             this.Report = new HashSet<Report>();
             this.Reward = new HashSet<Reward>();
             this.ShoppingCart = new HashSet<ShoppingCart>();
@@ -47,6 +48,8 @@ namespace Models
         public virtual ICollection<Goods_Assess> Goods_Assess { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Orders> Orders { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ReBack> ReBack { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Report> Report { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

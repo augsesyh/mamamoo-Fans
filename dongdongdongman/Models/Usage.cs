@@ -14,6 +14,15 @@ namespace Models
     
     public partial class Usage
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Usage()
+        {
+            this.Comic = new HashSet<Comic>();
+        }
+    
         public string CateName_Usage { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Comic> Comic { get; set; }
     }
 }

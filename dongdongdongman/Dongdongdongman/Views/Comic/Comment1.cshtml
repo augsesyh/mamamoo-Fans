@@ -1,15 +1,16 @@
 ﻿@using Webdiyer.WebControls.Mvc;
 @model Dongdongdongman.Models.Comic_detail
 
-    @foreach (var it in Model.co)
-    {
-        <div class="js-citem sr-citem f-cb" id="comment1">
-            <div class="sr-citem-c1 f-fl">
-                <a href="@Url.Action("Detail","User",new { uid=it.User_id })" target="_blank" class="sr-citem__avatar f-pr">
-                    <img src="@it.User.User_detail.User_head" srcset="#" width="48" height="48">
-                </a>
-            </div>
-            <div class="sr-citem-c2">
+@foreach (var it in Model.co)
+{
+    <div class="js-citem sr-citem f-cb" id="comment1">
+        <div class="sr-citem-c1 f-fl">
+            <a href="@Url.Action("Detail","User",new { uid=it.User_id })" target="_blank" class="sr-citem__avatar f-pr">
+                <img src="@it.User.User_detail.User_head" srcset="#" width="48" height="48">
+            </a>
+        </div>
+        <div class="sr-citem-c2">
+            <div id="reply2">
                 <div class="sr-citem__hd">
                     <a href="@Url.Action("Detail","User",new { uid=it.User_id })" class="sr-citem__user j-emoji" target="_blank">@it.User.User_detail.User_name</a>
                 </div>
@@ -17,43 +18,140 @@
                     @it.Comment_intro
 
                 </div>
+
                 <div class="sr-citem-c2-r3 f-cb">
                     <span class="sr-citem__time">@it.Comment_time </span>
                     <div class="f-fr">
                         <a href="javascript:void(0)" class="sr-citem__reply f-fl j-reply-button">举报</a>
-                        <a href="javascript:void(0)" class="sr-citem__reply f-fl j-reply-button" id="reply">回复</a>
+                        <a href="javascript:void(0)" id="reply1" class="sr-citem__reply f-fl j-reply-button">回复</a>
                     </div>
-                </div>
-                @using (Ajax.BeginForm("Add_Comment1","Comic",
+                    @using (Ajax.BeginForm("Add_Comment1", "Comic",
                            new AjaxOptions()
                            {
                                HttpMethod = "post",
                                InsertionMode = InsertionMode.ReplaceWith,
-                               UpdateTargetId = "comment-block"
-                           },new { id="form1" }))
-                {
-                    <div class="js-input-wrapper sr-citem__input" style="display:none;" id="reply-con">
-                     
-                            <div class="sr-cinput__input f-pr">
-                                <textarea class="sr-textarea z-small" name="content" id="content" placeholder="回复 @it.User.User_detail.User_name "></textarea>
-                                <div class="sr-creply__triangle">
-
-                                </div>
-                            </div>
-                            <div class="sr-cinput-c2-r2 f-cb">
-                                <div class="f-cb f-fr">
-                                    <button class="u-btn-reply z-danger f-fl  js-btn-comment" type="submit">发送</button>
-                                </div>
-                            </div>
-                        
-                    </div>
-                }
+                               UpdateTargetId = "comment"
+                           }))
+                    {
+                        <input type="hidden" name="reback_id" id="rid" value="@it.Comment_id">
+                        <input type="hidden" name="reb1" value="">
+                        <input type="hidden" name="uid" id="uid" value="@Model.ur.User_id">
+                        <input type="hidden" name="cid1" id="cid1" value="@Model.a.Comic_id">
+                        <input type="hidden" name="coid1" id="coid1" value="@ViewBag.co">
+                    }
                 </div>
+            </div>
+
+
+
+            @*@using (Ajax.BeginForm("Add_Comment1", "Comic",
+                               new AjaxOptions()
+                               {
+                                   HttpMethod = "post",
+                                   InsertionMode = InsertionMode.ReplaceWith,
+                                   UpdateTargetId = "comment-block"
+                               }))
+                {*@
+            @*<div class="sr-cinput__input f-pr">
+                    <textarea class="sr-textarea z-small" placeholder="回复 @it.User.User_detail.User_name" name="recontent"></textarea>
+                    <div class="sr-creply__triangle">
+
+                    </div>
+                </div>*@
+
+
+            @*<div class="sr-cinput-c2-r2 f-cb">
+                    <div class="f-cb f-fr">
+                        <button class="u-btn-reply z-danger f-fl  js-btn-comment" type="submit">回复</button>
+                    </div>
+                </div>*@
+
+
+            @if (it.ReBack.Count() != 0)
+            {
+                <div class="j-reply-list sr-citem__rlist">
+                    <div class="j-flag">
+                        @foreach (var i in it.ReBack)
+                        {
+                            <div class="sr-rpitem f-cb">
+                                <div class="sr-rpitem-c1 f-fl">
+                                    <a href="#" class="sr-rpitem__avatar" target="_blank">
+                                        <img src="@i.User.User_detail.User_head">
+                                    </a>
+                                </div>
+                                <div class="sr-rpitem-c2">
+                                    <div class="sr-rpitem-c2-r1 sr-citem__user">
+                                        <a class="j-emoji" target="_blank" href="#">@i.User.User_detail.User_name </a><span class="sr-reply__user">
+                                            回复 @if (i.Reback1_id == null)
+                                            {<a class="j-emoji" href="#" target="_blank"> @i.Comment.User.User_detail.User_name </a> }
+                                        else
+                                        { <a class="j-emoji" href="#" target="_blank"> @i.ReBack2.User.User_detail.User_name </a>}
+                                        </span>
+                                    </div>
+                                    <div class="sr-rpitem__text sr-citem__text j-emoji">
+                                        @i.ReBack_intro
+                                    </div>
+                                    <div class="sr-rpitem-c2-r3 f-cb">
+                                        <span class="sr-citem__time">
+                                            @i.ReBack_time
+                                        </span>
+                                        <div class="f-fr">
+                                            <a href="javascript:void(0)" class="sr-citem__reply f-fl j-reply-button">举报</a>
+                                            <a href="javascript:void(0)" id="reply1" class="sr-citem__reply f-fl j-reply-button">回复</a>
+                                        </div>
+                                        @using (Ajax.BeginForm("Add_Comment1", "Comic",
+                         new AjaxOptions()
+                         {
+                             HttpMethod = "post",
+                             InsertionMode = InsertionMode.Replace,
+                             UpdateTargetId = "comment"
+                         }))
+                                        {
+                                            <input type="hidden" name="reback_id" id="rid" value="@it.Comment_id">
+                                            <input type="hidden" name="uid" id="uid" value="@Model.ur.User_id">
+                                            <input type="hidden" name="reb1" value="@i.ReBack_id">
+                                            <input type="hidden" name="cid1" id="cid1" value="@Model.a.Comic_id">
+                                            <input type="hidden" name="coid1" id="coid1" value="@ViewBag.co">
+                                        }
+                                    </div>
+                                </div>
+                                @*@using (Ajax.BeginForm("Add_Comment1", "Comic",
+                                    new AjaxOptions()
+                                    {
+                                        HttpMethod = "post",
+                                        InsertionMode = InsertionMode.ReplaceWith,
+                                        UpdateTargetId = "comment-block"
+                                    }))
+                                           {*@
+                                @*<div class="sr-cinput__input f-pr">
+                                        <textarea class="sr-textarea z-small" placeholder="回复 @it.User.User_detail.User_name" name="recontent"></textarea>
+                                        <div class="sr-creply__triangle">
+
+                                        </div>
+                                    </div>*@
+                                @*<input type="hidden" value="@it.Comment_id">
+                                    <input type="hidden" name="uid" id="uid" value="@Model.ur.User_id">*@
+
+                                @*<div class="sr-cinput-c2-r2 f-cb">
+                                        <div class="f-cb f-fr">
+                                            <button class="u-btn-reply z-danger f-fl  js-btn-comment" type="submit">回复</button>
+                                        </div>
+                                    </div>*@
+                                @*}*@
+                            </div>
+
+                        }
+                    </div>
+                </div>
+
+            }
         </div>
-        
-    }
-
-    <div class="text-center">
-        @Ajax.Pager(Model.co, new PagerOptions { PageIndexParameterName = "coid", ContainerTagName = "ul", CssClass = "pagination", CurrentPagerItemTemplate = "<li class=\"active\"><a href=\"#\">{0}</a></li>", DisabledPagerItemTemplate = "<li class=\"disabled\"><a>{0}</a></li>", PagerItemTemplate = "<li>{0}</li>" }).AjaxOptions(a => a.SetUpdateTargetId("comment"))
     </div>
+}
 
+
+<div class="text-center">
+    @Ajax.Pager(Model.co,new PagerOptions { PageIndexParameterName = "coid", ContainerTagName = "ul", CssClass = "pagination", CurrentPagerItemTemplate = "<li class=\"active\"><a href=\"#\">{0}</a></li>", DisabledPagerItemTemplate = "<li class=\"disabled\"><a>{0}</a></li>", PagerItemTemplate = "<li>{0}</li>" }).AjaxOptions(a => a.SetUpdateTargetId("comment"))
+</div>
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/Scripts/shiyonghui/Comic_detail.js")

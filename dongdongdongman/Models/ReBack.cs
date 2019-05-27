@@ -12,24 +12,25 @@ namespace Models
     using System;
     using System.Collections.Generic;
     
-    public partial class User_detail
+    public partial class ReBack
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public User_detail()
+        public ReBack()
         {
-            this.UP = new HashSet<UP>();
-            this.User = new HashSet<User>();
+            this.ReBack1 = new HashSet<ReBack>();
         }
     
-        public int User_detail_id { get; set; }
-        public string User_name { get; set; }
-        public string User_head { get; set; }
-        public string User_realname { get; set; }
-        public string User_email { get; set; }
+        public int ReBack_id { get; set; }
+        public int Comment_id { get; set; }
+        public int User_id { get; set; }
+        public string ReBack_intro { get; set; }
+        public Nullable<System.DateTime> ReBack_time { get; set; }
+        public Nullable<int> Reback1_id { get; set; }
     
+        public virtual Comment Comment { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<UP> UP { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<User> User { get; set; }
+        public virtual ICollection<ReBack> ReBack1 { get; set; }
+        public virtual ReBack ReBack2 { get; set; }
+        public virtual User User { get; set; }
     }
 }

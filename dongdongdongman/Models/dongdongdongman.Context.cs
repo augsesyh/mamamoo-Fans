@@ -43,6 +43,7 @@ namespace Models
         public virtual DbSet<Goods_Cate_Goods> Goods_Cate_Goods { get; set; }
         public virtual DbSet<Order_details> Order_details { get; set; }
         public virtual DbSet<Orders> Orders { get; set; }
+        public virtual DbSet<ReBack> ReBack { get; set; }
         public virtual DbSet<Report> Report { get; set; }
         public virtual DbSet<Reward> Reward { get; set; }
         public virtual DbSet<ShoppingCart> ShoppingCart { get; set; }

@@ -1,0 +1,85 @@
+﻿@model Dongdongdongman.Models.Comic_Fenlei
+@{
+    ViewBag.Title = "Fenlei";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="TagFilterNav" style="margin-top:51px;">
+    <div class="userSelected cls">
+        <div class="tipsName fl">已选</div>
+        <ul class="selectedList fl cls">
+            <li class="selectedItem fl"><span>全部</span></li>
+           
+        </ul>
+
+    </div>
+    <div class="theme cls">
+        <div class="selName fl">颜色</div>
+        <div class="selList fl cls">
+            <a class="selListItem active">全部</a>
+            @foreach (var it in Model.co)
+            {
+                <a class="selListItem ">@it.CateName_Colors.Trim()</a>
+            }
+        </div>
+    </div>
+    <div class="theme cls">
+        <div class="selName fl">受众</div>
+        <div class="selList fl cls">
+            <a class="selListItem active">全部</a>
+            @foreach (var it in Model.ad)
+            {
+                <a class="selListItem ">@it.CateName_Audiences.Trim()</a>
+            }
+        </div>
+    </div>
+    <div class="theme cls">
+        <div class="selName fl">内容</div>
+        <div class="selList fl cls">
+            <a class="selListItem active">全部</a>
+            @foreach (var it in Model.ct)
+            {
+                <a class="selListItem ">@it.CateName_Contents.Trim()</a>
+            }
+        </div>
+    </div>
+    <div class="theme cls">
+        <div class="selName fl">地区</div>
+        <div class="selList fl cls">
+            <a class="selListItem active">全部</a>
+            @foreach (var it in Model.te)
+            {
+                <a class="selListItem ">@it.CateName_Territory.Trim()</a>
+            }
+        </div>
+    </div>
+    <div class="theme cls">
+        <div class="selName fl">篇幅</div>
+        <div class="selList fl cls">
+            <a class="selListItem active">全部</a>
+            @foreach (var it in Model.fo)
+            {
+                <a class="selListItem ">@it.CateName_Forms.Trim()</a>
+            }
+        </div>
+    </div>
+
+</div>
+<div class="tagContent cls ">
+    <div class="ItemSpecial fl">
+        <a href="#" class="itemLink" target="_blank">
+            <span class="imgCover">
+                <img class="blankImg" alt="blank">
+                <img vm="184" class="img" src="#">
+            </span>
+            <span class="itemTitle"></span>
+        </a>
+        <p class="itemFooter cls">
+            <span class="author fl">zero</span>
+
+        </p>
+    </div>
+</div>
+@Styles.Render("~/Content/shiyonghui/Comic_fenlei.css")
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/Scripts/shiyonghui/Comic_Fenlei.js")
