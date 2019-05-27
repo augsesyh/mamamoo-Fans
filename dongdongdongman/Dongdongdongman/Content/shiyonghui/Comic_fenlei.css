@@ -81,7 +81,7 @@ ul, ol, li {
     }
     .TagFilterNav .category .selList, .TagFilterNav .theme .selList {
         padding-left: 32px;
-        max-width: 720px;
+        max-width: 920px;
     }
   .TagFilterNav .category .selList .active, .TagFilterNav .theme .selList .active {
             background: #FFD706;
@@ -134,3 +134,4 @@ a {
     text-decoration: none;
     -webkit-tap-highlight-color: transparent;
     color: #1a1a1a
+}

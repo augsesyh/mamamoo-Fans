@@ -11,7 +11,7 @@
         </div>
         <div class="sr-citem-c2">
             <div id="reply2">
-                <div class="sr-citem__hd">
+                <div class="sr-citem__hd username">
                     <a href="@Url.Action("Detail","User",new { uid=it.User_id })" class="sr-citem__user j-emoji" target="_blank">@it.User.User_detail.User_name</a>
                 </div>
                 <div class="sr-citem__text j-emoji">
@@ -80,7 +80,7 @@
                                     </a>
                                 </div>
                                 <div class="sr-rpitem-c2">
-                                    <div class="sr-rpitem-c2-r1 sr-citem__user">
+                                    <div class="username sr-rpitem-c2-r1 sr-citem__user">
                                         <a class="j-emoji" target="_blank" href="#">@i.User.User_detail.User_name </a><span class="sr-reply__user">
                                             回复 @if (i.Reback1_id == null)
                                             {<a class="j-emoji" href="#" target="_blank"> @i.Comment.User.User_detail.User_name </a> }
