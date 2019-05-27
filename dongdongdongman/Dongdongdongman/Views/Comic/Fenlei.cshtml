@@ -9,6 +9,7 @@
         <div class="tipsName fl">已选</div>
         <ul class="selectedList fl cls">
             <li class="selectedItem fl"><span>全部</span></li>
+           
         </ul>
 
     </div>
@@ -18,7 +19,7 @@
             <a class="selListItem active">全部</a>
             @foreach (var it in Model.co)
             {
-                <a class="selectedItem">@it.CateName_Colors</a>
+                <a class="selListItem ">@it.CateName_Colors.Trim()</a>
             }
         </div>
     </div>
@@ -28,7 +29,7 @@
             <a class="selListItem active">全部</a>
             @foreach (var it in Model.ad)
             {
-                <a class="selectedItem">@it.CateName_Audiences</a>
+                <a class="selListItem ">@it.CateName_Audiences.Trim()</a>
             }
         </div>
     </div>
@@ -38,7 +39,7 @@
             <a class="selListItem active">全部</a>
             @foreach (var it in Model.ct)
             {
-                <a class="selectedItem">@it.CateName_Contents</a>
+                <a class="selListItem ">@it.CateName_Contents.Trim()</a>
             }
         </div>
     </div>
@@ -48,7 +49,7 @@
             <a class="selListItem active">全部</a>
             @foreach (var it in Model.te)
             {
-                <a class="selectedItem">@it.CateName_Territory</a>
+                <a class="selListItem ">@it.CateName_Territory.Trim()</a>
             }
         </div>
     </div>
@@ -58,23 +59,27 @@
             <a class="selListItem active">全部</a>
             @foreach (var it in Model.fo)
             {
-                <a class="selectedItem">@it.CateName_Forms</a>
+                <a class="selListItem ">@it.CateName_Forms.Trim()</a>
             }
         </div>
     </div>
-    
+
 </div>
 <div class="tagContent cls ">
     <div class="ItemSpecial fl">
         <a href="#" class="itemLink" target="_blank">
-            <span class="imgCover"><img class="blankImg" alt="blank">
-            <img vm="184" class="img" src="#"></span>
+            <span class="imgCover">
+                <img class="blankImg" alt="blank">
+                <img vm="184" class="img" src="#">
+            </span>
             <span class="itemTitle"></span>
         </a>
         <p class="itemFooter cls">
             <span class="author fl">zero</span>
-          
+
         </p>
     </div>
 </div>
 @Styles.Render("~/Content/shiyonghui/Comic_fenlei.css")
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/Scripts/shiyonghui/Comic_Fenlei.js")

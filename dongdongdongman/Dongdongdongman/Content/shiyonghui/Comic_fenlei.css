@@ -83,10 +83,10 @@ ul, ol, li {
         padding-left: 32px;
         max-width: 720px;
     }
-        .TagFilterNav .category .selList .active, .TagFilterNav .theme .selList .active {
+  .TagFilterNav .category .selList .active, .TagFilterNav .theme .selList .active {
             background: #FFD706;
-        }
-        .TagFilterNav .category .selList .selListItem, .TagFilterNav .theme .selList .selListItem {
+  }
+ .TagFilterNav .category .selList .selListItem, .TagFilterNav .theme .selList .selListItem {
             display: block;
             float: left;
             margin-bottom: 7px;
@@ -99,7 +99,7 @@ ul, ol, li {
             color: #333333;
             border-radius: 4px;
             cursor: pointer;
-        }
+}
 a, img {
     -webkit-tap-highlight-color: transparent;
     border: 0;
@@ -117,3 +117,20 @@ a {
     padding-bottom: 32px;
     width: 1184px;
 }
+    .TagFilterNav .category .selList .active, .TagFilterNav .theme .selList .active {
+        background: #FFD706;
+    }
+a, button, input, * {
+    -webkit-tap-highlight-color: rgba(255, 0, 0, 0);
+}
+
+a, img {
+    -webkit-tap-highlight-color: transparent;
+    border: 0;
+}
+
+a {
+    background: transparent;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+    color: #1a1a1a

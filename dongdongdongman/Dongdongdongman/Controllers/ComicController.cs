@@ -17,6 +17,7 @@ namespace Dongdongdongman.Controllers
         }
         public ActionResult Detail(int cid,int coid=1)
         {
+            ViewBag.co = coid;
             var da = Session["User_name"].ToString();
             Comic_detail h = new Comic_detail(cid,da,coid);
             if (Request.IsAjaxRequest())
@@ -34,9 +35,7 @@ namespace Dongdongdongman.Controllers
             c.Comic_id = Convert.ToInt32(cid);
             db.Comment.Add(c);
             db.SaveChanges();
-            var da = Session["User_name"].ToString();
-            Comic_detail h = new Comic_detail(c.Comic_id,da ,1);
-            return PartialView("Comment", h); ;
+            return RedirectToAction("Detail", new { cid = c.Comic_id, coid = 1 });
         }
         public ActionResult ALl_More()
         {
@@ -49,14 +48,15 @@ namespace Dongdongdongman.Controllers
         }
         public ActionResult Fenlei()
         {
-            return View();
+            Comic_Fenlei Cf = new Comic_Fenlei();
+            return View(Cf);
         }
         [HttpPost]
-        public ActionResult Add_Comment1(string recontent,string reback_id, string uid, string cid,string reb1)
+        public ActionResult Add_Comment1(string recontent,string reback_id, string uid, string cid1,string reb1,string coid1)
         {
             ReBack re = new ReBack();
             re.Comment_id = Convert.ToInt32(reback_id);
-            if (reb1 == null)
+            if (reb1 == ""|| reb1==null)
             {
                 re.Reback1_id = null;
             }
@@ -69,10 +69,9 @@ namespace Dongdongdongman.Controllers
             re.User_id = Convert.ToInt32(uid);
             db.ReBack.Add(re);
             db.SaveChanges();
-            int cid1 = Convert.ToInt32(cid);
-           var da = Session["User_name"].ToString();
-            Comic_detail h = new Comic_detail(cid1, da, 1);
-            return PartialView("Comment", h);
+            var cid2 = Convert.ToInt32(cid1);
+            var coid3 = Convert.ToInt32(coid1);
+            return RedirectToAction("Detail", new { cid = cid2, coid = coid1 });
         }
     }
 }
