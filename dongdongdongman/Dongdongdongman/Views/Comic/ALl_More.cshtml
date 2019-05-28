@@ -1,17 +1,11 @@
-﻿
+﻿@model IEnumerable<Models.Comic>
 @{
     ViewBag.Title = "ALl_More";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div class="TagFilterNav">
-    <div class="userSelected cls">
-        <div class="tipsName fl">
-            已选
-        </div>
-        <ul class="">
-        </ul>
-    </div>
+@foreach(var i in Model)
+{
 
-</div>
+}
 
 

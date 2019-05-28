@@ -18,8 +18,18 @@
             case "篇幅": List[4] = a; break;
             default: alert("不要乱点");
         }
-        .ajax{
-
-        }
+        $(".tagContent").load("/Comic/FenleiPart", { List: List }, function () { alert("查找成功"); });
+        //$.ajax({
+        //    traditional: true,
+        //    type: "post",
+        //    url: "/Comic/FenLeiByOther",
+        //    data: { List: List },
+        //    success: function (data) {
+                
+        //    },
+        //    error: function (data) {
+        //        alert(data);
+        //    }
+        //});
     });
 });
