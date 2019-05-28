@@ -23,6 +23,38 @@ namespace Dongdongdongman.Models
             te = db.Territory;
             fo = db.Forms;
         }
-
+        public Comic_Fenlei(string[] List)
+        {
+           
+            IEnumerable<Comic> te=db.Comic;
+            var i = te.Count();
+            if (List[0] != "全部")
+            {
+                te = te.Where(o => o.Colors == List[0]);
+                i = te.Count();
+            }
+            if (List[1] != "全部")
+            {
+                
+                te = te.Where(o => o.Audiences == List[1]);
+                i = te.Count();
+            }
+            if (List[2] != "全部")
+            {
+                te = te.Where(o => o.Contents == List[2]);
+                i = te.Count();
+            }
+            if (List[3] != "全部")
+            {
+                te = te.Where(o => o.Territory == List[3]);
+                i = te.Count();
+            }
+            if (List[4] != "全部")
+            {
+                te = te.Where(o => o.Forms == List[4]);
+                i = te.Count();
+            }
+            cm = te;
+    }
     }
 }

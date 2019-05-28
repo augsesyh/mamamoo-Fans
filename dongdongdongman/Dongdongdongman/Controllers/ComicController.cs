@@ -76,28 +76,29 @@ namespace Dongdongdongman.Controllers
         public PartialViewResult FenleiPart(string[] List)
         {
 
-            Comic_Fenlei cf = new Comic_Fenlei();
-            if(List[0]!="全部")
-            {
-                cf.cm = cf.cm.Where(o => o.Colors == List[0]);
-            }
-            if (List[1] != "全部")
-            {
-                cf.cm = cf.cm.Where(o => o.Audiences == List[1]);
-            }
-            if (List[2] != "全部")
-            {
-                cf.cm = cf.cm.Where(o => o.Contents == List[2]);
-            }
-            if (List[3] != "全部")
-            {
-                cf.cm = cf.cm.Where(o => o.Territory == List[3]);
-            }
-            if (List[4] != "全部")
-            {
-                cf.cm = cf.cm.Where(o => o.Forms == List[4]);
-            }
-            return PartialView("FenleiPart",cf);
+            Comic_Fenlei cf = new Comic_Fenlei(List);
+            
+            //if(List[0]!="全部")
+            //{
+            //    cf.cm = cf.cm.Where(o => o.Audiences == List[0]);
+            //}
+            //if (List[1] != "全部")
+            //{
+            //    cf.cm = cf.cm.Where(o => o.Audiences == List[1]);
+            //}
+            //if (List[2] != "全部")
+            //{
+            //    cf.cm = cf.cm.Where(o => o.Contents == List[2]);
+            //}
+            //if (List[3] != "全部")
+            //{
+            //    cf.cm = cf.cm.Where(o => o.Territory == List[3]);
+            //}
+            //if (List[4] != "全部")
+            //{
+            //    cf.cm = cf.cm.Where(o => o.Forms == List[4]);
+            //}
+            return PartialView(cf);
         }
     }
 }

@@ -1,17 +1,20 @@
 ﻿@model Dongdongdongman.Models.Comic_Fenlei
-@foreach (var it in Model.cm)
-{
-    <div class="ItemSpecial fl">
-        <a href="#" class="itemLink" target="_blank">
-            <span class="imgCover">
-                <img src="~/Img/data.gif" class="blankImg" alt="blank">
-                <img vm="184" class="img" src="@it.Comic_cover">
-            </span>
-            <span class="itemTitle">@it.Comic_name.Trim()</span>
-        </a>
-        <p class="itemFooter cls">
-            <span class="author fl">@it.Comic_writer</span>
+    @{ 
+        var i = Model.cm.Count();
+    }
+    @foreach (var it in Model.cm)
+    {
+        <div class="ItemSpecial fl">
+            <a href="#" class="itemLink" target="_blank">
+                <span class="imgCover">
+                    <img src="~/Img/data.gif" class="blankImg" alt="blank">
+                    <img vm="184" class="img" src="@it.Comic_cover">
+                </span>
+                <span class="itemTitle">@it.Comic_name.Trim()</span>
+            </a>
+            <p class="itemFooter cls">
+                <span class="author fl">@it.Comic_writer</span>
 
-        </p>
-    </div>
-}
+            </p>
+        </div>
+    }

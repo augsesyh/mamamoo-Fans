@@ -65,28 +65,28 @@
     </div>
 
 </div>
-<div class="tagContent cls">
+<div class="tagContent cls" id="tagContent">
     @*@foreach (var it in Model.cm)
-    {
-    <div class="ItemSpecial fl">
-        <a href="#" class="itemLink" target="_blank">
-            <span class="imgCover">
-                <img src="~/Img/data.gif" class="blankImg" alt="blank">
-                <img vm="184" class="img" src="@it.Comic_cover">
-            </span>
-            <span class="itemTitle">@it.Comic_name.Trim()</span>
-        </a>
-        <p class="itemFooter cls">
-            <span class="author fl">@it.Comic_writer</span>
+        {
+        <div class="ItemSpecial fl">
+            <a href="#" class="itemLink" target="_blank">
+                <span class="imgCover">
+                    <img src="~/Img/data.gif" class="blankImg" alt="blank">
+                    <img vm="184" class="img" src="@it.Comic_cover">
+                </span>
+                <span class="itemTitle">@it.Comic_name.Trim()</span>
+            </a>
+            <p class="itemFooter cls">
+                <span class="author fl">@it.Comic_writer</span>
 
-        </p>
+            </p>
+        </div>
+        }*@
+    @Html.Partial("FenleiPart", Model)
     </div>
-    }*@
-    @Html.Partial("FenleiPart",Model)
-</div>
-@{ 
+    @{
 
-}
-@Styles.Render("~/Content/shiyonghui/Comic_fenlei.css")
-@Scripts.Render("~/bundles/jquery")
-@Scripts.Render("~/Scripts/shiyonghui/Comic_Fenlei.js")
+    }
+    @Styles.Render("~/Content/shiyonghui/Comic_fenlei.css")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/Scripts/shiyonghui/Comic_Fenlei.js")
