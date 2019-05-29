@@ -71,9 +71,9 @@
             {
                 <div class="j-reply-list sr-citem__rlist">
                     <div class="j-flag">
-                        @foreach (var i in it.ReBack)
+                        @foreach (var i in it.ReBack.OrderBy(o=>o.ReBack_time))
                         {
-                            <div class="sr-rpitem f-cb">
+                            <div class="sr-rpitem f-cb ">
                                 <div class="sr-rpitem-c1 f-fl">
                                     <a href="#" class="sr-rpitem__avatar" target="_blank">
                                         <img src="@i.User.User_detail.User_head">
@@ -91,7 +91,7 @@
                                     <div class="sr-rpitem__text sr-citem__text j-emoji">
                                         @i.ReBack_intro
                                     </div>
-                                    <div class="sr-rpitem-c2-r3 f-cb">
+                                    <div class="sr-rpitem-c2-r3 f-cb ">
                                         <span class="sr-citem__time">
                                             @i.ReBack_time
                                         </span>
@@ -154,4 +154,4 @@
     @Ajax.Pager(Model.co,new PagerOptions { PageIndexParameterName = "coid", ContainerTagName = "ul", CssClass = "pagination", CurrentPagerItemTemplate = "<li class=\"active\"><a href=\"#\">{0}</a></li>", DisabledPagerItemTemplate = "<li class=\"disabled\"><a>{0}</a></li>", PagerItemTemplate = "<li>{0}</li>" }).AjaxOptions(a => a.SetUpdateTargetId("comment"))
 </div>
 @Scripts.Render("~/bundles/jquery")
-@Scripts.Render("~/Scripts/shiyonghui/Comic_detail.js")
+@Scripts.Render("~/Scripts/shiyonghui/Comic_Comment.js")

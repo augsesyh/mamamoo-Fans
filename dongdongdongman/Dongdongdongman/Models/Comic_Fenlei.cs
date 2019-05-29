@@ -8,7 +8,7 @@ namespace Dongdongdongman.Models
     public class Comic_Fenlei
     {
         dongdongdongEntities db = new dongdongdongEntities();
-        public IEnumerable<Comic> cm;
+        public IQueryable<Comic> cm;
         public IEnumerable<Colors> co;
         public IEnumerable<Audiences> ad;
         public IEnumerable<Contents> ct;
@@ -26,32 +26,36 @@ namespace Dongdongdongman.Models
         public Comic_Fenlei(string[] List)
         {
            
-            IEnumerable<Comic> te=db.Comic;
+            IQueryable<Comic> te=db.Comic;
             var i = te.Count();
             if (List[0] != "全部")
             {
-                te = te.Where(o => o.Colors == List[0]);
+                var t = List[0];
+                te = te.Where(o => o.Colors == t);
                 i = te.Count();
             }
             if (List[1] != "全部")
             {
-                
-                te = te.Where(o => o.Audiences == List[1]);
+                var t = List[1];
+                te = te.Where(o => o.Audiences == t);
                 i = te.Count();
             }
             if (List[2] != "全部")
             {
-                te = te.Where(o => o.Contents == List[2]);
+                var t = List[2];
+                te = te.Where(o => o.Contents == t);
                 i = te.Count();
             }
             if (List[3] != "全部")
             {
-                te = te.Where(o => o.Territory == List[3]);
+                var t = List[3];
+                te = te.Where(o => o.Territory == t);
                 i = te.Count();
             }
             if (List[4] != "全部")
             {
-                te = te.Where(o => o.Forms == List[4]);
+                var t = List[4];
+                te = te.Where(o => o.Forms ==t);
                 i = te.Count();
             }
             cm = te;

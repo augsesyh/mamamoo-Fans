@@ -14,7 +14,7 @@
         e_num = true;
     }
     var x_num = true;
-   
+    
     $("#sunxu").click( function () {
 
         if (x_num === false) {
@@ -66,18 +66,6 @@
             Comment_con:"评论内容不为空"
         }
     });
-    var d = 0;
-    $(".j-reply-button").click(function () {
-        var a = $(this).parent().parent().parent().children(".username").children(".j-emoji").text();
-
-        alert(a);
-        $(".textarea").remove();
-        if (d === 0) {
-            d = 1;
-            $(this).parent().parent().children("form").append("<div class='textarea'> <div class='sr-cinput__input f - pr'><textarea class='sr-textarea z-small' placeholder='回复" + a + " ' name='recontent' ></textarea><div class='sr-creply__triangle'></div></div > <div class='sr-cinput-c2-r2 f-cb'><div class='f-cb f-fr'> <button class='u-btn-reply z-danger f-fl  js-btn-comment' type='submit' id='re3'>回复</button></div></div></div>");
-        } else {
-            d = 0;
-        }
-    });
+    
   
 });
