@@ -18,6 +18,11 @@
             case "篇幅": List[4] = a; break;
             default: alert("不要乱点");
         }
+        var e = 0;
+        $(".selectedList li").remove();
+       
+        List.forEach(v => { if (v !== "全部") { $(".selectedList").append(" <li class='selectedItem fl'><span>" + v + "</span></li>"); e = 1; } });
+        if (e === 0) { $(".selectedList").append("<li class='selectedItem fl'><span>全部</span></li>"); }
         //$("#tagContent").load("/Comic/FenleiPart", { List: List }, function () { alert("查找成功"); });
         $.ajax({
             traditional: true,
@@ -32,6 +37,7 @@
                 alert(data);
             }
         });
+        
         //$.get("/Comic/FenleiPart",{ List: List }, function (result) {
         //    $("#tagContent").html(result);
         //});

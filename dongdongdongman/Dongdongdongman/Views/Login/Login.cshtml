@@ -1,0 +1,54 @@
+﻿
+<div class="login-form">
+    <div class="login-header">
+        <a href="javascript:;" title="关闭" class="login-close close">×</a>
+        <div class="">
+            <h3 class="loginlabel">用户登录</h3>
+        </div>
+        <hr>
+    </div>
+    <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+        <form action="##" method="post" id="Login_form">
+            @Html.AntiForgeryToken()
+            <div class="form-group">
+                <label class="control-label col-md-3">用户名</label>
+                @if (ViewBag.UserName != null)
+                {
+                    <input type="text" class="uname form-control col-md-9" id="uname" name="uname" autocomplete="off" spellcheck="false" placeholder="请使用注册邮箱或手机号登录" value="@ViewBag.UserName">
+                }
+                else
+
+                {
+            <input type="text" class="uname form-control col-md-9" id="uname" name="uname" autocomplete="off" spellcheck="false" placeholder="请使用注册邮箱或手机号登录">
+                }
+            </div>
+            <div class="form-group">
+                <label class="col-md-3">密码</label>
+                @if (ViewBag.Pwd!=null)
+                {
+                    <input type="password" class="upwd form-control col-md-9" id="upwd" name="upwd" autocomplete="off" spellcheck="false" placeholder="请输入密码" value="@ViewBag.Pwd">
+                }
+                else
+                {
+                    <input type="password" class="upwd form-control col-md-9" id="upwd" name="upwd" autocomplete="off" spellcheck="false" placeholder="请输入密码">
+                }
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label><input type="checkbox" name="checkname" id="checkid" onchange="changeval()" value="0">记住密码</label>
+                    <div class="pull-right">
+                        <a href="@Url.Action("ForgetPassword","Login")" class="text-right">忘记密码？</a>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <input id="referrer" type="text" name="referrer" class="form-control" style="display:none;">
+                <button type="submit" class="btn btn-info btn-lg btn-block">登    录</button>
+            </div>
+            <div class="form-group">
+                <a href="javascript:;" class="register-btn btn btn-info btn-lg btn-block" role="button">注册新账号</a>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="login-form-mask"></div>

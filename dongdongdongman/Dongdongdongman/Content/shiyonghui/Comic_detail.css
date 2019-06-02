@@ -655,7 +655,9 @@ label.error {
     font-size: 15px;
     color: #999;
 }
-
+.sr-rpitem + .sr-rpitem {
+    margin-top: 34px;
+}
 .sr-rpitem__text {
     margin-top: 9px;
     font-size: 13px;
@@ -674,4 +676,28 @@ label.error {
     border-radius: 16px;
     line-height: 32px;
     text-align: center;
+}
+.expand-trigger {
+    display: block;
+    margin: 20px 0 24px 0;
+    text-align: center;
+    font-size: 13px;
+    color: #999;
+}
+
+.f-tac {
+    text-align: center;
+}
+.sr-icon {
+    display: inline-block;
+    vertical-align: bottom;
+}
+.expand-trigger-content {
+    padding: 0 4px;
+    color: #999;
+}
+.sprite-icon_2-star {
+    background-position: -226px -102px;
+    width: 17px;
+    height: 17px;
 }

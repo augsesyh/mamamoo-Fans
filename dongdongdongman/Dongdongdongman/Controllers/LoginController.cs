@@ -8,6 +8,7 @@ using Models;
 using Dongdongdongman.Models;
 using System.Net.Mail;
 using System.Net;
+using Dongdongdongman.App_Data;
 
 namespace Dongdongdongman.Controllers
 {
@@ -16,12 +17,28 @@ namespace Dongdongdongman.Controllers
         readonly dongdongdongEntities db = new dongdongdongEntities();
         UserManager us = new UserManager();
         User_detailManager ud = new  User_detailManager();
-    
+
         // GET: Login
+
+        public ActionResult Login()
+        {
+            if (SqlHelper.GetCookieValue("NameCookie") != "" && SqlHelper.GetCookieValue("PwdCookie") != "")
+            {
+                //获取Cookie
+                string name = SqlHelper.GetCookieValue("NameCookie");
+                string pwd = SqlHelper.GetCookieValue("PwdCookie");
+
+                //使用Decode（）解密
+                ViewBag.UserName = SqlHelper.Decode(name);
+                ViewBag.Pwd = SqlHelper.Decode(pwd);
+            }
+            return PartialView();
+        }
         public ActionResult Index()
         {
             HomeViewModel Home = new HomeViewModel();
-
+            
+          
             return View(Home);
         }
        
@@ -29,6 +46,12 @@ namespace Dongdongdongman.Controllers
         [ValidateAntiForgeryToken]
         public int Login(string uname,string upwd)
         {
+            var cok = Request.Form["checkname"];
+            if (cok != null)
+            {
+                SqlHelper.SetCookie("NameCookie", SqlHelper.Encode(uname), DateTime.Now.AddDays(7));
+                SqlHelper.SetCookie("PwdCookie", SqlHelper.Encode(upwd), DateTime.Now.AddDays(7));
+            }
             var da = us.FindUser(uname, upwd);
             if(da!=null)
             { 
