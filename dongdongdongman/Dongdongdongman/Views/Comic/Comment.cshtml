@@ -18,10 +18,10 @@
         <div id="comment">
             @Html.Partial("Comment1", Model)
         </div>
-
-        <div class="sr-cinput f-cb" id="input">
-            @*<form action="@Url.Action("Add_Comment")">*@
-            @using (Ajax.BeginForm("Add_Comment","Comic",
+      
+        @*<div class="sr-cinput f-cb" id="input">
+           <form action="@Url.Action("Add_Comment")">
+            @using (Ajax.BeginForm("Add_Comment", "Comic",
                             new AjaxOptions()
                             {
                                 HttpMethod = "post",
@@ -51,6 +51,6 @@
                     </div>
                 </div>
             }
-        </div>
+        </div>*@
     </div>
 </div>

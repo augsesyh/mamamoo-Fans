@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 using Models;
 namespace IDAL
 {
-   public interface ISubscribe
+    public interface IComic_chapter
     {
-        IEnumerable<Subscribe> Findsu(int uid);
-        void AddSubscribe(int ccid,int uid);
+        Comic_chapter FindByid(int ccid);
     }
 }

@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Models;
 using Dongdongdongman.Models;
+using BLL;
 namespace Dongdongdongman.Controllers
 {
     public class ComicController : Controller
@@ -21,7 +22,7 @@ namespace Dongdongdongman.Controllers
             var da = Session["User_name"].ToString();
             Comic_detail h = new Comic_detail(cid,da,coid);
             if (Request.IsAjaxRequest())
-                return PartialView("Comment1",h);
+                return PartialView("Comment",h);
             return View(h);
         }
         [HttpPost]
@@ -42,9 +43,15 @@ namespace Dongdongdongman.Controllers
             var da = db.Comic;
             return View(da);
         }
-        public ActionResult Pay()
+        public ActionResult Pay(string ccid)
         {
-            return View();
+
+            var ci = Convert.ToInt32(ccid);
+            Comic_chapterManager cm = new Comic_chapterManager();
+            var c = cm.FindByid(ci);
+            var cd = c.Comic.Comic_chapter.Where(o => o.Comic_fufei == 1).Count();
+            ViewBag.id = cd;
+            return View(c);
         }
         public ActionResult Fenlei()
         {
@@ -99,6 +106,43 @@ namespace Dongdongdongman.Controllers
             //    cf.cm = cf.cm.Where(o => o.Forms == List[4]);
             //}
             return PartialView(cf);
+        }
+        public ActionResult Comic_pager(int cid,int nums=1)
+        {
+            
+            Comic_pagerMananger ccm = new Comic_pagerMananger();
+           var da = ccm.FindBynums(cid,nums);
+            var dc =da.Comic_chapter.Comic_chapter_num + 1;
+            int dr;
+                var dt = da.Comic_chapter.Comic.Comic_chapter.Where(o => o.Comic_chapter_num == dc).FirstOrDefault();
+             if(dt!=null)
+            {
+                ViewBag.nexcd = dt.Comic_chapter_id;
+            }
+            
+            
+            var dp = da.Comic_chapter.Comic_chapter_num - 1;
+           
+                var dt1 = da.Comic_chapter.Comic.Comic_chapter.Where(c => c.Comic_chapter_num == dp).FirstOrDefault();
+            if (dt1 != null)
+            {
+                ViewBag.precd = dt1.Comic_chapter_id;
+            }
+            
+ 
+            ViewBag.num = nums;
+            return View(da);
+        }
+        public ActionResult AddSubscribe(string ccid)
+        {
+            
+            var cci = Convert.ToInt32(ccid);
+            Comic_chapterManager cm = new Comic_chapterManager();
+            var c = cm.FindByid(cci);
+            var ui = Convert.ToInt32(Session["User_id"].ToString());
+            SubscribeManager sm = new SubscribeManager();
+            sm.AddSubscribe(cci, ui);
+            return RedirectToAction("Detail","Comic",new { cid=c.Comic_id });
         }
     }
 }

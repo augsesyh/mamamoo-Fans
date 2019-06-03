@@ -1,0 +1,126 @@
+﻿@model Models.Comic_pager
+@{
+    ViewBag.Title = "Comic_pager";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    
+}
+<div class="cf" id="readarea" style="width: 100%;">
+<div id="readtop">
+    <h1 >
+        <a href="@Url.Action("Deatil","Comic",new { cid=Model.Comic_chapter.Comic_id })" class="comic_name">@Model.Comic_chapter.Comic.Comic_name</a>&nbsp;&nbsp;>&nbsp;&nbsp;<span id="current_chapter_name">@Model.Comic_chapter.Comic_chapter_title</span>
+    </h1>
+    <span class="author"><a href="javascript:void(0);">@Model.Comic_chapter.Comic.Comic_writer</a></span>
+    <span class="author">阅读顺序：从左至右</span>
+    <div class="pagebar">
+        @if (Model.Comic_chapter.Comic_chapter_num == 1)
+        {
+            <a href="javascript:void(0);" disabled class="prev">上一章</a>
+        }
+        else
+        {
+            <a href="@Url.Action("Comic_pager","Comic",new { cid=ViewBag.precd,nums = 1 })" class="prev">上一页</a>
+        }
+        @if (ViewBag.num == 1)
+        {
+            <a href="javascript:void(0);" disabled class="prev">上一页</a>
+        }
+        else
+        {
+            <a href="@Url.Action("Comic_pager","Comic",new { cid=Model.Comic_chapter_id,nums = ViewBag.num-1 })" class="prev">上一页</a>
+        }
+        <div class="selectpage" style="width:91px;">
+            <em><i><b></b><span></span></i><q>第 @ViewBag.num 页</q></em>
+            <div class="osx">
+                <div class="pane" style="overflow: hidden; padding: 0px; width: 90px;">
+                    <div class="jspContainer" style="width: 90px; height: 218px;">
+                        <div class="jspPane" style="padding: 0px; top: 0px; left: 0px; width: 90px;">
+                            @for (var d = 1; d <= Model.Comic_chapter.Comic_pager.Count(); d++)
+                            {
+
+                                if (d == ViewBag.num)
+                                {
+                                    <a href="@Url.Action("Comic_pager","Comic",new { cid = Model.Comic_chapter_id,nums = d })" class="pager_@d hover">第 @d 页</a>
+                                }
+                                else
+                                {
+                                    <a href="@Url.Action("Comic_pager","Comic",new { cid = Model.Comic_chapter_id,nums = d })" class="pager_@d">第 @d 页</a>
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @if (ViewBag.num == Model.Comic_chapter.Comic_pager.Count())
+        {
+            <a href="javascript:void(0);" disabled class="next">下一页</a>
+        }
+        else
+        {
+            <a href="@Url.Action("Comic_pager","Comic",new { cid=Model.Comic_chapter_id,nums = ViewBag.num+1 })" class="next">下一页</a>
+        }
+        @if (Model.Comic_chapter.Comic_chapter_num == Model.Comic_chapter.Comic.Comic_chapter.Count())
+        {
+            <a href="javascript:void(0);" disabled class="next">下一章</a>
+        }
+        else
+        {
+            <a href="@Url.Action("Comic_pager","Comic",new { cid=ViewBag.nexcd,nums = 1 })" class="next">下一章</a>
+        }
+    </div>
+</div>
+    <div class="u17-advert" style="margin: 0px auto 20px; opacity: 1; text-align: center;">
+    </div>
+<div class="tc">
+    <div class="comic_read_img" style="width: 800px; height: 1227px;">
+        @*<img src="~/Img/blank.gif" style="position:absolute; left:0; top:0; z-index:3;" width="800" height="1227" class="" border="4">*@
+        <img src="@Model.Comic_picpage.Trim()" class="loading image_cache" style="display: block; position: absolute; left: 0px; top: 0px; z-index: 2; width: 800px; height: 1227px;">
+
+    </div>
+</div>
+<div id="readbottom">
+    <strong class="pagenum"><em>@ViewBag.num</em>/@Model.Comic_chapter.Comic_pager.Count()</strong>
+    <div class="pagebar">
+        @if (ViewBag.num == 1)
+        {
+            <a href="javascript:void(0);" disabled class="prev">上一页</a>
+        }
+        else
+        {
+            <a href="@Url.Action("Comic_pager","Comic",new { cid=Model.Comic_chapter_id,nums = ViewBag.num-1 })" class="prev">上一页</a>
+        }
+        <div class="selectpage">
+            <em><i><b></b><span></span></i><p>第 @ViewBag.num 页</p></em>
+            <div class="osx">
+                <div class="pane" style="overflow: hidden; padding: 0px; width: 90px;">
+                    <div class="jspContainer" style="width: 90px; height: 218px;">
+                        <div class="jspPane" style="padding: 0px; top: 0px; left: 0px; width: 90px;">
+                            @for (var d = 1; d <= Model.Comic_chapter.Comic_pager.Count(); d++)
+                            {
+
+                                if (d == ViewBag.num)
+                                {
+                                    <a href="@Url.Action("Comic_pager","Comic",new { cid = Model.Comic_chapter_id,nums = d })" class="pager_@d hover">第 @d 页</a>
+                                }
+                                else
+                                {
+                                    <a href="@Url.Action("Comic_pager","Comic",new { cid = Model.Comic_chapter_id,nums = d })" class="pager_@d">第 @d 页</a>
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @if (ViewBag.num == Model.Comic_chapter.Comic_pager.Count())
+        {
+            <a href="javascript:void(0);" disabled class="next">下一页</a>
+        }
+        else
+        {
+            <a href="@Url.Action("Comic_pager","Comic",new { cid=Model.Comic_chapter_id,nums = ViewBag.num+1 })" class="next">下一页</a>
+        }
+    </div>
+</div>
+</div>
+@Styles.Render("~/Content/shiyonghui/Comic_Comic_pager.css")

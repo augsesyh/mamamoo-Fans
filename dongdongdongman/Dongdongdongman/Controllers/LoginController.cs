@@ -54,7 +54,8 @@ namespace Dongdongdongman.Controllers
             }
             var da = us.FindUser(uname, upwd);
             if(da!=null)
-            { 
+            {
+                Session["User_id"] = da.User_id;
                 Session["User_name"] = da.User_detail.User_name;
                 Session["User_head"] = da.User_detail.User_head;
 

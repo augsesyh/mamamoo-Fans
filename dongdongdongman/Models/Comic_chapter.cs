@@ -17,6 +17,7 @@ namespace Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Comic_chapter()
         {
+            this.Comic_pager = new HashSet<Comic_pager>();
             this.Subscribe = new HashSet<Subscribe>();
         }
     
@@ -29,6 +30,8 @@ namespace Models
         public Nullable<int> Comic_fufei { get; set; }
     
         public virtual Comic Comic { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Comic_pager> Comic_pager { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Subscribe> Subscribe { get; set; }
     }

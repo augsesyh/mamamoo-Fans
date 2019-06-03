@@ -1,7 +1,36 @@
-﻿
+﻿@model Models.Comic_chapter
 @{
     ViewBag.Title = "Pay";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var i = ViewBag.id / 0.7;
 }
 
-<h2>Pay</h2>
-
+<div class="player-container" id="J_Player" style="display:block;margin-top: 58px;">
+    <div class="vip-container article">
+        <div class="top-wrap">
+            <div class="title">
+                <a href="@Url.Action("Comic","Detail",new { cid=Model.Comic.Comic_id })">@Model.Comic.Comic_name</a>
+               <span>|</span>
+                @Model.Comic_chapter_title
+            </div>
+            <p class="tip f-dn" style="display:block">当前为付费话</p>
+        </div>
+        <div class="page-item1">
+            <div class="m-trade">
+                <div class="m-buy-notMonth">
+                    <p class="tip1">按话购买</p>
+                    <p class="tip2">当前为付费话</p>
+                    <div class="m-act">
+                        <div class="rd-puchase">
+                            <a href="@Url.Action("AddSubscribe","Comic",new { ccid=Model.Comic_chapter_id })" class="buyone" id="J-buyone">1元买此话<p class="rd-puchase-deduction">原价1元</p></a>
+                        </div>
+                        <div class="rd-puchase">
+                            <a href="@Url.Action("AddSubscribe1","Comic",new { cid=Model.Comic_id })" class="buymore" id="J-buymore">@ViewBag.id 元购买剩余 @ViewBag.id 话 <p class="rd-puchase-deduction">原价 @i 元</p></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@Styles.Render("~/Content/shiyonghui/Comic_pay.css")
