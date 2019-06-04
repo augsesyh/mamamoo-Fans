@@ -16,6 +16,9 @@ namespace BLL
         {
             return Is.Findsu(uid);
         }
-
+        public void AddSubscribe(int ccid,int uid )
+        {
+             Is.AddSubscribe(ccid,uid);
+        }
     }
 }

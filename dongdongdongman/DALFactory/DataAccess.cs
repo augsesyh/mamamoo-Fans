@@ -44,5 +44,15 @@ namespace DALFactory
             string className = AssemblyName + "." + db + "Subscribe";
             return (ISubscribe)Assembly.Load(AssemblyName).CreateInstance(className);
         }
+        public static IComic_chapter CreateComic_chapter()
+        {
+            string className = AssemblyName + "." + db + "Comic_chapter";
+            return (IComic_chapter)Assembly.Load(AssemblyName).CreateInstance(className);
+        }
+        public static IComic_pager CreateComic_pager()
+        {
+            string className = AssemblyName + "." + db + "Comic_pager";
+            return (IComic_pager)Assembly.Load(AssemblyName).CreateInstance(className);
+        }
     }
 }

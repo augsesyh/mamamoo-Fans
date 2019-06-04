@@ -33,6 +33,7 @@ namespace Models
         public virtual DbSet<Colors> Colors { get; set; }
         public virtual DbSet<Comic> Comic { get; set; }
         public virtual DbSet<Comic_chapter> Comic_chapter { get; set; }
+        public virtual DbSet<Comic_pager> Comic_pager { get; set; }
         public virtual DbSet<Comment> Comment { get; set; }
         public virtual DbSet<Contents> Contents { get; set; }
         public virtual DbSet<Follow> Follow { get; set; }

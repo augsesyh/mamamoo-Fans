@@ -8,6 +8,7 @@ namespace IDAL
 {
    public interface ISubscribe
     {
-        IEnumerable<Subscribe> Findsu(int uid); 
+        IEnumerable<Subscribe> Findsu(int uid);
+        void AddSubscribe(int ccid,int uid);
     }
 }

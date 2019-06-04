@@ -2,10 +2,131 @@
 @{
     ViewBag.Title = "ALl_More";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    var i;
 }
-@foreach(var i in Model)
-{
+<div id="banner_box" style="margin-top:50px;">
+    <div id="loop_container">
+        <div class="loop_slide_box">
+            <ul style="padding-left:0px;">
+                @foreach (var it in Model.Te)
+                {
+                    <li class="cur">
+                        <a href="#" target="_blank" data-little="@it.Comic_background.Trim()" data-src="@it.Comic_background.Trim()" data-call="@it.Comic_name.Trim()"></a>
+                    </li>
+                }
 
-}
+            </ul>
+        </div>
+        <!-- 轮播选项 -->
+        <div class="fl loop_choose">
+            <!-- 轮播图标题 -->
+            <div class="loop_tit">
+                <a href="javascript:;" target="_blank"></a>
+            </div>
+            <!-- 轮播图标题 end -->
+            <!-- 轮播图小图及左右按钮 -->
+            <div class="loop_pagination">
+                <div class="fl pagination_btn pagination_prev"></div>
+                <div class="fl loop_focus_pic_box">
+                    <ul class="overflow little_pic" style="padding-left:0px;"></ul>
+                </div>
+                <div class="fl pagination_btn pagination_next"></div>
+            </div>
+            <!-- 轮播图小图及左右按钮 end -->
+        </div>
+        <!-- 轮播选项 end -->
+    </div>
+    <div class="hot__mask_bg_box"></div>
+    <div class="fl all_hottest">
+        <div class="fl all_hot">
+            <div class="overflow hot_tab">
+                <h2 class="fl hot_tit" style="margin-top:0px;">全站最热</h2>
+                <a href="javascript:void(0);" class="fl hot_rank_tab_up hot_tab_btn cur">全部</a>\
+            </div>
+            <div class="overflow hot_comic_cut hot_comic_all lazyload">
 
+                <ul class="overflow hot_comic_list" style="width:220px;height:333px;padding-left:0px;">
+                    @foreach (var it in Model.Nc)
+                    {
+                        if (i == 1)
+                        {
+                            <li class="hot_comic_detail">
+                                <span class="fl hot_num hot_num_orange">@i</span>
+                                <div class="hot_comic_box">
+                                    <p class="overflow hot_comic_show"><span class="fl hot_comic_tit">@it.Comic_name.Trim()</span></p>
+                                    <div class="hot_comic_hide">
+                                        <a href="#" target="_blank" class="fl hot_comic_img">
+                                            <img xsrc="@it.Comic_cover" src="@it.Comic_cover" alt="" />
+                                        </a>
+                                        <div class="fl hot_comic_content">
+                                            <a href="#" class="comic_tit" target="_blank">@it.Comic_name.Trim()</a>
+                                            <div class="comic_style">
+                                                <span class="fl diamonds">@it.Contents</span>
+                                                <span class="fl diamonds">@it.Forms</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="">
+                                <span class="fl hot_num hot_num_orange">@i</span>
+                                <div class="hot_comic_box">
+                                    <p class="overflow hot_comic_show"><span class="fl hot_comic_tit">@it.Comic_name.Trim()</span></p>
+                                    <div class="hot_comic_hide">
+                                        <a href="#" target="_blank" class="fl hot_comic_img">
+                                            <img xsrc="@it.Comic_cover" src="@it.Comic_cover" alt="" />
+                                        </a>
+                                        <div class="fl hot_comic_content">
+                                            <a href="#" class="comic_tit" target="_blank">@it.Comic_name.Trim()</a>
+                                            <div class="comic_style">
+                                                <span class="fl diamonds">@it.Contents</span>
+                                                <span class="fl diamonds">@it.Forms</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        }
+                        i++;
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="v5_comic_list comic_list_qy">
+    <div class="fl comic_content">
+        <div class="comic_content_tit lazy_parent">
+            <h2>最近更新漫画</h2>
+            <ul class="fl comic_choose">
+                <li class="rank_tab lazy_cut cur">全部</li>
+
+            </ul>
+            <a href="#" target="_blank" class="fr comic_look_more">更多</a>
+        </div>
+        <div class="overflow comic_list_slide_box lazy_load">
+            <div class="cutUl lazyload cut1">
+                <ul class="comic_all" style="padding-left:0px;">
+                    @foreach (var it in Model.uc)
+                    {
+                        <li>
+                            <!--  -->
+                            <!--  -->
+                            <a href="@Url.Action("Detail","Comic",new { cid=it.Comic.Comic_id })" class="comic_pic" target="_blank">
+                                <img xsrc="@it.Comic.Comic_cover" alt="" src="@it.Comic.Comic_cover" title="@it.Comic.Comic_name.Trim()" />
+                            </a>
+                            <a href="#" class="comic_tit" target="_blank" title="@it.Comic.Comic_name.Trim()"><i class="ico_rec"></i>@it.Comic.Comic_name</a>
+
+                        </li>
+                    }
+                </ul>
+                <div class="comic_slide_prev"></div>
+                <div class="comic_slide_next"></div>
+            </div>
+        </div>
+</div>
+    </div>
 

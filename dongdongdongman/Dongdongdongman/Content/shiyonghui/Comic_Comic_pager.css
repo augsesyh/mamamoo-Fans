@@ -1,0 +1,245 @@
+﻿body {
+    font: normal 12px/22px Arial,宋体;
+    _height: 100%;
+    background: #1e1e1e;
+}
+body, dl, dd, ul, ol, h1, h2, h3, h4, h5, h6, pre, input, button, textarea, p, form {
+    margin: 0;
+    padding: 0;
+}
+#readtop {
+    width: 870px;
+    margin: 0 auto;
+    padding: 80px 0 20px;
+    height: 26px;
+    position: relative;
+    z-index: 21;
+}
+    #readtop h1, #readtop h1 a {
+        font: 16px/20px "Microsoft Yahei";
+        color: #aaa59c;
+    }
+
+    #readtop h1 {
+        float: left;
+    }
+        #readtop h1 .comic_name {
+            font-size: 20px;
+            color: #fff;
+            position: relative;
+            float: left;
+        }
+    #readtop .author {
+        float: left;
+        color: #a0a0a0;
+        padding-left: 16px;
+        line-height: 28px;
+        font-family: "Microsoft Yahei";
+    }
+        #readtop .author a {
+            color: #a0a0a0;
+        }
+.pagebar {
+    float: right;
+    height: 26px;
+}
+    .pagebar .prev:hover, .pagebar .next:hover {
+        text-decoration: none;
+        border: 1px solid #ffc600;
+        width: 73px;
+        height: 24px;
+        line-height: 24px;
+    }
+
+    .pagebar .prev, .pagebar .next {
+        display: block;
+        float: left;
+        width: 75px;
+        height: 26px;
+        text-align: center;
+        line-height: 26px;
+        color: #ccc;
+        background: #333;
+        font-weight: bold;
+    }
+
+a:hover {
+    text-decoration: underline;
+}
+.pagebar .selectpage {
+    cursor: pointer;
+    position: relative;
+    float: left;
+    padding-left: 9px;
+    margin: 0 15px 0;
+    border: 1px solid #1e1e1e;
+    width: 80px;
+    background: #333;
+    line-height: 26px;
+    color: #ccc;
+}
+    .pagebar .selectpage:hover, .pagebar .hover {
+        border: 1px solid #ffc600;
+    }
+q::before {
+    content: open-quote;
+}
+q::after {
+    content: close-quote;
+}
+blockquote, q {
+    quotes: none;
+}
+.pagebar .selectpage:hover .osx, .pagebar .selectpage .show {
+    height: 215px;
+    filter: alpha(opacity=100);
+    opacity: 1;
+    border: 1px solid #ffc600;
+}
+
+.pagebar .selectpage .osx {
+    border: 1px solid #ffc600;
+    position: absolute;
+    background: #252525;
+    top: 24px;
+    left: -1px;
+    width: 89px;
+    height: 0;
+    overflow: hidden;
+    cursor: default;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    _border: none;
+    -webkit-transition: height .2s ease;
+    transition: height .2s ease;
+}
+#readarea .pagebar .pane {
+    height: 217px;
+    width: 89px;
+}
+#readarea .jspContainer {
+    overflow: hidden;
+    position: relative;
+}
+#readarea .jspPane {
+    position: absolute;
+}
+.pagebar .selectpage .pane a {
+    display: block;
+    padding: 0 9px;
+    text-decoration: none;
+    line-height: 24px;
+    height: 24px;
+    width: auto;
+    background: #252525;
+    color: #999;
+    -webkit-transition: all .2s ease;
+    transition: all .2s ease;
+}
+.pagebar .prev, .pagebar .next {
+    display: block;
+    float: left;
+    width: 75px;
+    height: 26px;
+    text-align: center;
+    line-height: 26px;
+    color: #ccc;
+    background: #333;
+    font-weight: bold;
+}
+.tc, .txt_ct {
+    text-align: center;
+}
+.comic_read_img {
+    position: relative;
+    display: inline-block;
+    _overflow: visible;
+    z-index: 1;
+}
+img, abbr {
+    border: 0;
+}
+.loading {
+    background: url(../images/read/loading.gif) no-repeat center center #f7f7f7;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+}
+.comic_read_img .cur_img {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+#readbottom {
+    width: 870px;
+    margin: 0 auto;
+    height: 40px;
+    padding-bottom: 20px;
+    position: relative;
+    z-index: 30;
+}
+    #readbottom .pagenum {
+        font: italic 34px/38px "arial";
+        color: #656565;
+        float: left;
+    }
+
+        #readbottom .pagenum em {
+            color: #ffc600;
+            font-style: italic;
+            font-size: 38px;
+        }
+address, caption, cite, em, optgroup, i {
+    font-style: normal;
+}
+
+a, a:visited, ins {
+    text-decoration: none;
+}
+.cf:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+p{
+    margin:0 0 0px;
+}
+.pagebar .selectpage:hover em i {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+    -ms-transform: rotate(0);
+}
+.pagebar .selectpage em i {
+    display: inline;
+    float: right;
+    position: relative;
+    width: 8px;
+    height: 6px;
+    margin: 10px;
+    -webkit-transition: .3s ease-in;
+    transition: .3s ease-in;
+}
+    .pagebar .selectpage em i b {
+        top: 1px;
+        border-top-color: #f5f5f5;
+    }
+
+    .pagebar .selectpage em i b, .pagebar .selectpage em i span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 0;
+        border-color: rgba(255,255,255,0);
+        border-color: transparent\0;
+        *border-color: transparent;
+        _border-color: tomato;
+        _-webkit-filter: chroma(color=tomato);
+        _filter: chroma(color=tomato);
+        border-style: solid;
+        overflow: hidden;
+        *zoom: 1;
+        border-width: 4px 4px 0;
+    }
