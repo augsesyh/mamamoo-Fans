@@ -28,6 +28,7 @@ namespace Models
         public string Video_intro { get; set; }
         public int Video_nums { get; set; }
         public string Video_pic { get; set; }
+        public Nullable<int> Video_cate_id { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Collection> Collection { get; set; }
@@ -36,5 +37,6 @@ namespace Models
         public virtual ICollection<Video_Access> Video_Access { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Video_detail> Video_detail { get; set; }
+        public virtual Video_Cate Video_Cate { get; set; }
     }
 }

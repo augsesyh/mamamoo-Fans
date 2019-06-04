@@ -1,0 +1,45 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>咚咚咚动漫后台管理系统</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="sidebar  mm-menu mm-horizontal mm-offcanvas">
+        <div class="sidebar-collapse mm-panel mm-opened mm-current" id="mm-0">
+            <div class="sidebar-header t-center">
+                <h1 class="logo">
+                    咚咚咚
+                    <span>管理员</span>
+                </h1>
+                <span class="slogan">后台管理系统</span>
+            </div>
+            <div class="sidebar-menu opened" style="height:540px;">
+                <ul class="nav nav-sidebar">
+
+                </ul>
+            </div >
+        </div>
+    </div>
+    <div class="navbar" role="navigation">
+        <div class="container-fluid">
+            <div class="">
+            </div>
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -28,6 +28,7 @@ namespace Models
         }
     
         public virtual DbSet<Address> Address { get; set; }
+        public virtual DbSet<admin> admin { get; set; }
         public virtual DbSet<Audiences> Audiences { get; set; }
         public virtual DbSet<Collection> Collection { get; set; }
         public virtual DbSet<Colors> Colors { get; set; }

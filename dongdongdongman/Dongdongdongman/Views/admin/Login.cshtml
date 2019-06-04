@@ -1,0 +1,46 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Home</title>
+    <!-- Custom Theme files -->
+    <link href="~/Content/shiyonghui/admin_style.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- Custom Theme files -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Login form web template, Sign up Web Templates, Flat Web Templates, Login signup Responsive web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    @Scripts.Render("~/bundles/modernizr")
+    
+</head>
+<body>
+    <div class="login">
+        <h2>咚咚咚动漫网后台管理系统</h2>
+        <div class="login-top">
+            <h1>咚咚咚动漫网后台管理系统</h1>
+            <form action="@Url.Action("Login","admin")" style="text-align:center;" method="post" id="admin_login">
+                <input type="text" value="用户名" name="name" id="name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '用户名';}">
+                <input type="password" value="密码" name="pwd" id="pwd" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
+
+
+                <div class="forgot">
+
+                    <input type="submit" value="登录">
+                </div>
+            </form>
+        </div>
+        <div class="login-bottom">
+
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/Scripts/shiyonghui/admin_Login1.js")
+
+
+</body>
+</html>
