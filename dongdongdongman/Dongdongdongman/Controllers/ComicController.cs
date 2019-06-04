@@ -109,8 +109,27 @@ namespace Dongdongdongman.Controllers
         }
         public ActionResult Comic_pager(int cid,int nums=1)
         {
+            
             Comic_pagerMananger ccm = new Comic_pagerMananger();
            var da = ccm.FindBynums(cid,nums);
+            var dc =da.Comic_chapter.Comic_chapter_num + 1;
+            int dr;
+                var dt = da.Comic_chapter.Comic.Comic_chapter.Where(o => o.Comic_chapter_num == dc).FirstOrDefault();
+             if(dt!=null)
+            {
+                ViewBag.nexcd = dt.Comic_chapter_id;
+            }
+            
+            
+            var dp = da.Comic_chapter.Comic_chapter_num - 1;
+           
+                var dt1 = da.Comic_chapter.Comic.Comic_chapter.Where(c => c.Comic_chapter_num == dp).FirstOrDefault();
+            if (dt1 != null)
+            {
+                ViewBag.precd = dt1.Comic_chapter_id;
+            }
+            
+ 
             ViewBag.num = nums;
             return View(da);
         }

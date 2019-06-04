@@ -12,6 +12,14 @@
     <span class="author"><a href="javascript:void(0);">@Model.Comic_chapter.Comic.Comic_writer</a></span>
     <span class="author">阅读顺序：从左至右</span>
     <div class="pagebar">
+        @if (Model.Comic_chapter.Comic_chapter_num == 1)
+        {
+            <a href="javascript:void(0);" disabled class="prev">上一章</a>
+        }
+        else
+        {
+            <a href="@Url.Action("Comic_pager","Comic",new { cid=ViewBag.precd,nums = 1 })" class="prev">上一页</a>
+        }
         @if (ViewBag.num == 1)
         {
             <a href="javascript:void(0);" disabled class="prev">上一页</a>
@@ -31,11 +39,11 @@
 
                                 if (d == ViewBag.num)
                                 {
-                                    <a class="pager_@d hover">第 @d 页</a>
+                                    <a href="@Url.Action("Comic_pager","Comic",new { cid = Model.Comic_chapter_id,nums = d })" class="pager_@d hover">第 @d 页</a>
                                 }
                                 else
                                 {
-                                    <a class="pager_@d">第 @d 页</a>
+                                    <a href="@Url.Action("Comic_pager","Comic",new { cid = Model.Comic_chapter_id,nums = d })" class="pager_@d">第 @d 页</a>
                                 }
                             }
                         </div>
@@ -50,6 +58,14 @@
         else
         {
             <a href="@Url.Action("Comic_pager","Comic",new { cid=Model.Comic_chapter_id,nums = ViewBag.num+1 })" class="next">下一页</a>
+        }
+        @if (Model.Comic_chapter.Comic_chapter_num == Model.Comic_chapter.Comic.Comic_chapter.Count())
+        {
+            <a href="javascript:void(0);" disabled class="next">下一章</a>
+        }
+        else
+        {
+            <a href="@Url.Action("Comic_pager","Comic",new { cid=ViewBag.nexcd,nums = 1 })" class="next">下一章</a>
         }
     </div>
 </div>
@@ -84,7 +100,7 @@
 
                                 if (d == ViewBag.num)
                                 {
-                                    <a class="pager_@d hover">第 @d 页</a>
+                                    <a href="@Url.Action("Comic_pager","Comic",new { cid = Model.Comic_chapter_id,nums = d })" class="pager_@d hover">第 @d 页</a>
                                 }
                                 else
                                 {

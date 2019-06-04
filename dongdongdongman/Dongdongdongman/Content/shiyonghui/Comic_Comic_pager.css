@@ -11,7 +11,7 @@ body, dl, dd, ul, ol, h1, h2, h3, h4, h5, h6, pre, input, button, textarea, p, f
     width: 870px;
     margin: 0 auto;
     padding: 80px 0 20px;
-    height: 26px;
+    height: 126px;
     position: relative;
     z-index: 21;
 }
@@ -206,6 +206,10 @@ a, a:visited, ins {
 p{
     margin:0 0 0px;
 }
+.pagebar .selectpage em i b {
+    top: 1px;
+    border-top-color: #f5f5f5;
+}
 .pagebar .selectpage:hover em i {
     -webkit-transform: rotate(180deg);
     transform: rotate(180deg);
@@ -221,10 +225,7 @@ p{
     -webkit-transition: .3s ease-in;
     transition: .3s ease-in;
 }
-    .pagebar .selectpage em i b {
-        top: 1px;
-        border-top-color: #f5f5f5;
-    }
+    
 
     .pagebar .selectpage em i b, .pagebar .selectpage em i span {
         position: absolute;
@@ -242,4 +243,7 @@ p{
         overflow: hidden;
         *zoom: 1;
         border-width: 4px 4px 0;
+    }
+    .pagebar .selectpage em i span {
+        border-top-color: #333;
     }

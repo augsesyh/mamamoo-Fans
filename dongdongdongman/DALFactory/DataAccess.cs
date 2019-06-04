@@ -54,5 +54,10 @@ namespace DALFactory
             string className = AssemblyName + "." + db + "Comic_pager";
             return (IComic_pager)Assembly.Load(AssemblyName).CreateInstance(className);
         }
+        public static IAdmin CreateAdmin()
+        {
+            string className = AssemblyName + "." + db + "admin";
+            return (IAdmin)Assembly.Load(AssemblyName).CreateInstance(className);
+        }
     }
 }
