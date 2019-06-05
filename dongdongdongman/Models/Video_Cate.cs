@@ -14,16 +14,7 @@ namespace Models
     
     public partial class Video_Cate
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Video_Cate()
-        {
-            this.Video = new HashSet<Video>();
-        }
-    
         public int Video_Cate_id { get; set; }
         public string Video_Cate_name { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Video> Video { get; set; }
     }
 }

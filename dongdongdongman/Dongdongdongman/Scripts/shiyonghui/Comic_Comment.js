@@ -39,4 +39,12 @@
         $(this).parent().children(".sr_hish").toggle();
 
     });
+    $(".jubao").click(function () {
+        
+        var d = $(this).attr("value");
+        alert(d);
+        $("#Jubao_Form").children("#jb").remove();
+        $("#Jubao_Form").append("<input type='hidden' value=" + d + " id='jb' name='jb'>");
+    });
+
 });

@@ -28,7 +28,6 @@ namespace Models
         }
     
         public virtual DbSet<Address> Address { get; set; }
-        public virtual DbSet<admin> admin { get; set; }
         public virtual DbSet<Audiences> Audiences { get; set; }
         public virtual DbSet<Collection> Collection { get; set; }
         public virtual DbSet<Colors> Colors { get; set; }
@@ -60,6 +59,7 @@ namespace Models
         public virtual DbSet<Video_Access> Video_Access { get; set; }
         public virtual DbSet<Video_Cate> Video_Cate { get; set; }
         public virtual DbSet<Video_detail> Video_detail { get; set; }
+        public virtual DbSet<admin> admin { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {
