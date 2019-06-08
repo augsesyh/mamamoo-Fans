@@ -4,129 +4,246 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     var i;
 }
-<div id="banner_box" style="margin-top:50px;">
-    <div id="loop_container">
-        <div class="loop_slide_box">
-            <ul style="padding-left:0px;">
-                @foreach (var it in Model.Te)
-                {
-                    <li class="cur">
-                        <a href="#" target="_blank" data-little="@it.Comic_background.Trim()" data-src="@it.Comic_background.Trim()" data-call="@it.Comic_name.Trim()"></a>
-                    </li>
-                }
-
-            </ul>
-        </div>
-        <!-- 轮播选项 -->
-        <div class="fl loop_choose">
-            <!-- 轮播图标题 -->
-            <div class="loop_tit">
-                <a href="javascript:;" target="_blank"></a>
-            </div>
-            <!-- 轮播图标题 end -->
-            <!-- 轮播图小图及左右按钮 -->
-            <div class="loop_pagination">
-                <div class="fl pagination_btn pagination_prev"></div>
-                <div class="fl loop_focus_pic_box">
-                    <ul class="overflow little_pic" style="padding-left:0px;"></ul>
-                </div>
-                <div class="fl pagination_btn pagination_next"></div>
-            </div>
-            <!-- 轮播图小图及左右按钮 end -->
-        </div>
-        <!-- 轮播选项 end -->
-    </div>
-    <div class="hot__mask_bg_box"></div>
-    <div class="fl all_hottest">
-        <div class="fl all_hot">
-            <div class="overflow hot_tab">
-                <h2 class="fl hot_tit" style="margin-top:0px;">全站最热</h2>
-                <a href="javascript:void(0);" class="fl hot_rank_tab_up hot_tab_btn cur">全部</a>\
-            </div>
-            <div class="overflow hot_comic_cut hot_comic_all lazyload">
-
-                <ul class="overflow hot_comic_list" style="width:220px;height:333px;padding-left:0px;">
-                    @foreach (var it in Model.Nc)
+@*<div id="banner_box" style="margin-top:50px;">
+        <div id="loop_container">
+            <div class="loop_slide_box">
+                <ul style="padding-left:0px;">
+                    @foreach (var it in Model.Te)
                     {
-                        if (i == 1)
-                        {
-                            <li class="hot_comic_detail">
-                                <span class="fl hot_num hot_num_orange">@i</span>
-                                <div class="hot_comic_box">
-                                    <p class="overflow hot_comic_show"><span class="fl hot_comic_tit">@it.Comic_name.Trim()</span></p>
-                                    <div class="hot_comic_hide">
-                                        <a href="#" target="_blank" class="fl hot_comic_img">
-                                            <img xsrc="@it.Comic_cover" src="@it.Comic_cover" alt="" />
-                                        </a>
-                                        <div class="fl hot_comic_content">
-                                            <a href="#" class="comic_tit" target="_blank">@it.Comic_name.Trim()</a>
-                                            <div class="comic_style">
-                                                <span class="fl diamonds">@it.Contents</span>
-                                                <span class="fl diamonds">@it.Forms</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        }
-                        else
-                        {
-                            <li class="">
-                                <span class="fl hot_num hot_num_orange">@i</span>
-                                <div class="hot_comic_box">
-                                    <p class="overflow hot_comic_show"><span class="fl hot_comic_tit">@it.Comic_name.Trim()</span></p>
-                                    <div class="hot_comic_hide">
-                                        <a href="#" target="_blank" class="fl hot_comic_img">
-                                            <img xsrc="@it.Comic_cover" src="@it.Comic_cover" alt="" />
-                                        </a>
-                                        <div class="fl hot_comic_content">
-                                            <a href="#" class="comic_tit" target="_blank">@it.Comic_name.Trim()</a>
-                                            <div class="comic_style">
-                                                <span class="fl diamonds">@it.Contents</span>
-                                                <span class="fl diamonds">@it.Forms</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        }
-                        i++;
-                    }
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="v5_comic_list comic_list_qy">
-    <div class="fl comic_content">
-        <div class="comic_content_tit lazy_parent">
-            <h2>最近更新漫画</h2>
-            <ul class="fl comic_choose">
-                <li class="rank_tab lazy_cut cur">全部</li>
-
-            </ul>
-            <a href="#" target="_blank" class="fr comic_look_more">更多</a>
-        </div>
-        <div class="overflow comic_list_slide_box lazy_load">
-            <div class="cutUl lazyload cut1">
-                <ul class="comic_all" style="padding-left:0px;">
-                    @foreach (var it in Model.uc)
-                    {
-                        <li>
-                            <!--  -->
-                            <!--  -->
-                            <a href="@Url.Action("Detail","Comic",new { cid=it.Comic.Comic_id })" class="comic_pic" target="_blank">
-                                <img xsrc="@it.Comic.Comic_cover" alt="" src="@it.Comic.Comic_cover" title="@it.Comic.Comic_name.Trim()" />
-                            </a>
-                            <a href="#" class="comic_tit" target="_blank" title="@it.Comic.Comic_name.Trim()"><i class="ico_rec"></i>@it.Comic.Comic_name</a>
-
+                        <li class="cur">
+                            <a href="#" target="_blank" data-little="@it.Comic_background.Trim()" data-src="@it.Comic_background.Trim()" data-call="@it.Comic_name.Trim()"></a>
                         </li>
                     }
+
                 </ul>
-                <div class="comic_slide_prev"></div>
-                <div class="comic_slide_next"></div>
+            </div>
+            <!-- 轮播选项 -->
+            <div class="fl loop_choose">
+                <!-- 轮播图标题 -->
+                <div class="loop_tit">
+                    <a href="javascript:;" target="_blank"></a>
+                </div>
+                <!-- 轮播图标题 end -->
+                <!-- 轮播图小图及左右按钮 -->
+                <div class="loop_pagination">
+                    <div class="fl pagination_btn pagination_prev"></div>
+                    <div class="fl loop_focus_pic_box">
+                        <ul class="overflow little_pic" style="padding-left:0px;"></ul>
+                    </div>
+                    <div class="fl pagination_btn pagination_next"></div>
+                </div>
+                <!-- 轮播图小图及左右按钮 end -->
+            </div>
+            <!-- 轮播选项 end -->
+        </div>
+        <div class="hot__mask_bg_box"></div>
+        <div class="fl all_hottest">
+            <div class="fl all_hot">
+                <div class="overflow hot_tab">
+                    <h2 class="fl hot_tit" style="margin-top:0px;">全站最热</h2>
+                    <a href="javascript:void(0);" class="fl hot_rank_tab_up hot_tab_btn cur">全部</a>\
+                </div>
+                <div class="overflow hot_comic_cut hot_comic_all lazyload">
+
+                    <ul class="overflow hot_comic_list" style="width:220px;height:333px;padding-left:0px;">
+                        @foreach (var it in Model.Nc)
+                        {
+                            if (i == 1)
+                            {
+                                <li class="hot_comic_detail">
+                                    <span class="fl hot_num hot_num_orange">@i</span>
+                                    <div class="hot_comic_box">
+                                        <p class="overflow hot_comic_show"><span class="fl hot_comic_tit">@it.Comic_name.Trim()</span></p>
+                                        <div class="hot_comic_hide">
+                                            <a href="#" target="_blank" class="fl hot_comic_img">
+                                                <img xsrc="@it.Comic_cover" src="@it.Comic_cover" alt="" />
+                                            </a>
+                                            <div class="fl hot_comic_content">
+                                                <a href="#" class="comic_tit" target="_blank">@it.Comic_name.Trim()</a>
+                                                <div class="comic_style">
+                                                    <span class="fl diamonds">@it.Contents</span>
+                                                    <span class="fl diamonds">@it.Forms</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            }
+                            else
+                            {
+                                <li class="">
+                                    <span class="fl hot_num hot_num_orange">@i</span>
+                                    <div class="hot_comic_box">
+                                        <p class="overflow hot_comic_show"><span class="fl hot_comic_tit">@it.Comic_name.Trim()</span></p>
+                                        <div class="hot_comic_hide">
+                                            <a href="#" target="_blank" class="fl hot_comic_img">
+                                                <img xsrc="@it.Comic_cover" src="@it.Comic_cover" alt="" />
+                                            </a>
+                                            <div class="fl hot_comic_content">
+                                                <a href="#" class="comic_tit" target="_blank">@it.Comic_name.Trim()</a>
+                                                <div class="comic_style">
+                                                    <span class="fl diamonds">@it.Contents</span>
+                                                    <span class="fl diamonds">@it.Forms</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            }
+                            i++;
+                        }
+                    </ul>
+                </div>
             </div>
         </div>
-</div>
     </div>
+    <div class="v5_comic_list comic_list_qy">
+        <div class="fl comic_content">
+            <div class="comic_content_tit lazy_parent">
+                <h2>最近更新漫画</h2>
+                <ul class="fl comic_choose">
+                    <li class="rank_tab lazy_cut cur">全部</li>
 
+                </ul>
+                <a href="#" target="_blank" class="fr comic_look_more">更多</a>
+            </div>
+            <div class="overflow comic_list_slide_box lazy_load">
+                <div class="cutUl lazyload cut1">
+                    <ul class="comic_all" style="padding-left:0px;">
+                        @foreach (var it in Model.uc)
+                        {
+                            <li>
+                                <!--  -->
+                                <!--  -->
+                                <a href="@Url.Action("Detail","Comic",new { cid=it.Comic.Comic_id })" class="comic_pic" target="_blank">
+                                    <img xsrc="@it.Comic.Comic_cover" alt="" src="@it.Comic.Comic_cover" title="@it.Comic.Comic_name.Trim()" />
+                                </a>
+                                <a href="#" class="comic_tit" target="_blank" title="@it.Comic.Comic_name.Trim()"><i class="ico_rec"></i>@it.Comic.Comic_name</a>
+
+                            </li>
+                        }
+                    </ul>
+                    <div class="comic_slide_prev"></div>
+                    <div class="comic_slide_next"></div>
+                </div>
+            </div>
+    </div>
+        </div>*@
+<div class="wrap">
+    <!-- Banner -->
+    <div class="japan-works ui-wm clearfix">
+        <div class="japan-banner">
+            <div class="japan-banner-slider">
+                <span class="banner-border-right">&nbsp;</span>
+                <div class="japan-rise-tab">
+                    <a title="上一页" class="arrow japan-rise-leftbtn first" href="javascript:void(0);">上一页</a>
+                    <a title="寻找身体" class="in-rise-tab-num" href="https://ac.qq.com/Comic/comicInfo/id/540908" target="_blank">
+                        <img src="./日漫 - 腾讯动漫官方网站_files/0" width="65" height="40" alt="寻找身体">
+                    </a>
+                    <a title="下一页" class="arrow japan-rise-rightbtn last" href="javascript:void(0);">下一页</a>
+                </div>
+                <div class="bx-wrapper" style="max-width: 9000px;">
+                    <div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 297px;">
+                        <ul class="banner-slider-list" id="japan-slider-list" style="width: auto; position: relative;">
+                            <li style="float: none; list-style: none; position: absolute; width: 9000px; z-index: 0; display: none;">
+                                <a href="https://ac.qq.com/Comic/comicInfo/id/540908" title="寻找身体" class="banner-img" target="_blank">
+                                    <img src="./日漫 - 腾讯动漫官方网站_files/0(3)" alt="寻找身体">
+                                </a>
+                                <div class="banner-slider-text">
+                                    <a href="https://ac.qq.com/Comic/comicInfo/id/540908" class="banner-slider-a" title="寻找身体" target="_blank">
+                                        寻找身体
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="japan-new ui-right">
+            <h2 class="tit">最近更新</h2>
+            <span class="new-border-left">&nbsp;</span>
+            <div class="japan-new-slider">
+                <div class="bx-wrapper mod-slider" style="max-width: 100%; position: relative;">
+                    <div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 171px;">
+                        <ul class="japan-new-list" id="japan-new-list" style="width: auto; position: relative;">
+                            <li style="float: none; list-style: none; position: absolute; width: 394px; z-index: 0; display: none;">
+                                <div class="japan-new-mod">
+                                    <a href="https://ac.qq.com/Comic/comicInfo/id/530132" title="食戟之灵" target="_blank" class="new-img">
+                                        <img width="100" height="133" src="./日漫 - 腾讯动漫官方网站_files/420" alt="食戟之灵"><span class="mod-layer-mask"></span>
+                                    </a>
+                                    <div class="new-text">
+                                        <p class="new-name">
+                                            <a href="https://ac.qq.com/Comic/comicInfo/id/530132" title="食戟之灵" target="_blank">食戟之灵</a>
+                                        </p>
+                                        <a href="https://ac.qq.com/ComicView/index/id/530132/seqno/310" class="new-a" title="更新至310话" target="_blank">更新至310话</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li style="float: none; list-style: none; position: absolute; width: 394px; z-index: 0; display: none;">
+                                <div class="japan-new-mod">
+                                    <a href="https://ac.qq.com/Comic/comicInfo/id/530132" title="食戟之灵" target="_blank" class="new-img">
+                                        <img width="100" height="133" src="./日漫 - 腾讯动漫官方网站_files/420" alt="食戟之灵"><span class="mod-layer-mask"></span>
+                                    </a>
+                                    <div class="new-text">
+                                        <p class="new-name">
+                                            <a href="https://ac.qq.com/Comic/comicInfo/id/530132" title="食戟之灵" target="_blank">食戟之灵</a>
+                                        </p>
+                                        <a href="https://ac.qq.com/ComicView/index/id/530132/seqno/310" class="new-a" title="更新至310话" target="_blank">更新至310话</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li style="float: none; list-style: none; position: absolute; width: 394px; z-index: 50; display: list-item;">
+                                <div class="japan-new-mod">
+                                    <a href="https://ac.qq.com/Comic/comicInfo/id/530132" title="食戟之灵" target="_blank" class="new-img">
+                                        <img width="100" height="133" src="./日漫 - 腾讯动漫官方网站_files/420" alt="食戟之灵"><span class="mod-layer-mask"></span>
+                                    </a>
+                                    <div class="new-text">
+                                        <p class="new-name">
+                                            <a href="https://ac.qq.com/Comic/comicInfo/id/530132" title="食戟之灵" target="_blank">食戟之灵</a>
+                                        </p>
+                                        <a href="https://ac.qq.com/ComicView/index/id/530132/seqno/310" class="new-a" title="更新至310话" target="_blank">更新至310话</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--正版漫画-->
+    <div class="Japan-comic ui-wm">
+        <div class="Japan-bx-head clearfix">
+            <h2>正版漫画</h2>
+            <div class="Japan-head-content clearfix">
+            </div>
+        </div>
+        <div class="Japan-comic-box clearfix clearfix">
+            <h2>看漫画<i></i></h2>
+            <ul>
+                <li>
+                    <strong class="ui-japan-red">连载中</strong>
+                    <a href="https://ac.qq.com/Comic/comicInfo/id/505430" title="航海王" target="_blank">【航海王】</a>
+                </li>
+                <li>
+                    <strong class="ui-japan-red">连载中</strong>
+                    <a href="https://ac.qq.com/Comic/comicInfo/id/505430" title="航海王" target="_blank">【航海王】</a>
+                </li>
+            </ul>
+        </div>
+        <div class="Japan-comic-wrap clearfix">
+            <!--漫画列表-->
+            <div class="Japan-comic-list" style="width: 1200px;">
+                <div class="Japan-comic-head clearfix">
+                    <h3 class="ui-left">漫画列表</h3>
+                    <ul class="clearfix Japan-list-tab" id="Japan-list-tab-ani">
+                        <li class="comic-list-all"><a href="javascript:void(0)" title="全部">全部</a></li>
+                        <li class=""><a href="javascript:void(0)" title="连载中">连载中</a></li>
+                        <li class=""><a href="javascript:void(0)" title="已完结">已完结</a></li>
+                        <li class=""><a href="javascript:void(0)" title="番外篇">番外篇</a></li>
+                        <li class="active"><a href="javascript:void(0)" title="全彩版" class="ui-japan-brn">全彩版</a></li>
+                    </ul>
+                </div>
+               <div class="">
+                </div>

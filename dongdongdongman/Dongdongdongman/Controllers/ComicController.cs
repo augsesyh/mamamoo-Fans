@@ -10,6 +10,7 @@ namespace Dongdongdongman.Controllers
 {
     public class ComicController : Controller
     {
+        ComicManager cm = new ComicManager();
         dongdongdongEntities db = new dongdongdongEntities();
         // GET: Comic
         public ActionResult Index()
@@ -113,7 +114,7 @@ namespace Dongdongdongman.Controllers
             Comic_pagerMananger ccm = new Comic_pagerMananger();
            var da = ccm.FindBynums(cid,nums);
             var dc =da.Comic_chapter.Comic_chapter_num + 1;
-            int dr;
+            
                 var dt = da.Comic_chapter.Comic.Comic_chapter.Where(o => o.Comic_chapter_num == dc).FirstOrDefault();
              if(dt!=null)
             {
@@ -143,6 +144,23 @@ namespace Dongdongdongman.Controllers
             SubscribeManager sm = new SubscribeManager();
             sm.AddSubscribe(cci, ui);
             return RedirectToAction("Detail","Comic",new { cid=c.Comic_id });
+        }
+        public ActionResult Add_Comic(int coid)
+        {
+            var da = cm.FindComic(coid);
+            int ccid = da.Comic_chapter.Where(o => o.Comic_chapter_num == 1).FirstOrDefault().Comic_chapter_id;
+            int uid = Convert.ToInt32(Session["User_id"].ToString());
+            SubscribeManager sm = new SubscribeManager();
+            sm.Add_Comic(coid, uid);
+            return RedirectToAction("Comic_pager", "Comic", new { cid = ccid });
+        }
+        [HttpPost]
+          public ActionResult Comment_jubao(string leibie,string miaoshu,string jb)
+        {
+            int uid = Convert.ToInt32(Session["User_id"].ToString());
+            ReportManager rp = new ReportManager();
+            rp.Add_Report(leibie, miaoshu, jb, uid);
+            return Content("<script>windows.loaction.href=windows.location.href;</scripts>");
         }
     }
 }

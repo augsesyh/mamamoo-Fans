@@ -10,5 +10,6 @@ namespace IDAL
     {
         IEnumerable<Subscribe> Findsu(int uid);
         void AddSubscribe(int ccid,int uid);
+        void Add_Comic(int coid,int uid);
     }
 }

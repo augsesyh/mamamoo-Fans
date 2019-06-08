@@ -57,11 +57,11 @@
 
                     <div class="sr-detail__bottom f-cb js-detail-bottom">
                         <div class="f-fl sr-detail__bleft f-cb">
-                            <a href="#" class="sr-btn u-btn-read z-danger f-fl j-read"><span class="sr-icon sprite-icon_2-book"></span> 开始阅读 </a>
+                            <a href="@Url.Action("Comic_pager","Comic",new { cid=Model.ca.OrderBy(o=>o.Comic_chapter_num).FirstOrDefault().Comic_chapter_id,nums = 1})"" class="sr-btn u-btn-read z-danger f-fl j-read"><span class="sr-icon sprite-icon_2-book"></span> 开始阅读 </a>
                         </div>
                         <div class="sr-btn u-btn-collect f-fl j-fav-button">
                             <div class="sprite-icon_2-collect sr-icon"></div>
-                            <span>订阅</span>
+                            <span><a href="@Url.Action("Add_Comic", "Comic", new { coid = Model.a.Comic_id })">订阅</a></span>
                         </div>
                     </div>
 
@@ -158,6 +158,47 @@
             </div>
         </div>
     </div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title" id="myModalLabel">举报评论</h4>
+            </div> 
+        <form action="@Url.Action("Comment_jubao","Comic")" method="post" id="Jubao_Form">
+                <div class="modal-body" style="height:300px;">
+
+                    <div class="form-group">
+                        <div class="col-md-3 control-label">
+                            举报类别
+                        </div>
+                        <div class="col-md-9">
+                            <select class="form-control input-lg" name="leibie" size="1">
+                                <option value="0">广告，发布谣言</option>
+                                <option value="1">淫秽，色情</option>
+                                <option value="2">出口成脏</option>
+                                <option value="3">泄露国家机密</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-3 control-label">
+                            问题描述
+                        </div>
+                        <div class="col-md-9">
+                            <textarea class="form-control" name="miaoshu" placeholder="问题描述" rows="9"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="submit" class="btn btn-primary" style="color: #faf8f8;background-color: #ff2853; border-color: #ff2853;">提交举报</button>
+
+                </div>
+        </form>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
     @section scripts
 {
         @{Html.RegisterMvcPagerScriptResource();}

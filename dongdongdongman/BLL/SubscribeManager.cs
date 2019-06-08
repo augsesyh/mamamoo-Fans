@@ -20,5 +20,9 @@ namespace BLL
         {
              Is.AddSubscribe(ccid,uid);
         }
+        public void Add_Comic(int coid,int uid)
+        {
+            Is.Add_Comic(coid, uid);
+        }
     }
 }

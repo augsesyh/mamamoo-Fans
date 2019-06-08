@@ -59,5 +59,10 @@ namespace DALFactory
             string className = AssemblyName + "." + db + "admin";
             return (IAdmin)Assembly.Load(AssemblyName).CreateInstance(className);
         }
+        public static IReport CreateReport()
+        {
+            string className = AssemblyName + "." + db + "Report";
+            return (IReport)Assembly.Load(AssemblyName).CreateInstance(className);
+        }
     }
 }

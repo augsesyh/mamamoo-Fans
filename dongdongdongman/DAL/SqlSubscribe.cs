@@ -28,5 +28,23 @@ namespace DAL
             db.Subscribe.Add(su);
             db.SaveChanges();
         }
+
+        public void Add_Comic(int coid,int uid)
+        {
+            List<Subscribe> ac=new List<Subscribe>();
+            var da = db.Comic_chapter.Where(o=>o.Comic_id==coid).Where(c=>c.Comic_fufei==1);
+            foreach(var it in da)
+            {
+                Subscribe sb = new Subscribe();
+                sb.Comic_detail_id = it.Comic_chapter_id;
+                sb.Subscribe_nums = 1;
+                sb.Subscribe_price = 10;
+                sb.Subscribe_time = DateTime.Now;
+                sb.User_id = uid;
+                ac.Add(sb);
+            }
+            db.Subscribe.AddRange(ac);
+            db.SaveChanges();
+        }
     }
 }
