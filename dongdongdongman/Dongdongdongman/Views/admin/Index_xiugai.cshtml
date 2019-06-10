@@ -1,27 +1,29 @@
-﻿@model IEnumerable<Models.Goods_Cate>
+﻿@model Dongdongdongman.Models.Admin_Index_xiugai
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Index_xiugai";
     Layout = "~/Views/Shared/admin_Layout.cshtml";
 }
 
 <div class="row">
     <div class="col-lg-12">
-        <h3 class="page-header"><i class="fa fa-indent"></i>商品上架</h3>
-        <ol class="breadcrumb">商品管理<li><i class="fa fa-home"></i>商品上架</li></ol>
+        <h3 class="page-header"><i class="fa fa-indent"></i>商品下架</h3>
+        <ol class="breadcrumb">商品管理<li><i class="fa fa-home"></i>商品修改</li></ol>
     </div>
 </div>
 <div class="row">
     <div class="col-md-12">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h2><i class="fa fa-indent red"></i><strong>商品上架</strong></h2>
+                <h2><i class="fa fa-indent red"></i><strong>商品修改</strong></h2>
             </div>
             <div class="panel-body">
-                <form action="@Url.Action("SaveAs","admin")" method="post" enctype="multipart/form-data">
+                <form action="@Url.Action("Good_xiugai","admin")" method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="Gid" value="@ViewBag.id">
+                    <input type="hidden" name="id" value="@Model.good.Goods_id">
                     <div class="control-group row">
                         <label class="col-md-1 control-label span3"></label>
                         <div class="col-md-5">
-                            <img src="" id="img1" style="min-width:100px;min-height:100px;max-width:400px;max-height:800px;">
+                            <img src="@Model.good.Goods_photo" id="img1" style="min-width:100px;min-height:100px;max-width:400px;max-height:800px;">
                         </div>
 
                     </div>
@@ -32,7 +34,7 @@
                             <div class="input-group">
                                 <input id="photoCover" class="form-control" readonly type="text">
                                 <label class="input-group-btn">
-                                    <input id="file" type="file" name="file" style="left: -9999px; position: absolute;">
+                                    <input id="file" type="file" name="file" style="left: -9999px; position: absolute;" value="@Model.good.Goods_photo">
                                     <span class="btn btn-default">Browse</span>
                                 </label>
                             </div>
@@ -42,7 +44,7 @@
                     <div class="control-group row">
                         <label class="col-md-1 control-label span3"></label>
                         <div class="col-md-5">
-                            <img src="" id="img" style="min-width:100px;min-height:100px;max-width:400px;max-height:800px;">
+                            <img src="@Model.good.Goods_intro" id="img" style="min-width:100px;min-height:100px;max-width:400px;max-height:800px;">
                         </div>
 
                     </div>
@@ -53,7 +55,7 @@
                             <div class="input-group">
                                 <input id="photoCover1" class="form-control" readonly type="text">
                                 <label class="input-group-btn">
-                                    <input id="file1" type="file" name="file1" style="left: -9999px; position: absolute;">
+                                    <input id="file1" type="file" name="file1" style="left: -9999px; position: absolute;" value="@Model.good.Goods_intro">
                                     <span class="btn btn-default">Browse</span>
                                 </label>
                             </div>
@@ -63,43 +65,43 @@
                     <div class="control-group row" style="width:50%;margin-top:20px;">
                         <label for="requirement" class="col-sm-2 control-label span3">商品详情文字</label>
                         <div class="col-sm-4">
-                            <textarea id="Good_text" type="text" name="Good_text" class="form-control"></textarea>
+                            <textarea id="Good_name" type="text" name="Good_name" class="form-control">@Model.good.Good_intro_text</textarea>
                         </div>
                     </div>
                     <div class="control-group row" style="width:50%;margin-top:20px;">
                         <label for="requirement" class="col-sm-2 control-label span3">商品名称</label>
                         <div class="col-sm-4">
-                            <input id="Good_name" type="text" name="Good_name" class="form-control" />
+                            <input id="Good_name" type="text" name="Good_name" class="form-control" value="@Model.good.Goods_name" />
                         </div>
                     </div>
                     <div class="control-group row" style="width:50%;margin-top:20px;">
                         <label for="requirement" class="col-sm-2 control-label span3">商品价格</label>
                         <div class="col-sm-4">
-                            <input id="Good_price" type="text" name="Good_price" class="form-control" />
+                            <input id="Good_price" type="text" name="Good_price" class="form-control" value="@Model.good.Goods_price" />
                         </div>
                     </div>
                     <div class="control-group row" style="width:50%;margin-top:20px;">
                         <label for="requirement" class="col-sm-2 control-label span3">商品库存</label>
                         <div class="col-sm-4">
-                            <input id="Good_nums" type="text" name="Good_nums" class="form-control" />
+                            <input id="Good_nums" type="text" name="Good_nums" class="form-control" value="@Model.good.Goods_nums"/>
                         </div>
                     </div>
                     <div class="control-group row" style="width:50%;margin-top:20px;">
 
                         <label for="requirement" class="col-sm-2 control-label span3">商品类别</label>
                         <div class="col-sm-6">
-                            <select size="1" id="Good_Cate" name="Good_Cate" class="form-control">
-                                @foreach (var it in Model)
+                            <select size="1" value="@Model.good.Goods_Cate1.Goods_Cate_name" id="Good_Cate" name="Good_Cate" class="form-control">
+                                @foreach (var it in Model.gc)
                                 {
                                     <option value="@it.Cate_id">@it.Goods_Cate_name</option>
                                 }
                             </select>
-                            <a href="javascript:void(0);" data-toggle="modal" data-target="#admin_Modal">添加种类</a>
+
                         </div>
                     </div>
 
                     <div class="control-group row" style="padding-left:10px;padding-top:10px;">
-                        <button class="btn btn-sm btn-success" type="submit"><i class="fa fa-dot-circle-o"></i>上架</button>
+                        <button class="btn btn-sm btn-success" type="submit"><i class="fa fa-dot-circle-o"></i>修改</button>
                         <button class="btn btn-sm btn-danger" type="reset"><i class="fa fa-ban"></i>重置</button>
                     </div>
                 </form>
@@ -107,32 +109,4 @@
         </div>
     </div>
 </div>
-<div class="modal fade" id="admin_Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h4 class="modal-title" id="myModalLabel">举报评论</h4>
-            </div>
-            <form action="@Url.Action("Add_Cate","admin")" method="post" id="Add_Form">
-                <div class="modal-body" >
 
-                    
-                    <div class="form-group">
-                        <div class="col-md-3 control-label">
-                            商品类别
-                        </div>
-                        <div class="col-md-9">
-                           <input class="form-control" id="Good_Ca" name="Good_Ca" type="text">
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                    <button type="submit" class="btn btn-primary">添加种类</button>
-
-                </div>
-            </form>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div>

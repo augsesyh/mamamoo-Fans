@@ -1,0 +1,15 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Models;
+namespace IDAL
+{
+    public interface IGood_Cate
+    {
+        IEnumerable<Goods_Cate> FindAllGood_Cate();
+        void Add_Cate(string name);
+    }
+
+}

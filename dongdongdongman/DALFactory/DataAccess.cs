@@ -64,5 +64,16 @@ namespace DALFactory
             string className = AssemblyName + "." + db + "Report";
             return (IReport)Assembly.Load(AssemblyName).CreateInstance(className);
         }
+        public static IGood_Cate CreateGood_Cate()
+        {
+            string className = AssemblyName + "." + db + "Good_Cate";
+            return (IGood_Cate)Assembly.Load(AssemblyName).CreateInstance(className);
+        }
+        public static IGoods_Assess CreateGoods_Assess()
+        {
+            string className = AssemblyName + "." + db + "Goods_Assess";
+            return (IGoods_Assess)Assembly.Load(AssemblyName).CreateInstance(className);
+        }
+
     }
 }

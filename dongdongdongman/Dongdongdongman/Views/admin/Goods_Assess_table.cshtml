@@ -1,0 +1,21 @@
+﻿<div class="row activity" id="pinjia">
+    @foreach (var it in Model)
+    {
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <input type="checkbox" id="cbox" name="cbox" value="@it.Assess_id">
+                    <img class="img-rounded" src="@it.User.User_detail.User_head">
+                    <div><a href="#"><strong>@it.User.User_detail.User_name</strong></a>对<a href="#"><strong>@it.Goods.Goods_name</strong></a></div>
+                </div>
+                <div class="panel-body">
+                    <p>@it.Assess_intro</p>
+                    <div class="actions"><div class="btn-group">@Ajax.ActionLink("删除", "Del_Assess", new { gaid = it.Assess_id }, new AjaxOptions { UpdateTargetId = "pinjia", HttpMethod = "post", InsertionMode = InsertionMode.Replace })</div></div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/Scripts/jquery.unobtrusive-ajax.min.js")
+@Scripts.Render("~/Scripts/shiyonghui/Admin_Comment.js")

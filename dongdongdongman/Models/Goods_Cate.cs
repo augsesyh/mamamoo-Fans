@@ -17,13 +17,13 @@ namespace Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Goods_Cate()
         {
-            this.Goods_Cate_Goods = new HashSet<Goods_Cate_Goods>();
+            this.Goods = new HashSet<Goods>();
         }
     
         public int Cate_id { get; set; }
         public string Goods_Cate_name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Goods_Cate_Goods> Goods_Cate_Goods { get; set; }
+        public virtual ICollection<Goods> Goods { get; set; }
     }
 }
