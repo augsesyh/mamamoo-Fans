@@ -16,14 +16,14 @@
             <div class="panel-heading" style="line-height:63px;">
                 <h2><i class="fa fa-table red"></i><span class="break"></span><strong>漫画列表</strong></h2>
                 <div class="panel-actions">
-                    @using (Ajax.BeginForm("FindBystr", "admin", new AjaxOptions { HttpMethod = "post", InsertionMode = InsertionMode.Replace, UpdateTargetId = "postContent" }, htmlAttributes: new { @class = "navbar-form navbar-right" }))
+                    @using (Ajax.BeginForm("FindBystr_Comic", "admin", new AjaxOptions { HttpMethod = "get", InsertionMode = InsertionMode.Replace, UpdateTargetId = "Comic_list" }, htmlAttributes: new { @class = "navbar-form navbar-right" }))
                     {
                         <button class="btn btn-primary" type="submit"><i class="fa fa-search"></i>Search</button><input type="text" class="form-control" placeholder="Search..." id="shoushuo" name="shoushuo">
                     }
                 </div>
             </div>
             <div class="panel-body">
-                @Html.Partial("")
+                @Html.Partial("Comic_List",Model)
             </div>
         </div>
     </div>

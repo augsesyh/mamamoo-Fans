@@ -206,11 +206,28 @@ namespace Dongdongdongman.Controllers
         }
         public ActionResult Comics_Index()
         {
-            return View();
+            return View(db.Comic);
         }
         public ActionResult Comic_List()
         {
-            return PartialView();
+            return PartialView(db.Comic);
+        }
+        public ActionResult Del_Comic(int cid)
+        {
+            ComicManager cm = new ComicManager();
+            cm.Del_Comic(cid);
+            return RedirectToAction("Comic_List");
+        }
+      
+        public ActionResult FindBystr_Comic(string shoushuo)
+        {
+            if(shoushuo.Trim() == "")
+            {
+                return PartialView("Comic_List", db.Comic);
+            }
+            ComicManager cm = new ComicManager();
+            var da = cm.FindByName(shoushuo);
+            return PartialView("Comic_List",da);
         }
     }
 }
