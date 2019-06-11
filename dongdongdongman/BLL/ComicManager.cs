@@ -32,5 +32,13 @@ namespace BLL
         {
             return Ic.FindTop(nums);
         }
+        public void Del_Comic(int Comic_id)
+        {
+            Ic.Del_Comic(Comic_id);
+        }
+        public IQueryable<Comic> FindByName(string name)
+        {
+            return Ic.GetComicByname(name);
+        }
     }
 }

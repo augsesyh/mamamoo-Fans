@@ -1,0 +1,19 @@
+﻿@model IEnumerable<Models.Comic>
+<div class="row" id="Comic_list">
+    @foreach (var it in Model)
+    {
+        <div class="col-sm-3 col-md-3">
+            <div class="thumbnail">
+                <img src="@it.Comic_cover" style="height:277px;width:210px;" onerror="javascript:this.src='/Img/kongbai.jpg';" alt="专栏作者">
+                <div class="caption">
+                    <h3>@it.Comic_name</h3>
+
+                    <p>
+                        @Ajax.ActionLink("删除", "Del_Comic",new { cid=it.Comic_id }, new AjaxOptions { UpdateTargetId = "Comic_list", HttpMethod = "post", InsertionMode = InsertionMode.Replace },htmlAttributes:new { @class="btn btn-primary",role="button" })
+                    </p>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+@Scripts.Render("~/Scripts/jquery.unobtrusive-ajax.min.js")

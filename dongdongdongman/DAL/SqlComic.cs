@@ -38,5 +38,17 @@ namespace DAL
             var da = db.Comic.OrderBy(o=>o.Follow_nums).Take(nums);
             return da;
         }
+
+        public void Del_Comic(int Comic_id)
+        {
+            var da = db.Comic.Where(o=>o.Comic_id==Comic_id).FirstOrDefault();
+            db.Comic.Remove(da);
+            db.SaveChanges();
+        }
+
+        public IQueryable<Comic> GetComicByname(string name)
+        {
+            return db.Comic.Where(o=>o.Comic_name.IndexOf(name)>=0);
+        }
     }
 }

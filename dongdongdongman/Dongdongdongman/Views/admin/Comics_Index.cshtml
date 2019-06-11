@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Models.Comic>
+@{
+    ViewBag.Title = "Comics_Index";
+    Layout = "~/Views/Shared/admin_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <h3 class="page-header"><i class="fa fa-indent"></i>商品上架</h3>
+        <ol class="breadcrumb">商品管理<li><i class="fa fa-home"></i>商品下架</li></ol>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading" style="line-height:63px;">
+                <h2><i class="fa fa-table red"></i><span class="break"></span><strong>漫画列表</strong></h2>
+                <div class="panel-actions">
+                    @using (Ajax.BeginForm("FindBystr_Comic", "admin", new AjaxOptions { HttpMethod = "get", InsertionMode = InsertionMode.Replace, UpdateTargetId = "Comic_list" }, htmlAttributes: new { @class = "navbar-form navbar-right" }))
+                    {
+                        <button class="btn btn-primary" type="submit"><i class="fa fa-search"></i>Search</button><input type="text" class="form-control" placeholder="Search..." id="shoushuo" name="shoushuo">
+                    }
+                </div>
+            </div>
+            <div class="panel-body">
+                @Html.Partial("Comic_List",Model)
+            </div>
+        </div>
+    </div>
+</div>

@@ -18,7 +18,6 @@ namespace Models
         public Goods()
         {
             this.Goods_Assess = new HashSet<Goods_Assess>();
-            this.Goods_Cate_Goods = new HashSet<Goods_Cate_Goods>();
             this.Order_details = new HashSet<Order_details>();
             this.ShoppingCart = new HashSet<ShoppingCart>();
         }
@@ -28,11 +27,13 @@ namespace Models
         public double Goods_price { get; set; }
         public string Goods_intro { get; set; }
         public string Goods_photo { get; set; }
+        public Nullable<int> Goods_cate { get; set; }
+        public Nullable<int> Goods_nums { get; set; }
+        public string Good_intro_text { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Goods_Assess> Goods_Assess { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Goods_Cate_Goods> Goods_Cate_Goods { get; set; }
+        public virtual Goods_Cate Goods_Cate1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order_details> Order_details { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

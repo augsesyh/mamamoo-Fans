@@ -13,5 +13,7 @@ namespace IDAL
         IQueryable<Comic_chapter> Up_new();
         Comic FindComic(int id);
         IQueryable<Comic> FindTop(int nums);
+        void Del_Comic(int Comic_id);
+        IQueryable<Comic> GetComicByname(string name);
     }
 }

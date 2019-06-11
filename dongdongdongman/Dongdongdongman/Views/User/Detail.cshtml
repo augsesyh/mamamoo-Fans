@@ -3,47 +3,64 @@
     ViewBag.Title = "Detail";
     Layout = "~/Views/Shared/User_Layout.cshtml";
 }
-<div class="user_de_all">
-    <div class="container">
-        <div class="user_de_ne">
-            <div class="row">
-                <div class="col-md-3">
+@*<div class="user_de_all">
+        <div class="container">
+            <div class="user_de_ne">
+                <div class="row">
+                    <div class="col-md-3">
+                    </div>
+                    <div class="col-md-6">
+                        昵称:<p>@Model.User_name</p>
+                    </div>
+                    <div class="col-md-3">
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    昵称:<p>@Model.User_name</p>
+                <div class="row">
+                    <div class="col-md-3">
+                    </div>
+                    <div class="col-md-6">
+                        自我简介:<p>@Model.User_name</p>
+                    </div>
+                    <div class="col-md-3">
+                    </div>
                 </div>
-                <div class="col-md-3">
+                <div class="row">
+                    <div class="col-md-3">
+                    </div>
+                    <div class="col-md-6">
+                        真实姓名:<p>@Model.User_realname</p>
+                    </div>
+                    <div class="col-md-3">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                    </div>
+                    <div class="col-md-6">
+                        邮箱:<p>@Model.User_email</p>
+                    </div>
+                    <div class="col-md-3">
+                    </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-3">
+
+    </div> </div>*@
+<div class="row profile">
+    <div class="col-md-5">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="text-center">
+                    <img class="img-profile" onerror="javascript:this.src='/Img/kongbai.jpg';" src="@Model.User_head">
                 </div>
-                <div class="col-md-6">
-                    自我简介:<p>@Model.User_name</p>
-                </div>
-                <div class="col-md-3">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-3">
-                </div>
-                <div class="col-md-6">
-                    真实姓名:<p>@Model.User_realname</p>
-                </div>
-                <div class="col-md-3">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-3">
-                </div>
-                <div class="col-md-6">
-                    邮箱:<p>@Model.User_email</p>
-                </div>
-                <div class="col-md-3">
-                </div>
+                <h2 class="text-center"><strong>@Model.User_name</strong></h2>
+                <hr>
+                <div class="row text-center"><div class="col-xs-4"><div><strong>@Model.User.FirstOrDefault().Subscribe.Count()</strong></div><div>订阅</div></div><div class="col-xs-4"><div><strong>@Model.User.FirstOrDefault().Reward.Count()</strong></div><div>打赏</div></div><div class="col-xs-4"><div><strong>@Model.User.FirstOrDefault().Follow.Count()</strong></div><div>订阅</div></div></div>
             </div>
         </div>
-
-</div> </div>
-
+    </div>
+    <div class="">
+    </div>
+</div>
 @Styles.Render("~/Content/shiyonghui/User_detail.css")
+@Styles.Render("~/Content/shiyonghui/style.min.css")
+@Styles.Render("~/Content/shiyonghui/font-awesome.min.css")

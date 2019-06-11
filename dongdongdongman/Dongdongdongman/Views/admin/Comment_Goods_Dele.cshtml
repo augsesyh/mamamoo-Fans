@@ -1,0 +1,87 @@
+﻿@model IEnumerable<Models.Goods_Assess>
+@{
+    ViewBag.Title = "Comment_Goods_Dele";
+    Layout = "~/Views/Shared/admin_Layout.cshtml";
+}
+<div class="row">
+    <div class="col-lg-12">
+        <h3 class="page-header">
+            <i class="fa fa-car"></i>
+            删除商品评论
+        </h3>
+        <ol class="breadcrumb">
+            <li><i class="fa fa-home"></i><a href="#">商品管理</a></li>
+            <li><i class="fa fa-file-text"></i><a href="#">删除评价</a></li>
+        </ol>
+    </div>
+</div>
+<div class="row activity">
+
+    <div class="col-md-2">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="checkbox col-sm-8"><label><input type="checkbox" id="All" name="All" value="全选" />全选</label></div>
+                <button class="btn btn-default" id="del"><span class="fa fa-trash-o"></span></button>
+            </div>
+        </div>
+    </div>
+    @using (Ajax.BeginForm("Shoushuo_Assess", "admin", new AjaxOptions { UpdateTargetId = "pinjia", HttpMethod = "get", InsertionMode = InsertionMode.Replace }))
+    {
+        <div class="col-md-3">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <input type="text" class="form-control" name="user_name" placeholder="按用户名称查找">
+                </div>
+                <div class="panel-footer" style="height:54px;">
+                    <div class="pull-right">
+                        <button class="btn btn-primary" type="submit">搜索</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <input type="text" class="form-control" name="Good_name" placeholder="按评价的商品名称查找">
+                </div>
+                <div class="panel-footer" style="height:54px;">
+                    <div class="pull-right">
+                        <button class="btn btn-primary" type="submit">搜索</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <input type="text" class="form-control" name="Assess_intro" placeholder="按评价的内容查找">
+                </div>
+                <div class="panel-footer" style="height:54px;">
+                    <div class="pull-right">
+                        <button class="btn btn-primary" type="submit">搜索</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+@*<div class="row activity" id="pinjia">*@
+
+@*@foreach (var it in Model)
+    {
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <input type="checkbox" value="@it.Assess_id">
+                    <img class="img-rounded" src="@it.User.User_detail.User_head">
+                    <div><a href="#"><strong>@it.User.User_detail.User_name</strong></a>对<a href="#"><strong>@it.Goods.Goods_name</strong></a></div>
+                </div>
+                <div class="panel-body">
+                    <p>@it.Assess_intro</p>
+                    <div class="actions"><div class="btn-group">@Ajax.ActionLink("删除","Del_Assess",new { gaid = it.Assess_id },new AjaxOptions { UpdateTargetId="pinjia",HttpMethod="post", InsertionMode = InsertionMode.Replace })</div></div>
+                </div>
+            </div>
+        </div>
+    }*@
+@*</div>*@
+@Html.Partial("Goods_Assess_table", Model)
