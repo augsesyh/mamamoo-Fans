@@ -74,6 +74,10 @@ namespace DALFactory
             string className = AssemblyName + "." + db + "Goods_Assess";
             return (IGoods_Assess)Assembly.Load(AssemblyName).CreateInstance(className);
         }
-
+        public static IFollow CreateFollow()
+        {
+            string className = AssemblyName + "." + db + "Follow";
+            return (IFollow)Assembly.Load(AssemblyName).CreateInstance(className);
+        }
     }
 }

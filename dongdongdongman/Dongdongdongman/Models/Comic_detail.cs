@@ -18,6 +18,7 @@ namespace Dongdongdongman.Models
        public PagedList<Comment> co;
        public IEnumerable<Comic> ac;
         public IEnumerable<Subscribe> su;
+        public Follow fol; 
        public Comic a;
         public User ur;
         public Comic_detail(int id,string name,int coid){
@@ -27,6 +28,7 @@ namespace Dongdongdongman.Models
             ac = cm.FindTop(4);
             ur = us.Findname(name);
             su = sm.Findsu(ur.User_id);
+            fol = a.Follow.Where(o => o.User_id == ur.User_id).FirstOrDefault();
        }
     }
 }
