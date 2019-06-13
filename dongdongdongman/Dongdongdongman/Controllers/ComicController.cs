@@ -162,5 +162,10 @@ namespace Dongdongdongman.Controllers
             rp.Add_Report(leibie, miaoshu, jb, uid);
             return Content("<script>windows.loaction.href=windows.location.href;</scripts>");
         }
+        //[HttpPost]
+        //public ActionResult Add_Follow(int Comic_id)
+        //{
+
+        //}
     }
 }

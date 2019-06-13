@@ -49,7 +49,7 @@ namespace Dongdongdongman.Controllers
                 return RedirectToAction("Index", "admin");
             }
         }
-        string Save_img(HttpPostedFileBase file, string Save)
+       public string Save_img(HttpPostedFileBase file, string Save)
         {
             //得到的名字是文件在本地机器的绝对路径
             var strLocalFullPathName = file.FileName;
@@ -228,6 +228,15 @@ namespace Dongdongdongman.Controllers
             ComicManager cm = new ComicManager();
             var da = cm.FindByName(shoushuo);
             return PartialView("Comic_List",da);
+        } 
+        public ActionResult Reposort_List()
+        {
+
+            return View();
+        }
+        public ActionResult Report_Table()
+        {
+            return PartialView();
         }
     }
 }

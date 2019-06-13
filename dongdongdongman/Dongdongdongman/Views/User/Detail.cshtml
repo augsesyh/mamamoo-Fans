@@ -45,77 +45,8 @@
             </div>
 
     </div> </div>*@
-<div class="row profile">
-    <div class="col-md-5">
-        <div class="panel panel-default">
-            <div class="panel-body">
-                <div class="text-center">
-                    <img class="img-profile" onerror="javascript:this.src='/Img/kongbai.jpg';" src="@Model.User_head">
-                </div>
-                <h2 class="text-center"><strong>@Model.User_name</strong></h2>
-                <hr>
-                <div class="row text-center"><div class="col-xs-4"><div><strong>@Model.User.FirstOrDefault().Subscribe.Count()</strong></div><div>订阅</div></div><div class="col-xs-4"><div><strong>@Model.User.FirstOrDefault().Reward.Count()</strong></div><div>打赏</div></div><div class="col-xs-4"><div><strong>@Model.User.FirstOrDefault().Follow.Count()</strong></div><div>订阅</div></div></div>
-                <hr>
-                <h4>
-                    <strong>基本信息</strong>
-                </h4>
-                <ul class="profile-details">
-                    <li><div><i class="fa fa-thumbs-up"></i>身份</div>用户</li>
-                    <li><div><i class="fa fa-user"></i>昵称</div>@Model.User_name</li>
-                </ul>
-                <hr>
-                <h4>详细信息</h4>
-                <ul class="profile-details">
-                    <li><div><i class="fa fa-envelope"></i>E_mail</div>@Model.User_email</li>
-                    <li><div><i class="fa fa-user-secret"></i>Realname</div>@Model.User_realname</li>
-                </ul>
-
-            </div>
-        </div>
-    </div>
-    <div class="col-md-7">
-
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h2><i class="fa fa-heart-o red"></i><strong>Update info</strong></h2>
-            </div>
-            <div class="panel-body">
-                <form class="form-vertical hover-stripped" role="form">
-                    <div class="form-group">
-                        <label class="control-label">Username</label>
-                        <input type="text" class="form-control" value="JhonSmith" disabled>
-                        <a href="#" class="help-block">Request new ?</a>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label">Full name</label>
-                        <input type="text" class="form-control" value="Jhon Smith">
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label">Email</label>
-                        <input type="email" class="form-control" value="jhonsmith@mail.com">
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label">New password</label>
-                        <input type="password" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label">Repeat password</label>
-                        <input type="password" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label">More info</label>
-                        <textarea class="form-control" rows="3"></textarea>
-                    </div>
-
-                    <div class="form-group pull-right">
-                        <button class="btn btn-primary">Change</button>
-                    </div>
-
-                </form>
-            </div>
-        </div>
-
-    </div><!--/.col-->
+<div class="row profile" id="user_info">
+    @Html.Partial("Detail_user", Model)
 
 </div>
 @Styles.Render("~/Content/shiyonghui/User_detail.css")
