@@ -41,7 +41,7 @@ namespace Dongdongdongman.Controllers
             var da = am.FindByname(name, pwd);
             if (da == null)
             {
-                return Content("<script>alerrt('输入密码错误');window.location.href = window.location.href;</script>");
+                return Content("<script>alert('输入密码错误');window.location.href = window.location.href;</script>");
             }
             else
             {

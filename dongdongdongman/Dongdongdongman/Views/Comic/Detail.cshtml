@@ -38,6 +38,7 @@
             <div class="sr-detail f-pr">
                 <div class="header sr-detail__header">
                     <h1 class="f-toe sr-detail__heading">@Model.a.Comic_name</h1>
+                    <div id="Add_Comic" style="float:right;">@Html.Partial("Add_Follow",Model)</div>
                 </div>
                 <p class="sr-detail__abstract f-pr">
                     <span class="sprite-icon_2-quote"></span>
@@ -57,7 +58,7 @@
 
                     <div class="sr-detail__bottom f-cb js-detail-bottom">
                         <div class="f-fl sr-detail__bleft f-cb">
-                            <a href="@Url.Action("Comic_pager","Comic",new { cid=Model.ca.OrderBy(o=>o.Comic_chapter_num).FirstOrDefault().Comic_chapter_id,nums = 1})"" class="sr-btn u-btn-read z-danger f-fl j-read"><span class="sr-icon sprite-icon_2-book"></span> 开始阅读 </a>
+                            <a href="@Url.Action("Comic_pager","Comic",new { cid=Model.ca.OrderBy(o=>o.Comic_chapter_num).FirstOrDefault().Comic_chapter_id,nums = 1})" class="sr-btn u-btn-read z-danger f-fl j-read"><span class="sr-icon sprite-icon_2-book"></span> 开始阅读 </a>
                         </div>
                         <div class="sr-btn u-btn-collect f-fl j-fav-button">
                             <div class="sprite-icon_2-collect sr-icon"></div>
@@ -165,7 +166,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                 <h4 class="modal-title" id="myModalLabel">举报评论</h4>
             </div> 
-        <form action="@Url.Action("Comment_jubao","Comic")" method="post" id="Jubao_Form">
+        <form action="@Url.Action("Comment_jubao","Comic",new { cid=Model.a.Comic_id })" method="post" id="Jubao_Form">
                 <div class="modal-body" style="height:300px;">
 
                     <div class="form-group">
@@ -174,10 +175,10 @@
                         </div>
                         <div class="col-md-9">
                             <select class="form-control input-lg" name="leibie" size="1">
-                                <option value="0">广告，发布谣言</option>
-                                <option value="1">淫秽，色情</option>
-                                <option value="2">出口成脏</option>
-                                <option value="3">泄露国家机密</option>
+                                <option value="广告，发布谣言">广告，发布谣言</option>
+                                <option value="淫秽，色情">淫秽，色情</option>
+                                <option value="出口成脏">出口成脏</option>
+                                <option value="泄露国家机密">泄露国家机密</option>
                             </select>
                         </div>
                     </div>

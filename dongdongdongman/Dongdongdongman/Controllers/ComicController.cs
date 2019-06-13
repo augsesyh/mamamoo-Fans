@@ -155,12 +155,39 @@ namespace Dongdongdongman.Controllers
             return RedirectToAction("Comic_pager", "Comic", new { cid = ccid });
         }
         [HttpPost]
-          public ActionResult Comment_jubao(string leibie,string miaoshu,string jb)
+          public ActionResult Comment_jubao(string leibie,string miaoshu,string jb,int cid)
         {
             int uid = Convert.ToInt32(Session["User_id"].ToString());
             ReportManager rp = new ReportManager();
             rp.Add_Report(leibie, miaoshu, jb, uid);
-            return Content("<script>windows.loaction.href=windows.location.href;</scripts>");
+            return RedirectToAction("Detail",cid);
+        }
+        public ActionResult Add_Follow()
+        {
+            return PartialView();
+        }
+        [HttpPost]
+        public ActionResult Add_Follow1(int Comic_id)
+        {
+            int User_id = Convert.ToInt32(Session["User_id"].ToString());
+            FollowManager fm = new FollowManager();
+            fm.Add_Follow(Comic_id, User_id);
+            var da = Session["User_name"].ToString();
+            Comic_detail cd = new Comic_detail(Comic_id,da,1);
+
+            return PartialView("Add_Follow",cd);
+        }
+
+        [HttpPost]
+        public ActionResult Del_Follow1(int Comic_id)
+        {
+            int User_id = Convert.ToInt32(Session["User_id"].ToString());
+            FollowManager fm = new FollowManager();
+            fm.Del_Follow(Comic_id, User_id);
+            var da = Session["User_name"].ToString();
+            Comic_detail cd = new Comic_detail(Comic_id, da, 1);
+
+            return PartialView("Add_Follow",cd);
         }
         //[HttpPost]
         //public ActionResult Add_Follow(int Comic_id)
