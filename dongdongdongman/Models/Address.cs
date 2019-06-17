@@ -27,6 +27,7 @@ namespace Models
         public string Address_detail { get; set; }
         public string Address_phone { get; set; }
         public string Address_name { get; set; }
+        public string Address_quyu { get; set; }
     
         public virtual User User { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

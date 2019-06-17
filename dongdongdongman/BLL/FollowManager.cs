@@ -20,5 +20,10 @@ namespace BLL
         {
             ifo.Del_Follow(Comic_id, User_id);
         }
+
+        public IQueryable<Follow> FindByuid(int uid)
+        {
+            return ifo.FindByuid(uid);
+        }
     }
 }

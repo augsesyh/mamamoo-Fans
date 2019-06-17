@@ -208,3 +208,43 @@ a:hover {
 a{
     color:black;
 }
+ .n-tab-links {
+    display: inline-block;
+    font-size: 0;
+    vertical-align: middle;
+}
+ .n-btn {
+    display: inline-block;
+    font-size: 0;
+    line-height: 66px;
+    margin-right: 16px;
+    position: relative;
+}
+.n .n-inner {
+    height: 66px;
+    background: #fff;
+    box-shadow: 0 0 0 1px #eee;
+    border-radius: 0 0 4px 4px;
+    padding: 0 20px;
+    font-size: 0;
+}
+
+.clearfix {
+    display: block;
+}
+
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+    .n .n-btn.active
+
+{
+    color: #00a1d6;
+}
+
+.n .n-text {
+    font-size: 13px;
+}

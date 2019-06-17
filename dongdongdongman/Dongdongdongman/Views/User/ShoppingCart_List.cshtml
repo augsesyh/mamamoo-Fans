@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Models.ShoppingCart>
+    @{ 
+        var i = 0;
+    }
+@foreach (var it in Model)
+{
+    @i= 0;
+@i= it.Goods_num * it.Goods.Goods_price;
+
+<tr>
+    <td style="width: 5%;"><input type="checkbox" name="check_@it.Cart_id" value="@it.Cart_id" /></td>
+    <td class="goods">
+        <img src="@it.Goods.Goods_photo" class="goods-left" />
+        <div class="goods-right">
+            <p></p>
+            <p class="tip">赠送<span style="margin-right: 5px;">铅笔,笔记本</span></p>
+        </div>
+    </td>
+    <td>@it.Goods.Goods_price</td>
+    <td class="num">
+        @Ajax.ActionLink("-", "Low_ShoppingCart", new { sid = it.Cart_id }, new AjaxOptions { UpdateTargetId = "cart_content", HttpMethod = "post", InsertionMode = InsertionMode.Replace })&nbsp;&nbsp;
+        <input type="text" value="@it.Goods_num" disabled />&nbsp;&nbsp;
+        @Ajax.ActionLink("+", "Add_ShoppingCart", new { sid = it.Cart_id }, new AjaxOptions { UpdateTargetId = "cart_content", HttpMethod = "post", InsertionMode = InsertionMode.Replace })
+    </td>
+
+    <td class="redcolor">@i</td>
+    <td class="del">
+        @Ajax.ActionLink("删除", "Del_ShoppingCart", new { sid = it.Cart_id }, new AjaxOptions { UpdateTargetId = "cart_content", HttpMethod = "post", InsertionMode = InsertionMode.Replace })
+    </td>
+</tr>
+}

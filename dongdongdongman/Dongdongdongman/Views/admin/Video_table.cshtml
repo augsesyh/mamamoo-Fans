@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Models.Video>
+    @{ 
+        int i = 1;
+    }
+<style type="text/css">
+    a{
+        color:black;
+    }
+</style>
+@Styles.Render("~/Content/shiyonghui/admin_Video.css")
+@Styles.Render("~/Content/shiyonghui/style.min.css")
+@foreach(var it in Model)
+{
+    i = 1;
+    <div class="col-md-4">
+        <div class="video">
+            <a href="#" class="cover"><img src="@it.Video_pic.Trim()" ></a>
+            <a href="#" class="info"><h4 class="video_name">@it.Video_name.Trim()</h4><div class="intro">@it.Video_intro</div><div class="type"><span>@it.Video_Cate.Video_Cate_name</span></div></a>
+            @Ajax.ActionLink("删除","Del_Video",new { vid=it.Video_id },new AjaxOptions { UpdateTargetId= "Video_Content",HttpMethod="post",InsertionMode=InsertionMode.Replace },htmlAttributes:new { role="button",@class= "btn btn-link btn-xs" })
+        </div>
+        @*<div class="video_detail">
+           <div class="vide_content">
+            @foreach(var id in it.Video_detail)
+            {
+                <div vpath="@id.Video_address">
+                <button class="btn btn-default btn-sm" type="button">@i</button>
+                </div>
+                i++;
+            }
+            </div>
+        </div>*@
+    </div>
+}

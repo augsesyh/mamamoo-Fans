@@ -98,7 +98,7 @@
                                             @i.ReBack_time
                                         </span>
                                         <div class="f-fr">
-                                            <a href="javascript:void(0)" value="@i.Comment_id" class="jubao sr-citem__reply f-fl j-reply-button1" data-toggle="modal" data-target="#myModal">举报</a>
+                                            <a href="javascript:void(0)" value="@i.ReBack_id" class="jubao1 sr-citem__reply f-fl j-reply-button1" data-toggle="modal" data-target="#myModal">举报</a>
                                             <a href="javascript:void(0)" id="reply1" class="sr-citem__reply f-fl j-reply-button">回复</a>
                                         </div>
                                         @using (Ajax.BeginForm("Add_Comment1", "Comic",
@@ -151,7 +151,7 @@
     </div>
 }
 <div class="text-center">
-    @Ajax.Pager(Model.co, new PagerOptions { PageIndexParameterName = "coid", ContainerTagName = "ul", CssClass = "pagination", CurrentPagerItemTemplate = "<li class=\"active\"><a href=\"#\">{0}</a></li>", DisabledPagerItemTemplate = "<li class=\"disabled\"><a>{0}</a></li>", PagerItemTemplate = "<li>{0}</li>" }).AjaxOptions(a => a.SetUpdateTargetId("comment"))
+    @Ajax.Pager(Model.co, new PagerOptions { PageIndexParameterName = "coid", ContainerTagName = "ul", CssClass = "pagination", CurrentPagerItemTemplate = "<li class=\"active\"><a href=\"#\">{0}</a></li>", DisabledPagerItemTemplate = "<li class=\"disabled\"><a>{0}</a></li>", PagerItemTemplate = "<li>{0}</li>" }).AjaxOptions(a => a.SetUpdateTargetId("comment-block"))
 </div>
 <div class="sr-cinput f-cb" id="input">
     @*<form action="@Url.Action("Add_Comment")">*@
@@ -186,6 +186,5 @@
         </div>
     }
 </div>
-
 @Scripts.Render("~/bundles/jquery")
 @Scripts.Render("~/Scripts/shiyonghui/Comic_Comment.js")

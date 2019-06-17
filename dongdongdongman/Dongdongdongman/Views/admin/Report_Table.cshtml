@@ -1,0 +1,219 @@
+﻿@model Dongdongdongman.Models.Comic_Comment_Report
+
+<div class="tab-pane active" id="guangao" role="tabpanel">
+    <div class="row mt-4">
+        @foreach (var it in Model.Regg)
+        {
+            <div class="col-md-4">
+                <div class="card text-white border-0">
+                    <div class="card-header bg-success">
+                        @it.User.User_detail.User_name 举报 @if (it.Comment_id != null)
+                        {@it.Comment.User.User_detail.User_name }
+                    else
+                    { @it.ReBack.User.User_detail.User_name} 的评论
+                        <div class="card-actions">
+                            @if (it.Comment_id != null)
+                            {<a href="javascripts:void(0);" class="btn text-white" data-toggle="modal" data-target="#co_@it.Comment_id">查看评论</a>}
+                            else
+                            { <a href="javascripts:void(0);" class="btn" data-toggle="modal" data-target="#Re_@it.Reback_id">查看评论</a>}
+                        </div>
+                    </div>
+                    <div class="card-body bg-success">
+                        @it.Report_intro
+                    </div>
+                    <div class="bg-success">
+                        @if (it.Comment_id != null)
+                        {
+                            <div class="bg-success" style="float:left;">
+                                @Ajax.ActionLink("删除评论", "Del_Comment", new { Comment_id = it.Comment_id }, new AjaxOptions { UpdateTargetId = "content", InsertionMode = InsertionMode.Replace, HttpMethod = "post" })
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="bg-success" style="float:left;">
+                                @Ajax.ActionLink("删除评论", "Del_Comment", new { Reback_id = it.Reback_id }, new AjaxOptions { UpdateTargetId = "content", InsertionMode = InsertionMode.Replace, HttpMethod = "post" })
+                            </div>
+                        }
+
+                        <div class="bg-success" style="float:right;">
+                            @Ajax.ActionLink("忽略", "Del_Report", new { Report_id = it.Report_id }, new AjaxOptions { UpdateTargetId = "content", InsertionMode = InsertionMode.Replace, HttpMethod = "post" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+<div class="tab-pane" id="yinhui" role="tabpanel">
+    <div class="row mt-4">
+        @foreach (var it in Model.Reyh)
+        {
+            <div class="col-md-4">
+                <div class="card text-white border-0">
+                    <div class="card-header bg-success">
+                        @it.User.User_detail.User_name 举报 @if (it.Comment_id != null)
+                        {@it.Comment.User.User_detail.User_name }
+                    else
+                    { @it.ReBack.User.User_detail.User_name}  的评论
+                        <div class="card-actions">
+                            @if (it.Comment_id != null)
+                            {<a href="javascripts:void(0);" class="btn" data-toggle="modal" data-target="#co_@it.Comment_id">查看评论</a>}
+                            else
+                            { <a href="javascripts:void(0);" class="btn" data-toggle="modal" data-target="#Re_@it.Reback_id">查看评论</a>}
+                        </div>
+                    </div>
+                    <div class="card-body bg-success">
+                        @it.Report_intro
+                    </div>
+                    @if (it.Comment_id != null)
+                    {
+                        <div>
+                            @Ajax.ActionLink("删除评论", "Del_Comment", new { Comment_id = it.Comment_id }, new AjaxOptions { UpdateTargetId = "content", InsertionMode = InsertionMode.Replace, HttpMethod = "post" })
+                        </div>
+                    }
+                    else
+                    {
+                        <div>
+                            @Ajax.ActionLink("删除评论", "Del_Comment", new { Reback_id = it.Reback_id }, new AjaxOptions { UpdateTargetId = "content", InsertionMode = InsertionMode.Replace, HttpMethod = "post" })
+                        </div>
+                    }
+
+                    <div>
+                        @Ajax.ActionLink("忽略", "Del_Report", new { Report_id = it.Report_id }, new AjaxOptions { UpdateTargetId = "content", InsertionMode = InsertionMode.Replace, HttpMethod = "post" })
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+<div class="tab-pane" id="zhanghua" role="tabpanel">
+    <div class="row mt-4">
+        @foreach (var it in Model.Remr)
+        {
+            <div class="col-md-4">
+                <div class="card text-white border-0">
+                    <div class="card-header bg-success">
+                        @it.User.User_detail.User_name 举报 @if (it.Comment_id != null)
+                        {@it.Comment.User.User_detail.User_name }
+                    else
+                    { @it.ReBack.User.User_detail.User_name} 的评论
+                        <div class="card-actions">
+                            @if (it.Comment_id != null)
+                            {<a href="javascripts:void(0);" class="btn" data-toggle="modal" data-target="#co_@it.Comment_id">查看评论</a>}
+                            else
+                            { <a href="javascripts:void(0);" class="btn" data-toggle="modal" data-target="#Re_@it.Reback_id">查看评论</a>}
+                        </div>
+                    </div>
+                    <div class="card-body bg-success">
+                        @it.Report_intro
+                    </div>
+                    @if (it.Comment_id != null)
+                    {
+                        <div>
+                            @Ajax.ActionLink("删除评论", "Del_Comment", new { Comment_id = it.Comment_id }, new AjaxOptions { UpdateTargetId = "content", InsertionMode = InsertionMode.Replace, HttpMethod = "post" })
+                        </div>
+                    }
+                    else
+                    {
+                        <div>
+                            @Ajax.ActionLink("删除评论", "Del_Comment", new { Reback_id = it.Reback_id }, new AjaxOptions { UpdateTargetId = "content", InsertionMode = InsertionMode.Replace, HttpMethod = "post" })
+                        </div>
+                    }
+
+                    <div>
+                        @Ajax.ActionLink("忽略", "Del_Report", new { Report_id = it.Report_id }, new AjaxOptions { UpdateTargetId = "content", InsertionMode = InsertionMode.Replace, HttpMethod = "post" })
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+<div class="tab-pane" id="xielujm" role="tabpanel">
+    <div class="row mt-4">
+        @foreach (var it in Model.Rexl)
+        {
+            <div class="col-md-6">
+                <div class="card text-white border-0">
+                    <div class="card-header bg-success">
+                        @it.User.User_detail.User_name 举报 @if (it.Comment_id != null)
+                        {@it.Comment.User.User_detail.User_name }
+                    else
+                    { @it.ReBack.User.User_detail.User_name} 的评论
+                        <div class="card-actions">
+                            @if (it.Comment_id != null)
+                            {<a href="javascripts:void(0);" class="btn" data-toggle="modal" data-target="#co_@it.Comment_id">查看评论</a>}
+                            else
+                            { <a href="javascripts:void(0);" class="btn" data-toggle="modal" data-target="#Re_@it.Reback_id">查看评论</a>}
+                        </div>
+                    </div>
+                    <div class="card-body bg-success">
+                        @it.Report_intro
+                    </div>
+                    @if (it.Comment_id != null)
+                    {
+                        <div>
+                            @Ajax.ActionLink("删除评论", "Del_Comment", new { Comment_id = it.Comment_id }, new AjaxOptions { UpdateTargetId = "content", InsertionMode = InsertionMode.Replace, HttpMethod = "post" })
+                        </div>
+                    }
+                    else
+                    {
+                        <div>
+                            @Ajax.ActionLink("删除评论", "Del_Comment", new { Reback_id = it.Reback_id }, new AjaxOptions { UpdateTargetId = "content", InsertionMode = InsertionMode.Replace, HttpMethod = "post" })
+                        </div>
+                    }
+
+                    <div>
+                        @Ajax.ActionLink("忽略", "Del_Report", new { Report_id = it.Comment_id }, new AjaxOptions { UpdateTargetId = "content", InsertionMode = InsertionMode.Replace, HttpMethod = "post" })
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+@foreach (var it in Model.co)
+{
+    <div class="modal fade" id="co_@it.Comment_id" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title" id="myModalLabel">评论详情</h4>
+                </div>
+
+                <div class="modal-body">
+                    @it.Comment_intro
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+
+
+                </div>
+
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
+}
+@foreach (var it in Model.Reb)
+{
+    <div class="modal fade" id="Re_@it.ReBack_id" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title" id="myModalLabel">评论详情</h4>
+                </div>
+
+                <div class="modal-body">
+                    @it.ReBack_intro
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+
+
+                </div>
+
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
+}
+@Scripts.Render("~/Scripts/jquery.unobtrusive-ajax.min.js")

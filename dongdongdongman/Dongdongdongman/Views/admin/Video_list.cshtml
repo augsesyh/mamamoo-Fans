@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Models.Video>
+@{
+    ViewBag.Title = "Video_list";
+    Layout = "~/Views/Shared/admin_Layout.cshtml";
+}
+<div class="row">
+    <div class="col-lg-12">
+        <h3 class="page-header"><i class="fa fa-indent"></i>下架动漫</h3>
+        <ol class="breadcrumb">动漫管理<li><i class="fa fa-home"></i>动漫下架</li></ol>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading" style="line-height:63px;">
+                <h2><i class="fa fa-table red"></i><span class="break"></span><strong>动漫列表</strong></h2>
+                <div class="panel-actions">
+                    @using (Ajax.BeginForm("FindBystr_video", "admin", new AjaxOptions { HttpMethod = "get", InsertionMode = InsertionMode.Replace, UpdateTargetId = "postContent" }, htmlAttributes: new { @class = "navbar-form navbar-right" }))
+                    {
+                        <button class="btn btn-primary" type="submit"><i class="fa fa-search"></i>Search</button><input type="text" class="form-control" placeholder="Search..." id="shoushuo" name="shoushuo">
+                    }
+                </div>
+            </div>
+            <div class="panel-body" id="Video_Content">
+                @Html.Partial("Video_table", Model)
+            </div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/Scripts/jquery.unobtrusive-ajax.min.js")

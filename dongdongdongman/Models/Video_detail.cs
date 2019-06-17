@@ -15,7 +15,7 @@ namespace Models
     public partial class Video_detail
     {
         public int Video_detail_id { get; set; }
-        public int Video_id { get; set; }
+        public Nullable<int> Video_id { get; set; }
         public string Video_detail_name { get; set; }
         public int Video_num { get; set; }
         public string Video_address { get; set; }

@@ -1,0 +1,12 @@
+﻿@model IEnumerable<Models.Follow>
+@{
+    ViewBag.Title = "Follow";
+    Layout = "~/Views/Shared/User_Layout.cshtml";
+}
+<div class="panel-heading">
+    <h2>关注列表</h2>
+</div>
+<div class="row" id="Follow_content">
+   @Html.Partial("Follow_List",Model)
+</div>
+

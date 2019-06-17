@@ -1,0 +1,136 @@
+﻿@model Dongdongdongman.Models.Comic_Comment_Report
+@{
+    ViewBag.Title = "Reposort_List";
+    Layout = "~/Views/Shared/admin_Layout.cshtml";
+}
+<style type="text/css">
+    .nav-tabs>.nav-link.active {
+        color: #4d4d4d;
+        background: #fff;
+        border-color: #dee2e6;
+        border-bottom: none;
+    }
+    .nav-tabs>.nav-link {
+        border: 1px solid transparent;
+    }
+    .nav-link {
+        display: block;
+        padding: .5rem 1rem;
+    }
+    a {
+        color: #777;
+        text-decoration: none;
+        background-color: transparent;
+        
+    }
+    .nav-tabs>.nav-link.active:hover {
+        border-color: #dee2e6;
+    }
+    .nav-tabs .nav-link:hover {
+        color: #4d4d4d;
+        border-color: transparent;
+    }
+    .card {
+        border: 1px solid #dee2e6;
+        margin-bottom: 1.5rem;
+    }
+
+    .text-white {
+        color: #fff !important;
+    }
+
+    .border-0 {
+        border: 0 !important;
+    }
+
+    .card {
+        position: relative;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        background-color: #fff;
+        background-clip: border-box;
+        border: 1px none;
+    }
+    .bg-success {
+        background-color: #9ccc65 !important;
+    }
+
+    .card-header {
+        padding: 1rem;
+        margin-bottom: 0;
+        background-color: #fff;
+        border-bottom: 1px none;
+    }
+    .card-body {
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+        padding: 1rem;
+    }
+    .text-white {
+        color: #fff !important;
+    }
+    .card-actions {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    .card-body {
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+        padding: 1rem;
+    }
+    .tab-content {
+        margin-top: -1px;
+        border: 1px solid #dee2e6;
+        background: #fff;
+    }
+    .btn:not(:disabled):not(.disabled) {
+        cursor: pointer;
+    }
+
+    .btn.btn-rounded {
+        border-radius: 50px !important;
+    }
+
+    .btn-primary:hover {
+        color: #fff;
+        background-color: #1e94f3;
+        border-color: #128ef2;
+    }
+
+    .btn:focus, .btn:hover {
+        text-decoration: none;
+    }
+</style>
+<div class="row mt-lg-4">
+    <div class="col-lg-12 mb-lg-4 open">
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#guangao" role="tab">广告，发布谣言</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#yinhui" role="tab">淫秽，色情</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#zhanghua" role="tab">出口成脏</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#xielujm" role="tab">泄露国家机密</a>
+            </li>
+        </ul>
+
+    </div>
+    <div class="tab-content" id="content" style="padding-left:14px;">
+        @Html.Partial("Report_Table", Model)
+    </div>
+</div>
+

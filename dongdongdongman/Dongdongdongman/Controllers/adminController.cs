@@ -8,6 +8,8 @@ using BLL;
 using Models;
 using Dongdongdongman.Models;
 using Webdiyer.WebControls.Mvc;
+using System.Data.Entity.Core.Objects;
+
 namespace Dongdongdongman.Controllers
 {
     public class adminController : Controller
@@ -228,6 +230,112 @@ namespace Dongdongdongman.Controllers
             ComicManager cm = new ComicManager();
             var da = cm.FindByName(shoushuo);
             return PartialView("Comic_List",da);
+        } 
+        public ActionResult Reposort_List()
+        {
+            Comic_Comment_Report ccr = new Comic_Comment_Report();
+            return View(ccr);
+        }
+        public ActionResult Report_Table()
+        {
+            Comic_Comment_Report ccr = new Comic_Comment_Report();
+            return PartialView(ccr);
+        }
+        [HttpPost]
+        public ActionResult Del_Comment(int Comment_id)
+        {
+            CommentManager cm = new CommentManager();
+            cm.Del_CommentByid(Comment_id);
+            return RedirectToAction("Report_Table");
+        }
+        [HttpPost]
+        public ActionResult Del_Report(int Report_id)
+        {
+            ReportManager rm = new ReportManager();
+            rm.Del_Report(Report_id);
+            return RedirectToAction("Report_Table");
+        }
+        public ActionResult UpVideo()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult UpVideo(HttpPostedFileBase file)
+        {
+            dongdongdongEntities db = new dongdongdongEntities();
+            if (file != null && file.ContentLength > 0)
+            {
+                string folderpath = "/Video/";//上传图片的文件夹
+                if (!Directory.Exists(folderpath))
+                {
+                    Directory.CreateDirectory(Server.MapPath(folderpath));
+                }
+                string ext1 = Path.GetExtension(file.FileName);
+                if (ext1 != ".mp4" && ext1 != ".rmvb" && ext1 != ".avi" && ext1 != ".flv")//笔者这儿修改了后缀的判断
+                {
+                    return Json(new { statu = 201, msg = "文件格式不正确！" });
+                }
+                else
+                {
+                    string folder = Server.MapPath(folderpath);
+                    string name = DateTime.Now.ToString("yyyyMMddHHmmssff");
+                    string ext = Path.GetExtension(file.FileName);
+                    string downpath = name + ext;
+                    string filepath = Server.MapPath(folderpath) + name + ext;
+                    Video_detail vd = new Video_detail();
+                    vd.Video_address = folderpath+downpath;
+                    vd.Video_detail_name = "惊奇队长";
+                    vd.Video_num = 1;
+                    vd.Video_id = 17;
+                    db.Video_detail.Add(vd);
+                    db.SaveChanges();
+                    file.SaveAs(Path.Combine(folder,downpath));
+                    
+                    return Json(new { status = 200, src = downpath, id = name });
+                }
+            }
+            else
+            {
+                return Json(new { status = 202, msg = "请上传文件！" });
+            }
+
+        }
+        public ActionResult Video_list()
+        {
+
+            return View(db.Video);
+        }
+        public ActionResult Video_table()
+        {
+            return PartialView(db.Video);
+        }
+        public ActionResult FindBystr_video(string shoushuo)
+        {
+            VideoManager vm = new VideoManager();
+            var da = vm.GetByStr(shoushuo);
+            return PartialView("Video_table",da);
+        }
+        [HttpPost]
+        public ActionResult Del_Video(int vid)
+        {
+            var da = db.Video.Where(o => o.Video_id == vid).FirstOrDefault();
+            foreach(var it in da.Video_detail)
+            {
+                Del_File(it.Video_address);
+                 
+            }
+            db.Video.Remove(da);
+
+            db.SaveChanges();
+            return RedirectToAction("Video_table");
+        }
+        public void Del_File(string way)
+        {
+            
+            var strServerFilePath = Server.MapPath(way);
+            //将接收到文件保存在服务器指定上当
+            System.IO.File.Delete(strServerFilePath);
+            
         }
     }
 }

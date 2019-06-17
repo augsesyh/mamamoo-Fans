@@ -25,6 +25,7 @@ namespace Models
         public int User_id { get; set; }
         public Nullable<System.DateTime> Orders_time { get; set; }
         public Nullable<decimal> Orders_mon { get; set; }
+        public string Orders_status { get; set; }
     
         public virtual Address Address { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

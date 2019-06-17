@@ -2,7 +2,7 @@
 @if (Model.fol == null)
 {
 <div class="f-fl sr-detail__bleft f-cb">
-    <a href="javascript:void(0);" id="guanzhu" class="sr-btn u-btn-read z-danger f-fl j-read"> + 关注 </a>
+    @Ajax.ActionLink("+关注","Add_Follow1",new { Comic_id = Model.a.Comic_id },new AjaxOptions { UpdateTargetId= "Add_Comic",HttpMethod="post",InsertionMode=InsertionMode.Replace },htmlAttributes:new { @class= "sr-btn u-btn-read z-danger f-fl j-read" })
 </div>
 }
 else
@@ -11,5 +11,4 @@ else
     <a href="javascript:void(0);" id="quxiao" class="sr-btn u-btn-read z-danger f-fl j-read" style="background-color:gray;"> 取消关注 </a>
 </div>
 }
-@Scripts.Render("~/bundles/jquery")
-@Scripts.Render("~/Scripts/jquery.unobtrusive-ajax.min.js")
+

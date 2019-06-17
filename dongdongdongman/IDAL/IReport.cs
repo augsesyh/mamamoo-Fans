@@ -8,6 +8,7 @@ namespace IDAL
 {
     public interface IReport
     {
-        void Add_Report(string leibie,string miaoshu,string jb,int uid);
+        void Add_Report(string leibie,string miaoshu,string jb,int uid,string jb1);
+        void Del_Report(int Report_id);
     }
 }

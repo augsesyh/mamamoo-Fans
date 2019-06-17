@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Models.Address>
+
+
+    <div class="panel panel-default">
+
+        <div class="panel-body">
+            <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>收货人姓名</th>
+                        <th>收货人电话</th>
+                        <th>收货人地址</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var it in Model)
+                    {
+                        <tr>
+                            <td>@it.Address_name</td>
+                            <td>@it.Address_phone</td>
+                            <td>@it.Address_detail</td>
+                            <td>
+                                <a href="javascripts:void(0);" class="btn btn-primary btn-xs" role="button" data-toggle="modal" data-target="#Address_@it.Address_id">修改</a>|
+                                @Ajax.ActionLink("删除", "Del_Address", new { aid = it.Address_id }, new AjaxOptions { UpdateTargetId = "Address_info", HttpMethod = "post", InsertionMode = InsertionMode.Replace }, htmlAttributes: new { @class = "btn btn-primary btn-xs", role = "button" })
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+</div>
+        </div>
+    </div>
+
+<!--/col-->

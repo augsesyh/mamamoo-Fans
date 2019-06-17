@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Models.Collection>
+@{
+    ViewBag.Title = "Collection";
+    Layout = "~/Views/Shared/User_Layout.cshtml";
+    int i = 0;
+}
+@Styles.Render("~/Content/shiyonghui/admin_Video.css")
+@Styles.Render("~/Content/shiyonghui/style.min.css")
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading" style="line-height:63px;">
+                <h2><i class="fa fa-table red"></i><span class="break"></span><strong>收藏列表</strong></h2>
+            </div>
+            <div class="panel-body">
+                @foreach (var it in Model)
+                {
+                    i = 1;
+                    <div class="col-md-4">
+                        <div class="video">
+                            <a href="#" class="cover"><img src="@it.Video.Video_pic.Trim()"></a>
+                            <a href="#" class="info"><h4 class="video_name">@it.Video.Video_name.Trim()</h4><div class="intro">@it.Video.Video_intro</div><div class="type"><span>@it.Video.Video_Cate.Video_Cate_name</span></div></a>
+                            @Html.ActionLink("删除", "Del_Collection", new { cid = it.Collection_id }, htmlAttributes: new { role = "button", @class = "btn btn-link btn-xs" })
+                        </div>
+                        @*<div class="video_detail">
+                               <div class="vide_content">
+                                @foreach(var id in it.Video_detail)
+                                {
+                                    <div vpath="@id.Video_address">
+                                    <button class="btn btn-default btn-sm" type="button">@i</button>
+                                    </div>
+                                    i++;
+                                }
+                                </div>
+                            </div>*@
+                    </div>
+                }
+                </div>
+            </div>
+        </div>
+</div>

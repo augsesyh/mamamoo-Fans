@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Models.ShoppingCart>
+@{
+    ViewBag.Title = "Shoppingcart";
+    Layout = "~/Views/Shared/User_Layout.cshtml";
+    int i=0;
+    
+}
+@Styles.Render("~/Content/shiyonghui/User_shoppingcart.css")
+<div id="app" class="container">
+    <h2 class="title">购物车</h2>
+    <table class="tab" style="width:100%;" border="0" cellspacing="0" cellpadding="0">
+        <thead>
+            <tr>
+                <th colspan="2">商品信息</th>
+                <th style="width: 14%;">商品金额</th>
+                <th style="width: 14%;">商品数量</th>
+                <th style="width: 14%;">总金额</th>
+                <th>编辑</th>
+            </tr>
+        </thead>
+        <tbody id="cart_content">
+     
+        </tbody>
+        <tfoot>
+            <tr class="footer">
+                <td><input type="checkbox" name="checkAll" /></td>
+                <td>
+                    <span class="redcolor">全选</span>&nbsp;&nbsp;
+                </td>
+                <td colspan="4">
+                    总计：<span id="Add_all"></span>元
+                    <button type="button" class="btn">结账</button>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</div>

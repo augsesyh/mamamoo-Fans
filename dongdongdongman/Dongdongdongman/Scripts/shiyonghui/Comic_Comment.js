@@ -44,7 +44,16 @@
         var d = $(this).attr("value");
         alert(d);
         $("#Jubao_Form").children("#jb").remove();
+        $("#Jubao_Form").children("#jb1").remove();
         $("#Jubao_Form").append("<input type='hidden' value=" + d + " id='jb' name='jb'>");
+    });
+    $(".jubao1").click(function () {
+
+        var d = $(this).attr("value");
+        alert(d);
+        $("#Jubao_Form").children("#jb").remove();
+        $("#Jubao_Form").children("#jb1").remove();
+        $("#Jubao_Form").append("<input type='hidden' value=" + d + " id='jb1' name='jb1'>");
     });
 
 });

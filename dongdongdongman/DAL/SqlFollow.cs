@@ -26,5 +26,10 @@ namespace DAL
             db.Follow.Remove(da);
             db.SaveChanges();
         }
+
+        public IQueryable<Follow> FindByuid(int uid)
+        {
+            return db.Follow.Where(o=>o.User_id==uid);
+        }
     }
 }

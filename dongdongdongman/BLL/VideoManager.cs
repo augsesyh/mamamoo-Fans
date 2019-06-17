@@ -16,5 +16,9 @@ namespace BLL
         {
             return d.GetNew();
         }
+        public IQueryable<Video> GetByStr(string str)
+        {
+            return d.GetByStr(str);
+        }
     }
 }

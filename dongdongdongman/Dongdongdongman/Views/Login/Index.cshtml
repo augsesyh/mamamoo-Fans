@@ -144,9 +144,9 @@
 
                 <div class="mod-wrap-in " data-style="c22">
                     <div class="mod-vd-i first  ">
-                        <div class="pic">
+                        <div class="pic" style="height:420px;">
                             <a data-nid="5" data-bid="470" data-cid="21745399" data-priority="1" data-gtype="cartoon" href="#" title="@Model.vo.FirstOrDefault().Video_name" target="_blank" data-id="327715">
-                                <img src="@Model.vo.FirstOrDefault().Video_pic.Trim()" alt="@Model.vo.FirstOrDefault().Video_name" class=""><span class="shadow"><i class="tip">全 @Model.vo.FirstOrDefault().Video_nums 集 </i></span>            <span class="mask">
+                                <img src="@Model.vo.FirstOrDefault().Video_pic.Trim()" style="object-fit: cover;" alt="@Model.vo.FirstOrDefault().Video_name" class=""><span class="shadow"><i class="tip">全 @Model.vo.FirstOrDefault().Video_nums 集 </i></span>            <span class="mask">
                                     <i class="play-btn"></i>
                                 </span>
                             </a>
@@ -160,10 +160,10 @@
                     </div>
                     @foreach (var it in Model.vo)
                     {
-                        <div class="mod-vd-i  ">
-                            <div class="pic">
+                        <div class="mod-vd-i">
+                            <div class="pic" style="">
                                 <a data-nid="5" data-bid="470" data-cid="21627940" data-priority="2" data-gtype="cartoon" href="#" title="@it.Video_name" target="_blank" data-id="321807">
-                                    <img src="@it.Video_pic.Trim()" alt="@it.Video_name" class=""><span class="shadow"><i class="tip">全 @it.Video_nums </i></span>            <span class="mask">
+                                    <img src="@it.Video_pic.Trim()" alt="@it.Video_name" style="object-fit: cover;" class=""><span class="shadow"><i class="tip">全 @it.Video_nums </i></span>            <span class="mask">
                                         <i class="play-btn"></i>
                                     </span>
                                 </a>

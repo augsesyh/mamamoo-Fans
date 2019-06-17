@@ -18,6 +18,7 @@ namespace Models
         public ReBack()
         {
             this.ReBack1 = new HashSet<ReBack>();
+            this.Report = new HashSet<Report>();
         }
     
         public int ReBack_id { get; set; }
@@ -32,5 +33,7 @@ namespace Models
         public virtual ICollection<ReBack> ReBack1 { get; set; }
         public virtual ReBack ReBack2 { get; set; }
         public virtual User User { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Report> Report { get; set; }
     }
 }

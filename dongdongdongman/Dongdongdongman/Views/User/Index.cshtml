@@ -27,29 +27,30 @@
 <div class="n" id="navigator">
     <div class="wrapper">
         <div class="n-inner clearfix">
-            <div class="n-tab-link">
+            <div class="n-tab-links">
                 <a href="@Url.Action("detail","User")" class="n-btn n-index n-fans n-404 router-link-exact-active router-link-active active">
-                    <span class="glyphicon glyphicon-home" style="color:aquamarine;width:20px;height:20px;"></span><span class="n-text">主页</span>
+                    <span class="fa fa-home" style="color:aquamarine;width:20px;height:20px;"></span><span class="n-text">主页</span>
                 </a>
-            </div>
-            <div class="n-tab-link">
-                <a href="@Url.Action("Address","User")" class="n-btn n-index n-fans n-404 router-link-exact-active router-link-active active">
-                    <span class="glyphicon glyphicon-home" style="color:aquamarine;width:20px;height:20px;"></span><span class="n-text">收货地址</span>
+         
+            
+                <a href="@Url.Action("Address","User")" class="n-btn n-dynamic">
+                    <span class="fa fa-address-card" style="color:aquamarine;width:20px;height:20px;"></span><span class="n-text">收货地址</span>
                 </a>
-            </div>
-            <div class="n-tab-link">
-                <a href="@Url.Action("Order","User")" class="n-btn n-index n-fans n-404 router-link-exact-active router-link-active active">
-                    <span class="glyphicon glyphicon-home" style="color:aquamarine;width:20px;height:20px;"></span><span class="n-text">订单</span>
+            
+                <a href="@Url.Action("Order","User")" class="n-btn n-video n-audio n-article n-album ">
+                    <span class="fa fa-first-order" style="color:aquamarine;width:20px;height:20px;"></span><span class="n-text">订单</span>
                 </a>
-            </div>
-            <div class="n-tab-link">
-                <a href="@Url.Action("Collection","User")" class="n-btn n-index n-fans n-404 router-link-exact-active router-link-active active">
-                    <span class="glyphicon glyphicon-home" style="color:aquamarine;width:20px;height:20px;"></span><span class="n-text">收藏</span>
+                <a href="@Url.Action("ShoppingCart","User")" class="n-btn n-channel ">
+                    <span class="fa fa-video-camera" style="color:aquamarine;width:20px;height:20px;"></span><span class="n-text">购物车</span>
                 </a>
-            </div>
-            <div class="n-tab-link">
-                <a href="@Url.Action("Follow","User")" class="n-btn n-index n-fans n-404 router-link-exact-active router-link-active active">
-                    <span class="glyphicon glyphicon-home" style="color:aquamarine;width:20px;height:20px;"></span><span class="n-text">关注</span>
+            
+                <a href="@Url.Action("Collection","User")" class="n-btn n-channel ">
+                    <span class="fa fa-video-camera" style="color:aquamarine;width:20px;height:20px;"></span><span class="n-text">收藏</span>
+                </a>
+            
+          
+                <a href="@Url.Action("Follow","User")" class="n-btn n-favlist ">
+                    <span class="fa fa-book" style="color:aquamarine;width:20px;height:20px;"></span><span class="n-text">关注</span>
                 </a>
             </div>
         </div>
@@ -62,24 +63,24 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                 <h4 class="modal-title" id="myModalLabel">修改头像</h4>
             </div>
-            <form action="@Url.Action("Xiugai_img","User")" method="post" id="Jubao_Form">
-                <div class="modal-body" style="height:300px;">
+            <form action="@Url.Action("Xiugai_img","User")" method="post" enctype="multipart/form-data">
+                <div class="modal-body" style="height:340px;">
                     <div class="control-group row">
-                        <label class="col-md-1 control-label span3"></label>
-                        <div class="col-md-5">
+                        <label class="col-md-3 col-md-offset-1  control-label span3"></label>
+                        <div class="col-md-6">
                             <img src="" id="img1" style="min-width:100px;min-height:100px;max-width:400px;max-height:800px;">
                         </div>
 
                     </div>
                     <div class="control-group row">
 
-                        <label for="requirement" class="col-md-1 control-label span3">头像上传</label>
-                        <div class="col-md-5">
+                        <label for="requirement" class="col-md-offset-1 col-md-3 control-label span3">头像上传</label>
+                        <div class="col-md-6">
                             <div class="input-group">
                                 <input id="photoCover" class="form-control" readonly type="text">
                                 <label class="input-group-btn">
                                     <input id="file" type="file" name="file" style="left: -9999px; position: absolute;">
-                                    <span class="btn btn-default">Browse</span>
+                                    <span class="btn btn-default" style="line-height:1.1;">Browse</span>
                                 </label>
                             </div>
                         </div>
@@ -95,3 +96,5 @@
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div>
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/Scripts/shiyonghui/User_Index.js")

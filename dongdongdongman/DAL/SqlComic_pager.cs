@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using IDAL;
 using Models;
-
 namespace DAL
 {
     class SqlComic_pager : IComic_pager

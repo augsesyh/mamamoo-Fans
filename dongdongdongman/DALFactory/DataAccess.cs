@@ -79,5 +79,25 @@ namespace DALFactory
             string className = AssemblyName + "." + db + "Follow";
             return (IFollow)Assembly.Load(AssemblyName).CreateInstance(className);
         }
+        public static IComment CreateComment()
+        {
+            string className = AssemblyName + "." + db + "Comment";
+            return (IComment)Assembly.Load(AssemblyName).CreateInstance(className);
+        }
+        public static IAddress CreateAddress()
+        {
+            string className = AssemblyName + "." + db + "Address";
+            return (IAddress)Assembly.Load(AssemblyName).CreateInstance(className);
+        }
+        public static IShoppingCart CreateShoppingCart()
+        {
+            string className = AssemblyName + "." + db + "ShoppingCart";
+            return (IShoppingCart)Assembly.Load(AssemblyName).CreateInstance(className);
+        }
+        public static ICollection CreateCollection()
+        {
+            string className = AssemblyName + "." + db + "Collection";
+            return (ICollection)Assembly.Load(AssemblyName).CreateInstance(className);
+        }
     }
 }

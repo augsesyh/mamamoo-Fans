@@ -16,11 +16,13 @@ namespace Models
     {
         public int Report_id { get; set; }
         public int User_id { get; set; }
-        public int Comment_id { get; set; }
+        public Nullable<int> Comment_id { get; set; }
         public string Report_category { get; set; }
         public string Report_intro { get; set; }
+        public Nullable<int> Reback_id { get; set; }
     
         public virtual Comment Comment { get; set; }
+        public virtual ReBack ReBack { get; set; }
         public virtual User User { get; set; }
     }
 }

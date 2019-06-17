@@ -155,12 +155,14 @@ namespace Dongdongdongman.Controllers
             return RedirectToAction("Comic_pager", "Comic", new { cid = ccid });
         }
         [HttpPost]
-          public ActionResult Comment_jubao(string leibie,string miaoshu,string jb,int cid)
+          public ActionResult Comment_jubao(string leibie,string miaoshu,string jb,int cid,string jb1)
         {
             int uid = Convert.ToInt32(Session["User_id"].ToString());
             ReportManager rp = new ReportManager();
-            rp.Add_Report(leibie, miaoshu, jb, uid);
-            return RedirectToAction("Detail",cid);
+            
+           
+            rp.Add_Report(leibie, miaoshu, jb, uid,jb1);
+            return RedirectToAction("Detail",new { cid =cid });
         }
         public ActionResult Add_Follow()
         {
@@ -189,5 +191,10 @@ namespace Dongdongdongman.Controllers
 
             return PartialView("Add_Follow",cd);
         }
+        //[HttpPost]
+        //public ActionResult Add_Follow(int Comic_id)
+        //{
+
+        //}
     }
 }

@@ -1,0 +1,110 @@
+﻿@model IEnumerable<Models.Address>
+@{
+    ViewBag.Title = "Address";
+    Layout = "~/Views/Shared/User_Layout.cshtml";
+}
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/Scripts/distpicker.js")
+<div class="row" id="Address_info">
+
+    <div class="col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="panel-heading">
+                    <h2><i class="fa "></i><strong>收货地址</strong></h2>
+                </div>
+                @using (Ajax.BeginForm("Add_Address", null, new AjaxOptions { UpdateTargetId = "Address_info", HttpMethod = "post", InsertionMode = InsertionMode.Replace }, htmlAttributes: new { @class = "form-vertical hover-stripped" }))
+                {
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label" for="name">收货人姓名</label>
+                        <div class="col-lg-9">
+                            <input type="text" id="name" name="name" class="form-control" placeholder="收货人姓名">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label" for="tele">收货人电话</label>
+                        <div class="col-md-9">
+                            <input type="text" id="tele" name="tele" class="form-control" placeholder="收货人电话">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label" for="tele">地址</label>
+                        <div data-toggle="distpicker" class="col-md-9">
+                            <select class="form-control" data-province="---- 选择省 ----" name="pro"></select>
+                            <select class="form-control" data-city="---- 选择市 ----" name="city"></select>
+                            <select class="form-control" data-district="---- 选择区 ----" name="quyu"></select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label" for="detail">详细地址</label>
+                        <div class="col-md-9">
+                            <textarea id="detail" name="detail" rows="9" class="form-control" placeholder="详细地址：具体到门牌号,已经写的不用写.."></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-rounded btn-info" type="submit">提交</button>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        @Html.Partial("Address_List", Model)
+    </div>
+</div>
+
+@foreach (var iy in Model)
+{
+    <div class="modal fade" id="Address_@iy.Address_id" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title" id="myModalLabel">修改地址</h4>
+                </div>
+
+                <div class="modal-body" style="height:500px;">
+                    <form action="@Url.Action("Xiugai_Address","User",new { aid=iy.Address_id })" method="post" id="Jubao_Form">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label" for="name">收货人姓名</label>
+                            <div class="col-md-9">
+                                <input type="text" id="name" name="name" class="form-control" value="@iy.Address_name" placeholder="收货人姓名">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label" for="tele">收货人电话</label>
+                            <div class="col-md-9">
+                                <input type="text" id="tele" name="tele" class="form-control" value="@iy.Address_phone" placeholder="收货人姓名">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label" for="tele">地址</label>
+                            <div data-toggle="distpicker" class="col-md-9">
+                                <select class="form-control" style="display:inline;width:175px;" data-province="@iy.Address_province" name="pro"></select>
+                                <select class="form-control" style="display:inline;width:175px;" data-city="@iy.Address_city" name="city"></select>
+                                <select class="form-control" style="display:inline;width:175px;" data-district="@iy.Address_quyu" name="quyu"></select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label" for="detail">详细地址</label>
+                            <div class="col-md-9">
+                                <textarea id="detail" name="detail" rows="9" class="form-control" placeholder="详细地址.."></textarea>
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                            <button type="submit" class="btn btn-primary">修改</button>
+
+                        </div>
+                    </form>
+                </div>
+
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
+}
+
+@Styles.Render("~/Content/shiyonghui/styles.css")
+@Scripts.Render("~/Scripts/jquery.unobtrusive-ajax.min.js")

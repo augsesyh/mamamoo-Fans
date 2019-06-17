@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Models.Follow>
+@foreach (var it in Model)
+{
+    <div class="ItemSpecial fl">
+        <a href="#" class="itemLink" target="_blank">
+            <span class="imgCover">
+                <img src="~/Img/data.gif" class="blankImg" alt="blank">
+                <img vm="184" class="img" src="@it.Comic.Comic_cover">
+            </span>
+            <span class="itemTitle">@it.Comic.Comic_name.Trim()</span>
+        </a>
+        <p class="itemFooter cls">
+            <span class="author fl">@it.Comic.Comic_writer.Trim()</span>
+
+        </p>
+        @Ajax.ActionLink("取消关注", "Del_Follow", new { cid=it.Comic_id }, new AjaxOptions { UpdateTargetId = "Follow_content",HttpMethod="post",InsertionMode=InsertionMode.Replace },htmlAttributes:new { style="color:black;" })
+    </div>
+}
